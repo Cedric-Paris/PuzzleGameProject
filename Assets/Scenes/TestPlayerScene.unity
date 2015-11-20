@@ -136,7 +136,8 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 69411af3063249747a5e259f84d52b90, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1045199179 stripped
@@ -185,10 +186,6 @@ Prefab:
     - target: {fileID: 139556, guid: 69411af3063249747a5e259f84d52b90, type: 2}
       propertyPath: m_Name
       value: Block gauche
-      objectReference: {fileID: 0}
-    - target: {fileID: 6139800, guid: 69411af3063249747a5e259f84d52b90, type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69411af3063249747a5e259f84d52b90, type: 2}
@@ -346,10 +343,6 @@ Prefab:
     - target: {fileID: 419522, guid: 6052f22e80d1db049beefbf406cc2140, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415646, guid: 6052f22e80d1db049beefbf406cc2140, type: 2}
-      propertyPath: endPlace
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6052f22e80d1db049beefbf406cc2140, type: 2}

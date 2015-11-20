@@ -3,18 +3,34 @@ using System.Collections;
 
 public class SquareObserver : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Element SquareDetected
+    {
+        get { return mSquareDetected; }
+        set
+        {
+            mSquareDetected = value;
+            isTreated = false;
+        }
+    }
+    private Element mSquareDetected;
+
+    public bool isTreated;//true si l'effet associé a cet element a été traité
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.GetType());
+        Component com = other.gameObject.GetComponent<Element>();//Recuperation de l'element associé a la case touchée (null si vide)
+        Element element = com as Element;
+        if (element != null)
+            SquareDetected = element;
     }
 }
