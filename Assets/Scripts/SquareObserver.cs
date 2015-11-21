@@ -3,16 +3,16 @@ using System.Collections;
 
 public class SquareObserver : MonoBehaviour {
 
-    public Element SquareDetected
+    public Element ElementDetected
     {
-        get { return mSquareDetected; }
+        get { return mElementDetected; }
         set
         {
-            mSquareDetected = value;
+            mElementDetected = value;
             isTreated = false;
         }
     }
-    private Element mSquareDetected;
+    private Element mElementDetected;
 
     public bool isTreated;//true si l'effet associé a cet element a été traité
 
@@ -31,6 +31,6 @@ public class SquareObserver : MonoBehaviour {
         Component com = other.gameObject.GetComponent<Element>();//Recuperation de l'element associé a la case touchée (null si vide)
         Element element = com as Element;
         if (element != null)
-            SquareDetected = element;
+            ElementDetected = element;
     }
 }

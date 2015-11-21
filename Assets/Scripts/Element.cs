@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Element : MonoBehaviour {
 
-    public int value;
-
 	// Use this for initialization
 	void Start () {
 	

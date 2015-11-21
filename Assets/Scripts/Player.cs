@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
     public readonly static Vector2 GO_LEFT = new Vector2(-1, 0);
 
     private float speed = 0.005f;
-    private Vector2 CurrentDirection = GO_LEFT;
+    private Vector2 currentDirection = GO_LEFT;
 
     public SquareObserver currentSquare;
     public SquareObserver nextSquare;
@@ -25,17 +25,17 @@ public class Player : MonoBehaviour {
             TreatSquare(nextSquare);
         if (!currentSquare.isTreated)
             TreatSquare(currentSquare);
-        transform.Translate(CurrentDirection * speed);
+        transform.Translate(currentDirection * speed);
 	}
 
     private void TreatSquare(SquareObserver square)
     {
-        EffectTransformation eTransf = square.SquareDetected.Effect();
+        EffectTransformation eTransf = square.ElementDetected.Effect();
         square.isTreated = true;
         if (!eTransf.isChangingSomething)
             return;
         if (eTransf.newDirection != null)
-            CurrentDirection = eTransf.newDirection;
+            currentDirection = eTransf.newDirection;
         if (eTransf.newPosition != null)
             transform.position = eTransf.newPosition;
         ///////////////////////////////Traiter le cas des obstacles////////////////////////////////
