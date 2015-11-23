@@ -1,19 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class ChangeDirection : Element
+public abstract class ChangeDirection : Special
 {
 
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
+	protected Vector2 newDirection;
+
 	
 	// Update is called once per frame
-	void Update ()
+	public override EffectTransformation Effect()
 	{
-	
+		EffectTransformation eTransf = new EffectTransformation ();
+		eTransf.isChangingSomething = true;
+		eTransf.newDirection = newDirection;
+		eTransf.newPosition = transform.position;
+		return eTransf;
 	}
 }
 
