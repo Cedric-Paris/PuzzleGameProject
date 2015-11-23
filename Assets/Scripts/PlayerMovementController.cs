@@ -3,13 +3,16 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 
-	DirectionProperties GO_UP = new DirectionProperties (new Vector3 (0, 1, 0), new Vector3 (0, 0.5f, 0), -1);
-	DirectionProperties GO_DOWN = new DirectionProperties(new Vector3(0, -1, 0), new Vector3 (0, -0.5f, 0), -1);
-	DirectionProperties GO_RIGHT = new DirectionProperties(new Vector3(1, 0, 0), new Vector3 (0.5f, 0, 0), -1);
-	DirectionProperties GO_LEFT = new DirectionProperties(new Vector3(-1, 0, 0), new Vector3 (-0.5f, 0, 0), -1);
+	public static readonly DirectionProperties GO_UP = new DirectionProperties (new Vector3 (0, 1, 0), new Vector3 (0, 0.5f, 0), -1);
+	public static readonly DirectionProperties GO_DOWN = new DirectionProperties(new Vector3(0, -1, 0), new Vector3 (0, -0.5f, 0), -1);
+	public static readonly DirectionProperties GO_RIGHT = new DirectionProperties(new Vector3(1, 0, 0), new Vector3 (0.5f, 0, 0), -1);
+	public static readonly DirectionProperties GO_LEFT = new DirectionProperties(new Vector3(-1, 0, 0), new Vector3 (-0.5f, 0, 0), -1);
 
 	public SquareObserver currentSquare;
 	public SquareObserver nextSquare;
+
+	private float speed = 0.005f;
+	private DirectionProperties currentDirection = GO_RIGHT;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +21,20 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!nextSquare.isTreated)
-			TreatSquare(nextSquare);
 		if (!currentSquare.isTreated && transform.position.x%1 >= 0.5f )
 			TreatSquare(currentSquare);
-		transform.Translate(currentDirection * speed);
+		transform.Translate(currentDirection.direction * speed);
+	}
+
+	private void TreatSquare(SquareObserver square)
+	{
+		EffectTransformation eTransf = square.ElementDetected.Effect();
+		if (! eTransf.isChangingSomething)
+			return;
+		if (eTransf.newDirection != null)
+		{
+			currentDirection = eTransf.newDirection;
+			nextSquare.transform.position = transform.position + eTransf.newDirection.positionNextObserver;
+		}
 	}
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class ChangeDirection : Special
 {
 
-	protected Vector2 newDirection;
+	protected DirectionProperties newDirection;
 
 	
 	// Update is called once per frame

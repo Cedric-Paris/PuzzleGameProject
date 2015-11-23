@@ -5,7 +5,7 @@ public class LeftArrow : ChangeDirection
 {
 
 	void Start () {
-		newDirection = Player.GO_LEFT;	
+		newDirection = PlayerMovementController.GO_LEFT;	
 	}
 }
 

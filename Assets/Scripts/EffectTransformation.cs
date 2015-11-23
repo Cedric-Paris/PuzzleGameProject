@@ -10,7 +10,7 @@ public class EffectTransformation {
     */
     public bool isChangingSomething;
 
-    public Vector3 newDirection;
+	public DirectionProperties newDirection;
 
     public Vector3 newPosition;
 

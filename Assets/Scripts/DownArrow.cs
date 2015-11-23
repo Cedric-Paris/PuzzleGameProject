@@ -4,6 +4,6 @@ using System.Collections;
 public class DownArrow : ChangeDirection
 {
 	void Start () {
-		newDirection = Player.GO_DOWN;	
+		newDirection = PlayerMovementController.GO_DOWN;	
 	}
 }
