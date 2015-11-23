@@ -1,19 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class DownArrow : MonoBehaviour
+public class UpArrow : ChangeDirection
 {
-
+	
 	// Use this for initialization
 	void Start ()
 	{
-	
+
 	}
 	
-	// Update is called once per frame
-	void Update ()
+	public override EffectTransformation Effect()
 	{
-	
+		EffectTransformation eTransf = new EffectTransformation ();
+		eTransf.isChangingSomething = true;
+		eTransf.newDirection = Player.GO_DOWN;
+		return eTransf;
 	}
 }
-

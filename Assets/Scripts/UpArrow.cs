@@ -12,10 +12,10 @@ public class UpArrow : ChangeDirection
 	
 	public override EffectTransformation Effect()
 	{
-		EffectTransformation eTransf = new EffectTransformation();
+		EffectTransformation eTransf = new EffectTransformation ();
 		eTransf.isChangingSomething = true;
-		eTransf.newDirection=Player.GO_LEFT;
+		eTransf.newDirection = Player.GO_UP;
 		return eTransf;
-
+	}
 }
 
