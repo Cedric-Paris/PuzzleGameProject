@@ -16,4 +16,6 @@ public class EffectTransformation {
 
     public bool isObstacle;
 
+	public bool isObjectif;
+
 }

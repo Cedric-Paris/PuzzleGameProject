@@ -13,7 +13,7 @@ public class Element : MonoBehaviour {
 	
 	}
 
-    public EffectTransformation Effect()//ici element sans effet
+    public virtual EffectTransformation Effect()//ici element sans effet
     {
         Debug.Log("Traitement effet...");
         return new EffectTransformation();
