@@ -24,13 +24,12 @@ public class Bridge : Element {
 	}
 
 	public override EffectTransformation Effect () {
+		EffectTransformation effect = new EffectTransformation ();
 		if (!this.isDown) {
 			Debug.Log ("Ceci est un obstacle, vous ne pouvez avancer");
-			EffectTransformation effect = new EffectTransformation ();
 			effect.isObstacle = true;
-		}
-		else
-			return new EffectTransformation();
+		} else
+			return effect;
 		return effect;
 	}
 }

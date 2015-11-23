@@ -46,11 +46,20 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\TestResources\LookForward.cs" />
+     <Compile Include="Assets\Scripts\Bridge.cs" />
+     <Compile Include="Assets\Scripts\BridgeSwitch.cs" />
+     <Compile Include="Assets\Scripts\ChangeDirection.cs" />
+     <Compile Include="Assets\Scripts\DownArrow.cs" />
      <Compile Include="Assets\Scripts\EffectTransformation.cs" />
      <Compile Include="Assets\Scripts\Element.cs" />
+     <Compile Include="Assets\Scripts\LeftArrow.cs" />
+     <Compile Include="Assets\Scripts\Objectif.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\RightArrow.cs" />
+     <Compile Include="Assets\Scripts\Special.cs" />
      <Compile Include="Assets\Scripts\Square.cs" />
      <Compile Include="Assets\Scripts\SquareObserver.cs" />
+     <Compile Include="Assets\Scripts\UpArrow.cs" />
      <Compile Include="Assets\Scripts\Wall.cs" />
      <Compile Include="Assets\test.cs" />
      <None Include="Assets\Animations\Empty.txt" />

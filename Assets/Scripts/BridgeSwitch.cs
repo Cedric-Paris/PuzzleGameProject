@@ -2,19 +2,20 @@
 using System.Collections;
 
 public class BridgeSwitch : Special {
-
-	public ArrayList<Bridge> lBrige;
+	
 
 	// Use this for initialization
 	void Start () {
 
 	}
 
-	public EffectTransformation Effect()//ici element sans effet
-	{
-		Debug.Log("Changement de positions des ponts");
-		foreach ( var i in lBrige)
-			i.ChangePosition();
+	public ArrayList lBridge = new ArrayList();
+
+	public override EffectTransformation Effect () {
+
+		Debug.Log ("Changement de position des ponts");
+		foreach (Bridge i in lBridge)
+			i.ChangePosition ();
 		return new EffectTransformation();
 	}
 }

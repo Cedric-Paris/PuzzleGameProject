@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class UpArrow : ChangeDirection
+public class DownArrow : ChangeDirection
 {
 	
 	// Use this for initialization
