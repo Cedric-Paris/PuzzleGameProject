@@ -8,8 +8,8 @@ public class Player : MonoBehaviour {
     public readonly static Vector2 GO_RIGHT = new Vector2(1, 0);
     public readonly static Vector2 GO_LEFT = new Vector2(-1, 0);
 
-    private float speed = 0.005f;
-    private Vector2 currentDirection = GO_LEFT;
+    private float speed = 0.1f;
+    private Vector2 currentDirection = GO_RIGHT;
 
     public SquareObserver currentSquare;
     public SquareObserver nextSquare;
