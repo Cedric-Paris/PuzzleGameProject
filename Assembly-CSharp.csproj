@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\EffectTransformation.cs" />
      <Compile Include="Assets\Scripts\Element.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Square.cs" />
      <Compile Include="Assets\Scripts\SquareObserver.cs" />
      <None Include="Assets\Animations\Empty.txt" />
  <Reference Include="UnityEngine.UI">
