@@ -8,6 +8,7 @@ public class SquareObserver : MonoBehaviour {
         get { return mElementDetected; }
         set
         {
+			Debug.Log ("Square dect");
             mElementDetected = value;
             isTreated = false;
         }

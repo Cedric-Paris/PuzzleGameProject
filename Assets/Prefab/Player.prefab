@@ -46,8 +46,9 @@ GameObject:
   - 4: {fileID: 419522}
   - 212: {fileID: 21294298}
   - 61: {fileID: 6189006}
-  - 114: {fileID: 11413974}
   - 95: {fileID: 9518334}
+  - 114: {fileID: 11423638}
+  - 114: {fileID: 11414838}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -181,7 +182,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11413974
+--- !u!114 &11414838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -192,8 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf7ab494eefd6949ac9de1210bd5622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSquare: {fileID: 11421520}
-  nextSquare: {fileID: 11490604}
 --- !u!114 &11421520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +205,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTreated: 1
+--- !u!114 &11423638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2d5a0273289a24695116e44f2de5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSquare: {fileID: 11421520}
+  nextSquare: {fileID: 11490604}
 --- !u!114 &11490604
 MonoBehaviour:
   m_ObjectHideFlags: 1
