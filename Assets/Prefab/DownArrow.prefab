@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 476892}
   - 212: {fileID: 21226298}
   - 114: {fileID: 11416080}
-  - 61: {fileID: 6196832}
+  - 60: {fileID: 6022576}
   m_Layer: 0
   m_Name: DownArrow
   m_TagString: Untagged
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: .5, z: 0}
+  m_LocalPosition: {x: -1.5, y: 3.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6196832
-BoxCollider2D:
+--- !u!60 &6022576
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -41,8 +41,15 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .100000001}
+  m_Points:
+    m_Paths:
+    - - {x: .0620661378, y: .226917863}
+      - {x: -.0713767409, y: .227508545}
+      - {x: -.0734750628, y: -.0128521919}
+      - {x: -.158623338, y: -.0149829388}
+      - {x: -.00147551298, y: -.23740983}
+      - {x: .147409678, y: -.0140980482}
+      - {x: .0628522038, y: -.0122959614}
 --- !u!114 &11416080
 MonoBehaviour:
   m_ObjectHideFlags: 1

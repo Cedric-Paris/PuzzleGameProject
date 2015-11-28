@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 497578}
   - 212: {fileID: 21273538}
   - 114: {fileID: 11430636}
-  - 61: {fileID: 6104668}
+  - 60: {fileID: 6046816}
   m_Layer: 0
   m_Name: LeftArrow
   m_TagString: Untagged
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: .5, z: 0}
+  m_LocalPosition: {x: -1.5, y: 7.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6104668
-BoxCollider2D:
+--- !u!60 &6046816
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -41,8 +41,15 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .100000001}
+  m_Points:
+    m_Paths:
+    - - {x: -.010581851, y: .164651394}
+      - {x: -.237325609, y: .00581479073}
+      - {x: -.0137222409, y: -.149302721}
+      - {x: -.0132530928, y: -.0637221336}
+      - {x: .228604853, y: -.0644199848}
+      - {x: .231279314, y: .0686047077}
+      - {x: -.0134876966, y: .0656991005}
 --- !u!114 &11430636
 MonoBehaviour:
   m_ObjectHideFlags: 1
