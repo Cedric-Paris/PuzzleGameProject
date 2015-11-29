@@ -32,8 +32,8 @@ public class PlayerMovementController : MonoBehaviour {
 																									return false;
 																								});
 
-	public SquareObserver currentSquare;
-	public SquareObserver nextSquare;
+	public ElementObserver currentElement;
+	public ElementObserver obstacleElement;
 
 	private float speed = 0.05f;
 	private DirectionProperties currentDirection = GO_RIGHT;
@@ -45,22 +45,33 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if ((!currentSquare.isTreated) && currentDirection.squareCanBeTreat(transform.position))
-			TreatSquare(currentSquare);
+		if (! obstacleElement.isTreated)
+			TreatObstacleElement(obstacleElement);
+		if ((!currentElement.isTreated) && currentDirection.squareCanBeTreat(transform.position))
+			TreatElement(currentElement);
 		transform.Translate(currentDirection.direction * speed);
 	}
 
-	private void TreatSquare(SquareObserver square)
+	private void TreatElement(ElementObserver elementObs)
 	{
-		square.isTreated = true;
-		EffectTransformation eTransf = square.ElementDetected.Effect();
+		elementObs.isTreated = true;
+		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
 		/*if (! eTransf.isChangingSomething)
 			return;*/
 		if (eTransf.newDirection != null)
 		{
 			transform.position = currentDirection.calculFavoritePos(transform.position);
 			currentDirection = eTransf.newDirection;
-			nextSquare.transform.position = transform.position + eTransf.newDirection.positionNextObserver;
+			/*nextSquare.transform.position = transform.position + eTransf.newDirection.positionNextObserver;
+			 	A supprimer si plus utilisé*/
 		}
+	}
+
+	private void TreatObstacleElement(ElementObserver elementObs)
+	{
+		elementObs.isTreated = true;
+		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
+		if (eTransf.isObstacle)
+			Debug.LogWarning ("Player explode!!!");
 	}
 }
