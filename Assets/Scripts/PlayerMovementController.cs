@@ -65,7 +65,7 @@ public class PlayerMovementController : MonoBehaviour {
 	private void TreatElement(ElementObserver elementObs)
 	{
 		elementObs.isTreated = true;
-		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
+		EffectTransformation eTransf = elementObs.ElementDetected.Effect(true);
 		/*if (! eTransf.isChangingSomething)
 			return;*/
 		if (eTransf.newDirection != null)

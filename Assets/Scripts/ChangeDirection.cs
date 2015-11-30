@@ -8,7 +8,7 @@ public abstract class ChangeDirection : Special
 
 	
 	// Update is called once per frame
-	public override EffectTransformation Effect()
+	public override EffectTransformation Effect(bool isTreated = false)
 	{
 		EffectTransformation eTransf = new EffectTransformation ();
 		eTransf.isChangingSomething = true;

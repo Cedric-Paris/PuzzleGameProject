@@ -19,7 +19,7 @@ public class FinalCase : Objectif {
 	
 	}
 
-	public override EffectTransformation Effect () {
+	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		effect.isObjectif = true;
 		if (objectifIterator == totalIterator) {

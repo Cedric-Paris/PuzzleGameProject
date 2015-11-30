@@ -8,7 +8,7 @@ public class PickingObjectif : Objectif {
 
 	}
 	
-	public override EffectTransformation Effect () {
+	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		effect.isObjectif = true;
 		FinalCase.objectifIterator += 1;
