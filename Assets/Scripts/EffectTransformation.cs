@@ -20,4 +20,6 @@ public class EffectTransformation {
 
 	public bool isWinner;
 
+	public bool isStartingJump;
+
 }
