@@ -1,16 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
-public class Objectif : Element {
+public class Jump : Special
+{
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 	
 	}
-
+	
 	public override EffectTransformation Effect () {
+		Debug.Log ("Ceci est une case Jump, attention à l'aterrissage");
 		EffectTransformation effect = new EffectTransformation ();
-		effect.isObjectif = true;
+		effect.isStartingJump = true;
 		return effect;
 	}
 }
+
