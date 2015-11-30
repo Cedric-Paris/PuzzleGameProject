@@ -18,4 +18,6 @@ public class EffectTransformation {
 
 	public bool isObjectif;
 
+	public bool isWinner;
+
 }
