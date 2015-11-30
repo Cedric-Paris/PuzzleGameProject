@@ -3,15 +3,15 @@ using System.Collections;
 
 public class FinalCase : Objectif {
 
-	public int objectifIterator;
+	public static int objectifIterator;
 	public int totalIterator;
 
 
 	// Use this for initialization
 	void Start () {
-		ArrayList pickingObjfList = new ArrayList ();
-		pickingObjfList = this.GetComponentInParent (PickingObjectif);
-		totalIterator = pickingObjfList.Count ();
+		PickingObjectif[] tab;
+		tab = this.GetComponentsInParent<PickingObjectif>();
+		totalIterator = tab.Length;
 	}
 	
 	// Update is called once per frame
