@@ -8,9 +8,5 @@ public class Objectif : Element {
 	
 	}
 
-	public override EffectTransformation Effect () {
-		EffectTransformation effect = new EffectTransformation ();
-		effect.isObjectif = true;
-		return effect;
-	}
+
 }
