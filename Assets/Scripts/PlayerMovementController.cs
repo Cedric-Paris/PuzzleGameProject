@@ -74,8 +74,8 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		elementObs.isTreated = true;
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect(true);
-		/*if (! eTransf.isChangingSomething)
-			return;*/
+		if (! eTransf.isChangingSomething)
+			return;
 		if (eTransf.newDirection != null)
 		{
 			transform.position = CurrentDirection.calculFavoritePos(transform.position);

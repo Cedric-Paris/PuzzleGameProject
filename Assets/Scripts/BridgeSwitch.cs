@@ -16,6 +16,6 @@ public class BridgeSwitch : Special {
 		Debug.Log ("Changement de position des ponts");
 		foreach (Bridge i in lBridge)
 			i.ChangePosition ();
-		return new EffectTransformation();
+		return new EffectTransformation(false);
 	}
 }

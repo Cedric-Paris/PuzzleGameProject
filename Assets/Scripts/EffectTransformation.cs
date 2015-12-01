@@ -8,7 +8,7 @@ public class EffectTransformation {
         Chaque attribut peut rester null si l'effet ne les change pas
     
     */
-    public bool isChangingSomething;
+	public bool isChangingSomething;//Passer a true quand il y a un effet sinon il ne sera pas traité
 
 	public DirectionProperties newDirection;
 
@@ -21,5 +21,10 @@ public class EffectTransformation {
 	public bool isWinner;
 
 	public bool isStartingJump;
+
+	public EffectTransformation(bool changingSomething=true)
+	{
+		isChangingSomething = changingSomething;
+	}
 
 }
