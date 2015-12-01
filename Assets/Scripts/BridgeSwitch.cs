@@ -11,7 +11,7 @@ public class BridgeSwitch : Special {
 
 	public ArrayList lBridge = new ArrayList();
 
-	public override EffectTransformation Effect () {
+	public override EffectTransformation Effect (bool isTreated = false) {
 
 		Debug.Log ("Changement de position des ponts");
 		foreach (Bridge i in lBridge)

@@ -19,7 +19,7 @@ public class EffectTransformation {
 	public bool isObjectif;
 
 	public bool isEnergy;
-
+	
 	public bool isWinner;
 
 	public bool isStartingJump;

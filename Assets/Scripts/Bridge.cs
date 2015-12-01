@@ -23,7 +23,7 @@ public class Bridge : Element {
 		return;
 	}
 
-	public override EffectTransformation Effect () {
+	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		if (!this.isDown) {
 			Debug.Log ("Ceci est un obstacle, vous ne pouvez avancer");

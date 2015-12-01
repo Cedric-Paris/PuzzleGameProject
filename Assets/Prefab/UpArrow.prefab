@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 422742}
   - 212: {fileID: 21237342}
   - 114: {fileID: 11437090}
-  - 61: {fileID: 6125762}
+  - 60: {fileID: 6045076}
   m_Layer: 0
   m_Name: UpArrow
   m_TagString: Untagged
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.49324656, y: -1.6363759, z: 0}
+  m_LocalPosition: {x: 6.76032877, y: 4.49299812, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6125762
-BoxCollider2D:
+--- !u!60 &6045076
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -41,8 +41,19 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .100000001}
+  m_Points:
+    m_Paths:
+    - - {x: -.00399160385, y: .236694336}
+      - {x: -.00871109962, y: .23536396}
+      - {x: -.14991641, y: .0329117775}
+      - {x: -.151372433, y: .00806665421}
+      - {x: -.0688784122, y: .00923037529}
+      - {x: -.0727026463, y: -.231330633}
+      - {x: -.0686693192, y: -.232702732}
+      - {x: .0627028942, y: -.231372356}
+      - {x: .0615394115, y: .0131802559}
+      - {x: .141372204, y: .0127446651}
+      - {x: .141121864, y: .0297312737}
 --- !u!114 &11437090
 MonoBehaviour:
   m_ObjectHideFlags: 1

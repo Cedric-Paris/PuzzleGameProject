@@ -14,7 +14,7 @@ public class PickingEnergy : Objectif {
 	
 	}
 
-	public override EffectTransformation Effect () {
+	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		effect.isEnergy = true;
 		energy.AddEnergy ();
