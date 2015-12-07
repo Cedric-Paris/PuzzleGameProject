@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 	
-	public static readonly DirectionProperties GO_UP = new DirectionProperties (new Vector3 (0, 1, 0), new Vector3 (0, 0.5f, 0), 3,
+	public static readonly DirectionProperties GO_UP = new DirectionProperties (new Vector3 (0, 1, 0), new Vector2(0.23f, 0.43f), new Vector3 (0, 0.5f, 0), 3,
 	                                                                            (currentPos) => { 
 																									if(currentPos.y < 0) return new Vector3 (currentPos.x, ((int)currentPos.y) - 0.5f, 0);
 																									return new Vector3 (currentPos.x, ((int)currentPos.y) + 0.5f, 0);},
@@ -12,7 +12,7 @@ public class PlayerMovementController : MonoBehaviour {
 																									if (currentPos.y > 0 && (currentPos.y % 1) >= 0.5f) return true;
 																									return false;
 																								});
-	public static readonly DirectionProperties GO_DOWN = new DirectionProperties(new Vector3(0, -1, 0), new Vector3 (0, -0.5f, 0), 4,
+	public static readonly DirectionProperties GO_DOWN = new DirectionProperties(new Vector3(0, -1, 0), new Vector2(0.23f, 0.43f), new Vector3 (0, -0.5f, 0), 4,
 	                                                                            (currentPos) => {
 																									if(currentPos.y < 0) return new Vector3 (currentPos.x, ((int)currentPos.y) - 0.5f, 0);
 																									return new Vector3 (currentPos.x, ((int)currentPos.y) + 0.5f, 0);},
@@ -21,7 +21,7 @@ public class PlayerMovementController : MonoBehaviour {
 																									if (currentPos.y > 0 && (currentPos.y % 1) <= 0.5f) return true;
 																									return false;
 																								});
-	public static readonly DirectionProperties GO_RIGHT = new DirectionProperties(new Vector3(1, 0, 0), new Vector3 (0.5f, 0, 0), 1,
+	public static readonly DirectionProperties GO_RIGHT = new DirectionProperties(new Vector3(1, 0, 0), new Vector2(0.43f, 0.23f), new Vector3 (0.5f, 0, 0), 1,
 	                                                                              	(currentPos) => {
 																										if(currentPos.x < 0) return new Vector3(((int)currentPos.x)-0.5f, currentPos.y,0);
 																										return new Vector3(((int)currentPos.x)+0.5f, currentPos.y,0);},
@@ -30,7 +30,7 @@ public class PlayerMovementController : MonoBehaviour {
 																										if (currentPos.x > 0 && (currentPos.x % 1) >= 0.5f) return true;
 																										return false;
 																									});
-	public static readonly DirectionProperties GO_LEFT = new DirectionProperties(new Vector3(-1, 0, 0), new Vector3 (-0.5f, 0, 0), 2,
+	public static readonly DirectionProperties GO_LEFT = new DirectionProperties(new Vector3(-1, 0, 0), new Vector2(0.43f, 0.23f), new Vector3 (-0.5f, 0, 0), 2,
                                                                             	(currentPos) => {
 																									if(currentPos.x < 0) return new Vector3(((int)currentPos.x)-0.5f, currentPos.y,0);
 																									return new Vector3(((int)currentPos.x)+0.5f, currentPos.y,0);},
@@ -42,6 +42,8 @@ public class PlayerMovementController : MonoBehaviour {
 
 	public ElementObserver currentElement;
 	public ElementObserver obstacleElement;
+
+	public Player playerAssociated;
 
 	private float speed = 0.05f;
 
@@ -89,13 +91,17 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		elementObs.isTreated = true;
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
-		if (eTransf.isObstacle)
-			Debug.LogWarning ("Player explode!!!");
+		if (eTransf.isObstacle && playerAssociated!=null)
+			playerAssociated.Explode();
+		Debug.Log ("Traitement Element");
 	}
 
 	private void OnPlayerDirectionChanging(DirectionProperties dir)
 	{
 		if (onPlayerDirectionChanging != null)
 			onPlayerDirectionChanging (dir);
+		BoxCollider2D bc = obstacleElement.GetComponent<BoxCollider2D>();
+		if (bc != null)
+			bc.size = dir.posObstacleObserver;
 	}
 }
