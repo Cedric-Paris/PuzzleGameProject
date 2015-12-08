@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 	public void Explode()
 	{
 		Debug.Log ("Explode");
-		Instantiate (explosion, this.transform.position, Quaternion.identity);
+		Instantiate(explosion, this.transform.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 
