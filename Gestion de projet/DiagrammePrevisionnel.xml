@@ -4,7 +4,7 @@
     <Title>Project1</Title>
     <ScheduleFromStart>1</ScheduleFromStart>
     <StartDate>2015-11-09T08:00:00</StartDate>
-    <FinishDate>2016-01-27T17:00:00</FinishDate>
+    <FinishDate>2016-01-21T17:00:00</FinishDate>
     <FYStartDate>1</FYStartDate>
     <CriticalSlackLimit>0</CriticalSlackLimit>
     <CurrencyDigits>2</CurrencyDigits>
@@ -40,7 +40,7 @@
     <MoveCompletedEndsForward>0</MoveCompletedEndsForward>
     <BaselineForEarnedValue>0</BaselineForEarnedValue>
     <AutoAddNewResourcesAndTasks>1</AutoAddNewResourcesAndTasks>
-    <CurrentDate>2015-12-07T13:57:00</CurrentDate>
+    <CurrentDate>2015-12-09T20:32:00</CurrentDate>
     <MicrosoftProjectServerURL>1</MicrosoftProjectServerURL>
     <Autolink>1</Autolink>
     <NewTaskStartDate>0</NewTaskStartDate>
@@ -296,8 +296,8 @@
             <OutlineLevel>0</OutlineLevel>
             <Priority>500</Priority>
             <Start>2015-11-09T08:00:00</Start>
-            <Finish>2016-01-27T17:00:00</Finish>
-            <Duration>PT640H0M0S</Duration>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT592H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
@@ -311,7 +311,7 @@
             <IsSubprojectReadOnly>0</IsSubprojectReadOnly>
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
-            <RemainingDuration>PT640H0M0S</RemainingDuration>
+            <RemainingDuration>PT592H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
@@ -880,7 +880,7 @@
             <ManualDuration>PT8H0M0S</ManualDuration>
         </Task>
         <Task>
-            <UID>152</UID>
+            <UID>157</UID>
             <ID>13</ID>
             <Name>Formation à Unity 3D</Name>
             <Type>0</Type>
@@ -960,7 +960,7 @@
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
             <PredecessorLink>
-                <PredecessorUID>152</PredecessorUID>
+                <PredecessorUID>157</PredecessorUID>
                 <Type>1</Type>
             </PredecessorLink>
             <PredecessorLink>
@@ -1152,7 +1152,7 @@
             <Rollup>0</Rollup>
             <EarnedValueMethod>0</EarnedValueMethod>
             <PredecessorLink>
-                <PredecessorUID>152</PredecessorUID>
+                <PredecessorUID>157</PredecessorUID>
                 <Type>1</Type>
             </PredecessorLink>
             <Active>1</Active>
@@ -1638,8 +1638,8 @@
             <OutlineLevel>1</OutlineLevel>
             <Priority>500</Priority>
             <Start>2015-12-07T08:00:00</Start>
-            <Finish>2016-01-19T17:00:00</Finish>
-            <Duration>PT224H0M0S</Duration>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT240H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
@@ -1654,7 +1654,7 @@
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
             <PercentComplete>0</PercentComplete>
-            <RemainingDuration>PT224H0M0S</RemainingDuration>
+            <RemainingDuration>PT240H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
@@ -1671,8 +1671,8 @@
             <Active>1</Active>
             <Manual>1</Manual>
             <ManualStart>2015-12-07T08:00:00</ManualStart>
-            <ManualFinish>2016-01-19T17:00:00</ManualFinish>
-            <ManualDuration>PT224H0M0S</ManualDuration>
+            <ManualFinish>2016-01-21T17:00:00</ManualFinish>
+            <ManualDuration>PT240H0M0S</ManualDuration>
         </Task>
         <Task>
             <UID>97</UID>
@@ -1685,8 +1685,8 @@
             <OutlineLevel>1</OutlineLevel>
             <Priority>500</Priority>
             <Start>2015-11-16T08:00:00</Start>
-            <Finish>2016-01-27T17:00:00</Finish>
-            <Duration>PT456H0M0S</Duration>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT408H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
@@ -1701,7 +1701,7 @@
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
             <PercentComplete>0</PercentComplete>
-            <RemainingDuration>PT456H0M0S</RemainingDuration>
+            <RemainingDuration>PT408H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
@@ -1718,8 +1718,8 @@
             <Active>1</Active>
             <Manual>1</Manual>
             <ManualStart>2015-11-16T08:00:00</ManualStart>
-            <ManualFinish>2016-01-27T17:00:00</ManualFinish>
-            <ManualDuration>PT456H0M0S</ManualDuration>
+            <ManualFinish>2016-01-21T17:00:00</ManualFinish>
+            <ManualDuration>PT408H0M0S</ManualDuration>
         </Task>
         <Task>
             <UID>133</UID>
@@ -1826,8 +1826,8 @@
             <OutlineLevel>1</OutlineLevel>
             <Priority>500</Priority>
             <Start>2016-01-06T08:00:00</Start>
-            <Finish>2016-01-26T17:00:00</Finish>
-            <Duration>PT168H0M0S</Duration>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT128H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
@@ -1842,7 +1842,7 @@
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
             <PercentComplete>0</PercentComplete>
-            <RemainingDuration>PT168H0M0S</RemainingDuration>
+            <RemainingDuration>PT128H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
@@ -1859,8 +1859,8 @@
             <Active>1</Active>
             <Manual>1</Manual>
             <ManualStart>2016-01-06T08:00:00</ManualStart>
-            <ManualFinish>2016-01-26T17:00:00</ManualFinish>
-            <ManualDuration>PT168H0M0S</ManualDuration>
+            <ManualFinish>2016-01-21T17:00:00</ManualFinish>
+            <ManualDuration>PT128H0M0S</ManualDuration>
         </Task>
         <Task>
             <UID>143</UID>
@@ -1873,8 +1873,8 @@
             <OutlineLevel>1</OutlineLevel>
             <Priority>500</Priority>
             <Start>2015-12-14T08:00:00</Start>
-            <Finish>2016-01-19T17:00:00</Finish>
-            <Duration>PT168H0M0S</Duration>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT184H0M0S</Duration>
             <DurationFormat>7</DurationFormat>
             <ResumeValid>0</ResumeValid>
             <EffortDriven>0</EffortDriven>
@@ -1889,7 +1889,7 @@
             <ExternalTask>0</ExternalTask>
             <FixedCostAccrual>3</FixedCostAccrual>
             <PercentComplete>0</PercentComplete>
-            <RemainingDuration>PT168H0M0S</RemainingDuration>
+            <RemainingDuration>PT184H0M0S</RemainingDuration>
             <ConstraintType>0</ConstraintType>
             <CalendarUID>-1</CalendarUID>
             <LevelAssignments>0</LevelAssignments>
@@ -1906,8 +1906,8 @@
             <Active>1</Active>
             <Manual>1</Manual>
             <ManualStart>2015-12-14T08:00:00</ManualStart>
-            <ManualFinish>2016-01-19T17:00:00</ManualFinish>
-            <ManualDuration>PT168H0M0S</ManualDuration>
+            <ManualFinish>2016-01-21T17:00:00</ManualFinish>
+            <ManualDuration>PT184H0M0S</ManualDuration>
         </Task>
         <Task>
             <UID>145</UID>
@@ -2003,6 +2003,53 @@
             <ManualFinish>2016-01-12T17:00:00</ManualFinish>
             <ManualDuration>PT56H0M0S</ManualDuration>
         </Task>
+        <Task>
+            <UID>156</UID>
+            <ID>37</ID>
+            <Name>Editeur de map</Name>
+            <Type>0</Type>
+            <IsNull>0</IsNull>
+            <WBS>37</WBS>
+            <OutlineNumber>37</OutlineNumber>
+            <OutlineLevel>1</OutlineLevel>
+            <Priority>500</Priority>
+            <Start>2016-01-13T08:00:00</Start>
+            <Finish>2016-01-21T17:00:00</Finish>
+            <Duration>PT72H0M0S</Duration>
+            <DurationFormat>7</DurationFormat>
+            <ResumeValid>0</ResumeValid>
+            <EffortDriven>0</EffortDriven>
+            <Recurring>0</Recurring>
+            <OverAllocated>0</OverAllocated>
+            <Estimated>0</Estimated>
+            <Milestone>0</Milestone>
+            <Summary>0</Summary>
+            <Critical>1</Critical>
+            <IsSubproject>0</IsSubproject>
+            <IsSubprojectReadOnly>0</IsSubprojectReadOnly>
+            <ExternalTask>0</ExternalTask>
+            <FixedCostAccrual>3</FixedCostAccrual>
+            <PercentComplete>0</PercentComplete>
+            <RemainingDuration>PT72H0M0S</RemainingDuration>
+            <ConstraintType>0</ConstraintType>
+            <CalendarUID>-1</CalendarUID>
+            <LevelAssignments>0</LevelAssignments>
+            <LevelingCanSplit>0</LevelingCanSplit>
+            <Hyperlink></Hyperlink>
+            <IgnoreResourceCalendar>1</IgnoreResourceCalendar>
+            <HideBar>0</HideBar>
+            <Rollup>0</Rollup>
+            <EarnedValueMethod>0</EarnedValueMethod>
+            <PredecessorLink>
+                <PredecessorUID>151</PredecessorUID>
+                <Type>1</Type>
+            </PredecessorLink>
+            <Active>1</Active>
+            <Manual>1</Manual>
+            <ManualStart>2016-01-13T08:00:00</ManualStart>
+            <ManualFinish>2016-01-21T17:00:00</ManualFinish>
+            <ManualDuration>PT72H0M0S</ManualDuration>
+        </Task>
     </Tasks>
     <Resources>
         <Resource>
@@ -2016,7 +2063,7 @@
             <PeakUnits>1</PeakUnits>
             <OverAllocated>0</OverAllocated>
             <Start>2015-11-09T08:00:00</Start>
-            <Finish>2016-01-19T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <CanLevel>0</CanLevel>
             <StandardRateFormat>3</StandardRateFormat>
             <OvertimeRateFormat>3</OvertimeRateFormat>
@@ -2082,7 +2129,7 @@
             <PeakUnits>1</PeakUnits>
             <OverAllocated>0</OverAllocated>
             <Start>2015-11-09T08:00:00</Start>
-            <Finish>2016-01-27T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <CanLevel>0</CanLevel>
             <StandardRateFormat>3</StandardRateFormat>
             <OvertimeRateFormat>3</OvertimeRateFormat>
@@ -2104,7 +2151,7 @@
             <PeakUnits>1</PeakUnits>
             <OverAllocated>0</OverAllocated>
             <Start>2015-11-09T08:00:00</Start>
-            <Finish>2016-01-19T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <CanLevel>0</CanLevel>
             <StandardRateFormat>3</StandardRateFormat>
             <OvertimeRateFormat>3</OvertimeRateFormat>
@@ -2346,7 +2393,7 @@
             <Work>PT8H0M0S</Work>
         </Assignment>
         <Assignment>
-            <TaskUID>152</TaskUID>
+            <TaskUID>157</TaskUID>
             <ResourceUID>1</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
             <Finish>2015-11-13T17:00:00</Finish>
@@ -2358,7 +2405,7 @@
             <Work>PT40H0M0S</Work>
         </Assignment>
         <Assignment>
-            <TaskUID>152</TaskUID>
+            <TaskUID>157</TaskUID>
             <ResourceUID>2</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
             <Finish>2015-11-13T17:00:00</Finish>
@@ -2370,7 +2417,7 @@
             <Work>PT40H0M0S</Work>
         </Assignment>
         <Assignment>
-            <TaskUID>152</TaskUID>
+            <TaskUID>157</TaskUID>
             <ResourceUID>3</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
             <Finish>2015-11-13T17:00:00</Finish>
@@ -2382,7 +2429,7 @@
             <Work>PT40H0M0S</Work>
         </Assignment>
         <Assignment>
-            <TaskUID>152</TaskUID>
+            <TaskUID>157</TaskUID>
             <ResourceUID>4</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
             <Finish>2015-11-13T17:00:00</Finish>
@@ -2394,7 +2441,7 @@
             <Work>PT40H0M0S</Work>
         </Assignment>
         <Assignment>
-            <TaskUID>152</TaskUID>
+            <TaskUID>157</TaskUID>
             <ResourceUID>5</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
             <Finish>2015-11-13T17:00:00</Finish>
@@ -2637,25 +2684,25 @@
             <TaskUID>128</TaskUID>
             <ResourceUID>1</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
-            <Finish>2016-01-19T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <HasFixedRateUnits>1</HasFixedRateUnits>
             <FixedMaterial>0</FixedMaterial>
-            <RemainingWork>PT224H0M0S</RemainingWork>
+            <RemainingWork>PT240H0M0S</RemainingWork>
             <Start>2015-12-07T08:00:00</Start>
             <Units>1</Units>
-            <Work>PT224H0M0S</Work>
+            <Work>PT240H0M0S</Work>
         </Assignment>
         <Assignment>
             <TaskUID>97</TaskUID>
             <ResourceUID>4</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
-            <Finish>2016-01-27T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <HasFixedRateUnits>1</HasFixedRateUnits>
             <FixedMaterial>0</FixedMaterial>
-            <RemainingWork>PT456H0M0S</RemainingWork>
+            <RemainingWork>PT408H0M0S</RemainingWork>
             <Start>2015-11-16T08:00:00</Start>
             <Units>0.75</Units>
-            <Work>PT456H0M0S</Work>
+            <Work>PT408H0M0S</Work>
         </Assignment>
         <Assignment>
             <TaskUID>133</TaskUID>
@@ -2685,25 +2732,25 @@
             <TaskUID>136</TaskUID>
             <ResourceUID>4</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
-            <Finish>2016-01-26T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <HasFixedRateUnits>1</HasFixedRateUnits>
             <FixedMaterial>0</FixedMaterial>
-            <RemainingWork>PT168H0M0S</RemainingWork>
+            <RemainingWork>PT128H0M0S</RemainingWork>
             <Start>2016-01-06T08:00:00</Start>
             <Units>1</Units>
-            <Work>PT168H0M0S</Work>
+            <Work>PT128H0M0S</Work>
         </Assignment>
         <Assignment>
             <TaskUID>143</TaskUID>
             <ResourceUID>5</ResourceUID>
             <PercentWorkComplete>0</PercentWorkComplete>
-            <Finish>2016-01-19T17:00:00</Finish>
+            <Finish>2016-01-21T17:00:00</Finish>
             <HasFixedRateUnits>1</HasFixedRateUnits>
             <FixedMaterial>0</FixedMaterial>
-            <RemainingWork>PT168H0M0S</RemainingWork>
+            <RemainingWork>PT184H0M0S</RemainingWork>
             <Start>2015-12-14T08:00:00</Start>
             <Units>1</Units>
-            <Work>PT168H0M0S</Work>
+            <Work>PT184H0M0S</Work>
         </Assignment>
         <Assignment>
             <TaskUID>145</TaskUID>

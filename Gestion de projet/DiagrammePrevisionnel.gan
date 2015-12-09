@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-11-09" view-index="0" gantt-divider-location="468" resource-divider-location="358" version="2.7.1" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-11-16" view-index="0" gantt-divider-location="468" resource-divider-location="358" version="2.7.1" locale="fr">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Nom" width="69" order="0"/>
@@ -8,7 +8,7 @@
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="50" order="0"/>
-        <field id="1" name="Rôle par défaut" width="49" order="1"/>
+        <field id="1" name="Rôle par défaut" width="50" order="1"/>
     </view>
     <!-- -->
     <calendars base-id="Aucun">
@@ -121,18 +121,21 @@
         <task id="117" name="Ajout éléments du jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
         <task id="122" name="Création d'obstacles" color="#8cb6ce" meeting="false" start="2015-12-07" duration="1" complete="0" expand="true"/>
         <task id="64" name="Installation d'Android SDK - configuration Unity Remote" color="#8cb6ce" meeting="false" start="2015-11-22" duration="1" complete="0" expand="true"/>
-        <task id="128" name="Création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-07" duration="28" complete="0" expand="true"/>
-        <task id="97" name="Création de graphismes" color="#8cb6ce" meeting="false" start="2015-11-16" duration="57" complete="0" expand="true"/>
+        <task id="128" name="Création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-07" duration="30" complete="0" expand="true"/>
+        <task id="97" name="Création de graphismes" color="#8cb6ce" meeting="false" start="2015-11-16" duration="51" complete="0" expand="true"/>
         <task id="133" name="Création d'un systeme audio" color="#8cb6ce" meeting="false" start="2015-12-07" duration="14" complete="0" expand="true"/>
         <task id="101" name="Création du menu de jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="21" complete="0" expand="true">
             <depend id="136" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="136" name="Création du menu principal" color="#8cb6ce" meeting="false" start="2016-01-06" duration="21" complete="0" expand="true"/>
-        <task id="143" name="Création de l'enchainement des niveaux" color="#8cb6ce" meeting="false" start="2015-12-14" duration="21" complete="0" expand="true"/>
+        <task id="136" name="Création du menu principal" color="#8cb6ce" meeting="false" start="2016-01-06" duration="16" complete="0" expand="true"/>
+        <task id="143" name="Création de l'enchainement des niveaux" color="#8cb6ce" meeting="false" start="2015-12-14" duration="23" complete="0" expand="true"/>
         <task id="145" name="Générateur de maps" color="#8cb6ce" meeting="false" start="2015-12-07" duration="14" complete="0" expand="true">
             <depend id="151" type="2" difference="0" hardness="Rubber"/>
         </task>
-        <task id="151" name="Ajout des services googles" color="#8cb6ce" meeting="false" start="2016-01-06" duration="7" complete="0" expand="true"/>
+        <task id="151" name="Ajout des services googles" color="#8cb6ce" meeting="false" start="2016-01-06" duration="7" complete="0" expand="true">
+            <depend id="156" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="156" name="Editeur de map" color="#8cb6ce" meeting="false" start="2016-01-13" duration="9" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Maxime Lanouziere" function="SoftwareDevelopment:2" contacts="" phone=""/>
