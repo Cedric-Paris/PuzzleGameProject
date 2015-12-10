@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RandomElementOnMapGenerator {
 
@@ -7,9 +8,25 @@ public class RandomElementOnMapGenerator {
 		Vide,
 		Chemin,
 		Orientation,
+		UpArrow,
+		DownArrow,
+		LeftArrow,
+		RightArrow,
 		Obstacle,
+		Objectif,
 		Start,
 		End
+	}
+
+	private int nbCheminNul = 0;
+	private List<Point2D> currentChemin;
+	private bool cheminSansObjectif;
+	private List<ElementName> listActions = new List<ElementName>();
+
+	public List<int> getTabActionsPossible()
+	{
+		List<int> convertTab = new List<int> ();
+		return convertTab;
 	}
 
 	private int[,] ConvertTabInt(ElementName[,] tab, int hauteur, int largeur)
@@ -25,10 +42,10 @@ public class RandomElementOnMapGenerator {
 					newTab[i,j] = -1;
 					break;
 				case ElementName.Orientation:
-					newTab[i,j] = 4;//-1
+					newTab[i,j] = -1;//-1
 					break;
 				case ElementName.Chemin:
-					newTab[i,j] = 3;//-1
+					newTab[i,j] = -4;//-1
 					break;
 				case ElementName.Start:
 					newTab[i,j] = 0;
@@ -39,6 +56,9 @@ public class RandomElementOnMapGenerator {
 				case ElementName.Obstacle:
 					newTab[i,j] = 2;
 					break;
+				case ElementName.Objectif:
+					newTab[i,j] = 3;
+					break;
 				default:
 					newTab[i,j] = -1;
 					break;
@@ -48,17 +68,17 @@ public class RandomElementOnMapGenerator {
 		return newTab;
 	}
 
-	public int[,] GenerateRandom(int hauteur, int largeur)
+	public int[,] GenerateRandom(int hauteur, int largeur, int nbChangeDir)
 	{
 		ElementName[,] tab = new ElementName[hauteur, largeur];
 		Point2D debut = GenererCaseStartEnd(tab, hauteur, largeur);
 		tab[debut.y, debut.x] = ElementName.Start;
-		GenererChemin(tab, debut, 6, hauteur, largeur);
-		GenererObstacle(tab, 15, hauteur, largeur);
+		GenererCheminAvecObjectif(tab, debut, nbChangeDir, hauteur, largeur);
+		GenererObstacle(tab, (int)((hauteur*largeur*15)/100), hauteur, largeur);
 		return ConvertTabInt (tab, hauteur, largeur);
 	}
 
-	private void GenererChemin(ElementName[,] tab, Point2D posDepart, int nbChangementDirection, int hauteur, int largeur)
+	private void GenererCheminAvecObjectif(ElementName[,] tab, Point2D posDepart, int nbChangementDirection, int hauteur, int largeur)
 	{
 		Point2D pos = new Point2D(posDepart.x, posDepart.y);
 		int distance, compteurSecurite;
@@ -73,13 +93,16 @@ public class RandomElementOnMapGenerator {
 				distance = DefinirDistance(pos, direction, hauteur, largeur);
 				if (compteurSecurite >= 40) break;
 			}
-			while (!VerifDirection(direction, pos, hauteur, largeur) || !VerifDistance(tab, pos, direction, distance));
+			while (!VerifDirection(direction, pos, hauteur, largeur) || !VerifDistance(tab, pos, direction, distance, nbChangementDirection));
 			if (compteurSecurite >= 40) continue;
 			currentDir = direction;
+			AjouterDirection(currentDir);
 			pos = DrawChemin(tab, pos, direction, distance);
+			GenererObjectifOnCurrentChemin(tab);
 			tab[pos.y, pos.x] = ElementName.Orientation;
 		}
 		tab[pos.y, pos.x] = ElementName.End;
+		listActions.Remove (listActions [0]);//On supprime le premier qui n'est pas une direction mais le sens de depart du joueur
 	}
 	
 	private void GenererObstacle(ElementName[,] tab, int nbObstacle, int hauteur, int largeur)
@@ -97,8 +120,14 @@ public class RandomElementOnMapGenerator {
 		}
 	}
 	
-	private bool VerifDistance(ElementName[,] tab, Point2D pos, string direction, int distance)
+	private bool VerifDistance(ElementName[,] tab, Point2D pos, string direction, int distance, int chDirection)
 	{
+		if (distance == 1)
+		{
+			nbCheminNul++;
+			if(nbCheminNul>chDirection/4)
+				return false;
+		}
 		switch (direction)
 		{
 		case "O":
@@ -177,6 +206,7 @@ public class RandomElementOnMapGenerator {
 	
 	private Point2D DrawChemin(ElementName[,] tab, Point2D pos, string direction, int distance)
 	{
+		currentChemin = new List<Point2D>();
 		switch (direction)
 		{
 		case "O":
@@ -194,31 +224,72 @@ public class RandomElementOnMapGenerator {
 	private Point2D DrawCheminNord(ElementName[,] tab, Point2D pos, int distance)
 	{
 		for (int i = pos.y - 1; i >= pos.y - distance; i--)
-			tab[i, pos.x] = ElementName.Chemin;
-		return new Point2D(pos.x, pos.y - distance);
+		{
+			tab [i, pos.x] = ElementName.Chemin;
+			currentChemin.Add(new Point2D(pos.x, i));
+		}
+			return new Point2D(pos.x, pos.y - distance);
 	}
 	
-	private static Point2D DrawCheminOuest(ElementName[,] tab, Point2D pos, int distance)
+	private Point2D DrawCheminOuest(ElementName[,] tab, Point2D pos, int distance)
 	{
 		for (int i = pos.x - 1; i >= pos.x - distance; i--)
-			tab[pos.y, i] = ElementName.Chemin;
+		{
+			tab [pos.y, i] = ElementName.Chemin;
+			currentChemin.Add(new Point2D(i, pos.y));
+		}
 		return new Point2D(pos.x - distance, pos.y);
 	}
 	
-	private static Point2D DrawCheminSud(ElementName[,] tab, Point2D pos, int distance)
+	private Point2D DrawCheminSud(ElementName[,] tab, Point2D pos, int distance)
 	{
 		for (int i = pos.y + 1; i <= pos.y + distance; i++)
-			tab[i, pos.x] = ElementName.Chemin;
+		{
+			tab [i, pos.x] = ElementName.Chemin;
+			currentChemin.Add(new Point2D(pos.x, i));
+		}
 		return new Point2D(pos.x, pos.y + distance);
 	}
 	
-	private static Point2D DrawCheminEst(ElementName[,] tab, Point2D pos, int distance)
+	private Point2D DrawCheminEst(ElementName[,] tab, Point2D pos, int distance)
 	{
 		for (int i = pos.x + 1; i <= pos.x + distance; i++)
-			tab[pos.y, i] = ElementName.Chemin;
+		{
+			tab [pos.y, i] = ElementName.Chemin;
+			currentChemin.Add(new Point2D(i, pos.y));
+		}
 		return new Point2D(pos.x+distance, pos.y);
 	}
 
+	private void GenererObjectifOnCurrentChemin(ElementName[,] tab)
+	{
+		if (currentChemin.Count < 1)
+			return;
+		int value = Random.Range (0, 4);
+		if (value == 3 && !cheminSansObjectif)
+		{
+			cheminSansObjectif = true;
+			return;
+		}
+		int nbObjectif = 1;
+		if (currentChemin.Count > 4)
+			nbObjectif += (int)((currentChemin.Count - 5) / 4);
+		int securite=0;
+		while (nbObjectif>0)
+		{
+			if(securite++ >20)
+			{
+				Debug.LogError ("Securité a pris la main!");
+				return;
+			}
+			value = Random.Range (0, currentChemin.Count-1);
+			if(tab[currentChemin[value].y, currentChemin[value].x] != ElementName.Chemin)
+				continue;
+			tab[currentChemin[value].y, currentChemin[value].x] = ElementName.Objectif;
+			nbObjectif--;
+		}
+
+	}
 
 	
 	private Point2D GenererCaseStartEnd(ElementName[,] tab, int hauteur, int largeur, Point2D end = null)
@@ -244,5 +315,26 @@ public class RandomElementOnMapGenerator {
 			end.y = posyEnd;
 		}
 		return new Point2D(posxStart, posyStart);
+	}
+
+	private void AjouterDirection(string direction)
+	{
+		switch (direction)
+		{
+		case "O":
+			listActions.Add(ElementName.LeftArrow);
+			return;
+		case "N":
+			listActions.Add(ElementName.UpArrow);
+			return;
+		case "E":
+			listActions.Add(ElementName.RightArrow);
+			return;
+		case "S":
+			listActions.Add(ElementName.DownArrow);
+			return;
+		default:
+			return;
+		}
 	}
 }

@@ -42,6 +42,7 @@ MonoBehaviour:
   emptySquare: {fileID: 11402792, guid: 67836c2096590524c89413505df07cfb, type: 2}
   hauteur: 9
   largeur: 12
+  nbChangementDirection: 6
   elements:
   - {fileID: 11410984, guid: e4d91588402df8140a62a4e02138c8e2, type: 2}
   - {fileID: 11475416, guid: 44d0f1522b2357a45919416d7b8bb146, type: 2}
