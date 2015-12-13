@@ -6,6 +6,7 @@ public class SelectElementOnEditorMenu : MonoBehaviour {
 
 	public static GameObject selectedObject;
 	public static Button currentButton;
+	public static bool enableTileSet = true;//Si false on ne placera pas les tuiles sur la map
 
 	public void OnButtonPressOnMenuEditor(Button buttonOnMenu)
 	{
