@@ -1,55 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &134936
+--- !u!1 &143744
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 442230}
-  - 114: {fileID: 11434272}
+  - 4: {fileID: 449572}
+  - 114: {fileID: 11498598}
   m_Layer: 0
-  m_Name: MapGenerator
-  m_TagString: Untagged
+  m_Name: TileMapEditor
+  m_TagString: TileMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &442230
+--- !u!4 &449572
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134936}
+  m_GameObject: {fileID: 143744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.88000011, y: 4.63999987, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11434272
+--- !u!114 &11498598
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134936}
+  m_GameObject: {fileID: 143744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bcabc640ff35724a91d00df8519e486, type: 3}
+  m_Script: {fileID: 11500000, guid: 71a52922966ad47439347835b6aa7a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptySquare: {fileID: 11402792, guid: 67836c2096590524c89413505df07cfb, type: 2}
-  hauteur: 9
-  largeur: 12
-  nbChangementDirection: 6
-  elements:
-  - {fileID: 11410984, guid: e4d91588402df8140a62a4e02138c8e2, type: 2}
-  - {fileID: 11475416, guid: 44d0f1522b2357a45919416d7b8bb146, type: 2}
-  - {fileID: 11488364, guid: 5fd9a4215507fae4195eca2817be4800, type: 2}
-  - {fileID: 11480962, guid: 8fd4347d25e6bc34ca0acb4ac97b4bd8, type: 2}
-  - {fileID: 11430636, guid: 1bffb37079f6688419f0fbbb8956a4f0, type: 2}
-  modeDeGeneration: 1
+  xMaximumEnPartantDroite: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -59,5 +49,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 134936}
+  m_RootGameObject: {fileID: 143744}
   m_IsPrefabParent: 1

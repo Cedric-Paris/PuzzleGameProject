@@ -6,6 +6,7 @@ public class MapGenerator : MonoBehaviour {
 	public Square emptySquare;
 	public int hauteur;
 	public int largeur;
+	public int nbChangementDirection;
 
 	private Square[,] mapSquares;
 	public Element[] elements;
@@ -20,7 +21,7 @@ public class MapGenerator : MonoBehaviour {
 		GenerateEmpty(hauteur, largeur);
 		if (modeDeGeneration == GenerationType.WithRandomElements)
 		{
-			int[,] tab = GenerateRandom (hauteur, largeur);
+			int[,] tab = GenerateRandom (hauteur, largeur, nbChangementDirection);
 			InstanciateForAllSquare (tab);
 		}
 	}
@@ -39,10 +40,10 @@ public class MapGenerator : MonoBehaviour {
 		mapSquares = tab;
 	}
 
-	public int[,] GenerateRandom(int hauteur, int largeur)
+	public int[,] GenerateRandom(int hauteur, int largeur, int nbChangeDirect)
 	{
 		RandomElementOnMapGenerator r = new RandomElementOnMapGenerator();
-		return r.GenerateRandom(hauteur, largeur);
+		return r.GenerateRandom(hauteur, largeur, nbChangeDirect);
 	}
 
 	private void InstanciateForAllSquare(int[,] tab)
