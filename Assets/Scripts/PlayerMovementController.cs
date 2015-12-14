@@ -47,7 +47,7 @@ public class PlayerMovementController : MonoBehaviour {
 
 	private float speed = 0.05f;
 
-	private DirectionProperties CurrentDirection
+	public DirectionProperties CurrentDirection
 	{
 		get
 		{

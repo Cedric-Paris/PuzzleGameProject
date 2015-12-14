@@ -54,40 +54,15 @@
             <depend id="6" type="2" difference="0" hardness="Rubber"/>
             <depend id="53" type="2" difference="0" hardness="Rubber"/>
             <depend id="64" type="2" difference="0" hardness="Rubber"/>
-            <depend id="97" type="2" difference="0" hardness="Rubber"/>
-            <depend id="101" type="2" difference="0" hardness="Rubber"/>
-            <depend id="128" type="2" difference="0" hardness="Rubber"/>
-            <depend id="133" type="2" difference="0" hardness="Rubber"/>
         </task>
         <task id="6" name="Installation Git/GitHub" color="#8cb6ce" meeting="false" start="2015-11-10" duration="2" complete="0" expand="true"/>
         <task id="27" name="Modélisation" color="#8cb6ce" meeting="false" start="2015-11-16" duration="14" complete="0" expand="true"/>
         <task id="79" name="Rédaction cahier des charges" color="#8cb6ce" meeting="false" start="2015-11-30" duration="7" complete="0" expand="true"/>
         <task id="0" name="Formation à Unity 3D" color="#8cb6ce" meeting="false" start="2015-11-09" duration="5" complete="0" expand="true">
             <depend id="53" type="2" difference="0" hardness="Rubber"/>
-            <depend id="88" type="2" difference="0" hardness="Rubber"/>
         </task>
         <task id="53" name="Création de l'élément joueur" color="#8cb6ce" meeting="false" start="2015-11-19" duration="14" complete="0" expand="true"/>
-        <task id="88" name="Création éléments du jeu" color="#8cb6ce" meeting="false" start="2015-11-23" duration="14" complete="0" expand="true">
-            <depend id="157" type="2" difference="0" hardness="Rubber"/>
-        </task>
         <task id="64" name="Installation d'Android SDK - configuration Unity Remote" color="#8cb6ce" meeting="false" start="2015-11-22" duration="1" complete="0" expand="true"/>
-        <task id="128" name="Création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-07" duration="20" complete="0" expand="true">
-            <depend id="177" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="177" name="Création du systeme de chargement de niveau" color="#8cb6ce" meeting="false" start="2016-01-12" duration="10" complete="0" expand="true"/>
-        <task id="133" name="Création d'un systeme audio" color="#8cb6ce" meeting="false" start="2015-12-07" duration="30" complete="0" expand="true"/>
-        <task id="97" name="Création de graphismes" color="#8cb6ce" meeting="false" start="2015-11-16" duration="51" complete="0" expand="true"/>
-        <task id="101" name="Création du menu de jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="21" complete="0" expand="true">
-            <depend id="136" type="2" difference="0" hardness="Rubber"/>
-        </task>
-        <task id="136" name="Création du menu principal" color="#8cb6ce" meeting="false" start="2016-01-06" duration="16" complete="0" expand="true"/>
-        <task id="157" name="Création et gestion de la case départ" color="#8cb6ce" meeting="false" start="2015-12-10" duration="7" complete="0" expand="true">
-            <depend id="160" type="2" difference="0" hardness="Rubber"/>
-        </task>
-        <task id="160" name="Création et récupération des objectif" color="#8cb6ce" meeting="false" start="2015-12-17" duration="13" complete="0" expand="true">
-            <depend id="165" type="2" difference="0" hardness="Strong"/>
-        </task>
-        <task id="165" name="Gestion de la fin du jeu" color="#8cb6ce" meeting="false" start="2016-01-15" duration="7" complete="0" expand="true"/>
         <task id="182" name="Débogage des mouvements du joueur" color="#8cb6ce" meeting="false" start="2015-12-07" duration="7" complete="0" expand="true">
             <depend id="145" type="2" difference="0" hardness="Rubber"/>
         </task>
@@ -100,24 +75,9 @@
         <task id="156" name="Editeur de map" color="#8cb6ce" meeting="false" start="2016-01-13" duration="9" complete="0" expand="true"/>
     </tasks>
     <resources>
-        <resource id="0" name="Maxime Lanouziere" function="SoftwareDevelopment:2" contacts="" phone=""/>
-        <resource id="1" name="Laurent Ribiere" function="SoftwareDevelopment:2" contacts="" phone=""/>
         <resource id="2" name="Cedric Paris" function="Default:1" contacts="" phone=""/>
-        <resource id="3" name="Nawhal Sayarh" function="SoftwareDevelopment:2" contacts="" phone=""/>
-        <resource id="4" name="Bastien Mosnier" function="SoftwareDevelopment:2" contacts="" phone=""/>
     </resources>
     <allocations>
-        <allocation task-id="0" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
-        <allocation task-id="27" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="88" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="33.0"/>
-        <allocation task-id="128" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="177" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="6" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="0" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
-        <allocation task-id="27" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="88" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="33.0"/>
-        <allocation task-id="133" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="6" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="0" resource-id="2" function="Default:1" responsible="false" load="75.0"/>
         <allocation task-id="6" resource-id="2" function="Default:1" responsible="true" load="20.0"/>
         <allocation task-id="53" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
@@ -129,27 +89,9 @@
         <allocation task-id="151" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="182" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="156" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
-        <allocation task-id="0" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
-        <allocation task-id="27" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="97" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
-        <allocation task-id="101" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
-        <allocation task-id="136" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
-        <allocation task-id="6" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="0" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
-        <allocation task-id="27" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="79" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
-        <allocation task-id="88" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="33.0"/>
-        <allocation task-id="157" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="160" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="165" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
-        <allocation task-id="6" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
     </allocations>
     <vacations>
-        <vacation start="2015-12-19" end="2016-01-04" resourceid="0"/>
-        <vacation start="2015-12-19" end="2016-01-04" resourceid="1"/>
         <vacation start="2015-12-19" end="2016-01-04" resourceid="2"/>
-        <vacation start="2015-12-19" end="2016-01-04" resourceid="3"/>
-        <vacation start="2015-12-19" end="2016-01-04" resourceid="4"/>
     </vacations>
     <taskdisplaycolumns>
         <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
