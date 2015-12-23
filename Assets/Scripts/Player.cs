@@ -13,11 +13,12 @@ public class Player : MonoBehaviour {
 		controller = GetComponent<PlayerMovementController>();
 		controller.onPlayerDirectionChanging += OnDirectionChange;
 		controller.playerAssociated = this;
+		setAnimation (controller.CurrentDirection.animationCode);
     }
 
 	private void OnDirectionChange(DirectionProperties dir)
 	{
-		animator.SetInteger ("AnimState", dir.animationCode);
+		setAnimation (dir.animationCode);
 	}
 
 	public void Explode()
@@ -27,4 +28,7 @@ public class Player : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
+	public void setAnimation(int anim){
+		animator.SetInteger ("AnimState", anim);
+	}
 }
