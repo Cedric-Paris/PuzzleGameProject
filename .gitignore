@@ -7,3 +7,6 @@ obj/
 ProjectSettings/ProjectVersion.txt
 ProjectSettings/ProjectSettings.asset
 ProjectSettings/ProjectVersion.txt
+ProjectSettings/ClusterInputManager.asset
+ProjectSettings/ProjectSettings.asset
+ProjectSettings/UnityConnectSettings.asset

@@ -3,30 +3,23 @@ using System.Collections;
 
 public class Bridge : Element {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+	private Animator animator;
 	public bool isDown;
 
+	// Use this for initialization
+	void Start () {
+		animator = GetComponent<Animator> ();
+	}
+
 	public void ChangePosition() {
-		if (this.isDown)
-			this.isDown = false;
-		else
-			this.isDown = true;
-		return;
+		isDown = !isDown;
+		animator.SetBool ("IsOpened", !animator.GetBool ("IsOpened"));
 	}
 
 	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation();
 		if (!this.isDown) {
-			Debug.Log ("Ceci est un obstacle, vous ne pouvez avancer");
+			Debug.Log ("Ceci est un obstacle, vous ne pouvez avancer.");
 			effect.isObstacle = true;
 			return effect;
 		}
