@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: EXPLOSIIIOOOONNNNN_
+  m_Name: SwitchViolet
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,22 +18,12 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - time: .111111112
-      value: {fileID: 21300002, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - time: .222222224
-      value: {fileID: 21300004, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - time: .333333343
-      value: {fileID: 21300006, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - time: .444444448
-      value: {fileID: 21300008, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - time: .555555582
-      value: {fileID: 21300010, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
+      value: {fileID: 21300026, guid: 3e3665715fc377649aa34e3928834564, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 9
+  m_SampleRate: 1
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -47,16 +37,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - {fileID: 21300002, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - {fileID: 21300004, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - {fileID: 21300006, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - {fileID: 21300008, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
-    - {fileID: 21300010, guid: 55a131f87bf3e3642a355ea41346e262, type: 3}
+    - {fileID: 21300026, guid: 3e3665715fc377649aa34e3928834564, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .666666687
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
