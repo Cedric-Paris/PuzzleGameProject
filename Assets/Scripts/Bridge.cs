@@ -9,6 +9,8 @@ public class Bridge : Element {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		if(!this.isDown)
+			animator.SetBool ("IsOpened", true);
 	}
 
 	public void ChangePosition() {
