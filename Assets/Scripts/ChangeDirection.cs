@@ -11,7 +11,6 @@ public abstract class ChangeDirection : Special
 	public override EffectTransformation Effect(bool isTreated = false)
 	{
 		EffectTransformation eTransf = new EffectTransformation ();
-		eTransf.isChangingSomething = true;
 		eTransf.newDirection = newDirection;
 		eTransf.newPosition = transform.position;
 		return eTransf;
