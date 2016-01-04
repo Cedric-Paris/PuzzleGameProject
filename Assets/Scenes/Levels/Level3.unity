@@ -1490,6 +1490,10 @@ Prefab:
       propertyPath: m_Name
       value: Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 11468914, guid: 46065fc17f217824ba966af2d80b43e1, type: 2}
+      propertyPath: isDown
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46065fc17f217824ba966af2d80b43e1, type: 2}
   m_IsPrefabParent: 0

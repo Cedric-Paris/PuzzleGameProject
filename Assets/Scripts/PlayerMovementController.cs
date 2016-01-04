@@ -79,6 +79,11 @@ public class PlayerMovementController : MonoBehaviour {
 		if (! eTransf.isChangingSomething)
 			return;
 		TreatmentIfObstacle (eTransf);//Evite Un cas de bug ou on passerait sur un obstacle
+		if (eTransf.isWinner)
+		{
+			OnPlayerWin ();
+			return;
+		}
 		if (eTransf.newDirection != null)
 		{
 			transform.position = CurrentDirection.calculFavoritePos(transform.position);
@@ -99,6 +104,11 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		if (eTransf.isObstacle && playerAssociated!=null)
 			playerAssociated.Explode();
+	}
+
+	private void OnPlayerWin()
+	{
+		this.speed = 0;
 	}
 
 	private void OnPlayerDirectionChanging(DirectionProperties dir)
