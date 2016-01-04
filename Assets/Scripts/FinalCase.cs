@@ -3,41 +3,42 @@ using System.Collections;
 
 public class FinalCase : Objectif {
 
-	public static int objectifIterator;
-	public int totalIterator;
-	private Animator animator;
+	public static int nbobjectif;
+	private static Animator animator;
 
 
 	// Use this for initialization
 	void Start () {
-		PickingObjectif[] tab;
-		tab = this.GetComponentsInParent<PickingObjectif>();
-		totalIterator = tab.Length;
-		objectifIterator = 0;
 		animator = GetComponent<Animator> ();
-		if (objectifIterator == totalIterator) {
-			animator.SetBool("isEnabled", true);
-		}
+		animator.SetBool("isEnabled", true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
-
-	public void PickObjectif()
-	{
-		objectifIterator++;
-		if (objectifIterator == totalIterator) {
+		if (nbobjectif <= 0) {
 			animator.SetBool("isEnabled", true);
 		}
+		else {
+			animator.SetBool("isEnabled", false);
+		}
+	}
+
+	public static void AddObjectif()
+	{
+		nbobjectif++;
+	}
+
+	public static void PickObjectif()
+	{
+		nbobjectif--;
+
 	}
 
 	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		effect.isObjectif = true;
 		effect.isChangingSomething = true;
-		if (objectifIterator == totalIterator) {
+		if (nbobjectif<=0) {
 			effect.isWinner = true;
 		}
 		return effect;

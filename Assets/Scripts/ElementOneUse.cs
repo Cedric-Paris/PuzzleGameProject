@@ -9,7 +9,8 @@ public class ElementOneUse : Element {
 	{
 		if (isTreated == true) {
 			Destroy (gameObject);
+			return elementBase.Effect (true);
 		}
-		return elementBase.Effect (true);
+		return elementBase.Effect (false);
 	}
 }
