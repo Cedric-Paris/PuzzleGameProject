@@ -9,7 +9,7 @@ public class PutEditorTiles : MonoBehaviour {
 
 	public float xMaximumEnPartantDroite;//devra etre géré tout seul plus tard
 
-
+	//TRAITER CAS BOUTON POUR PAS AFFICHER
 	void Update () {
 		if (SelectElementOnEditorMenu.selectedObject == null || !SelectElementOnEditorMenu.enableTileSet)
 			return;
