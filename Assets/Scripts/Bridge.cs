@@ -21,8 +21,7 @@ public class Bridge : Element {
 	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation();
 		if (!this.isDown) {
-			Debug.Log ("Ceci est un obstacle, vous ne pouvez avancer.");
-			effect.isObstacle = true;
+			effect.isWater = true;
 			return effect;
 		}
 		return new EffectTransformation(false);
