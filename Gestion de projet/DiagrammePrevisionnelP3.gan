@@ -8,8 +8,8 @@
         <option id="color.recent"><![CDATA[#ff0033 #f4f4f4 #ff3333 #ff0000 #999999]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="50" order="0"/>
-        <field id="1" name="Rôle par défaut" width="50" order="1"/>
+        <field id="0" name="Nom" width="64" order="0"/>
+        <field id="1" name="Rôle par défaut" width="35" order="1"/>
     </view>
     <!-- -->
     <calendars base-id="Aucun">
@@ -60,6 +60,7 @@
         </taskproperties>
         <task id="128" name="Création du systeme de chargement de niveau" color="#8cb6ce" meeting="false" start="2015-12-07" duration="26" complete="0" expand="true">
             <depend id="177" type="2" difference="0" hardness="Rubber"/>
+            <depend id="258" type="2" difference="0" hardness="Rubber"/>
         </task>
         <task id="133" name="Création d'un systeme audio" color="#8cb6ce" meeting="false" start="2015-12-07" duration="26" complete="0" expand="true"/>
         <task id="101" name="Création du menu de jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="33" complete="0" expand="true">
@@ -67,7 +68,9 @@
             <depend id="253" type="2" difference="0" hardness="Rubber"/>
         </task>
         <task id="165" name="Gestion de la fin du jeu" color="#8cb6ce" meeting="false" start="2016-01-11" duration="7" complete="0" expand="true"/>
+        <task id="255" name="Script Caméra pour adapter a un écran de portable / Editeur de Map (Fin)" color="#8cb6ce" meeting="false" start="2016-01-11" duration="7" complete="0" expand="true"/>
         <task id="177" name="Création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2016-01-25" duration="14" complete="0" expand="true"/>
+        <task id="258" name="Générateur de map" color="#8cb6ce" meeting="false" start="2016-01-25" duration="14" complete="0" expand="true"/>
         <task id="226" name="Création d'un téléporteur" color="#8cb6ce" meeting="false" start="2016-02-08" duration="14" complete="0" expand="true"/>
         <task id="253" name="Menu d'options" color="#8cb6ce" meeting="false" start="2016-02-29" duration="14" complete="0" expand="true"/>
         <task id="229" name="Mode HardCore" color="#8cb6ce" meeting="false" start="2016-02-08" duration="28" complete="0" expand="true"/>
@@ -104,8 +107,10 @@
         <allocation task-id="192" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="229" resource-id="2" function="Default:1" responsible="false" load="50.0"/>
         <allocation task-id="252" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
-        <allocation task-id="101" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
-        <allocation task-id="136" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
+        <allocation task-id="255" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="258" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="136" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="192" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
         <allocation task-id="250" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="252" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
@@ -113,6 +118,7 @@
         <allocation task-id="192" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
         <allocation task-id="177" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
         <allocation task-id="226" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="253" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="252" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
     </allocations>
     <vacations>
