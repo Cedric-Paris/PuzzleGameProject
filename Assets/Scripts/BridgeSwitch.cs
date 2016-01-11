@@ -16,7 +16,6 @@ public class BridgeSwitch : Special {
 
 
 	public override EffectTransformation Effect (bool isTreated = false) {
-		bool StateToBecome;
 		if (isTreated == false)
 			return new EffectTransformation(false);
 		Debug.Log ("Changement de position des ponts et des interrupteurs.");

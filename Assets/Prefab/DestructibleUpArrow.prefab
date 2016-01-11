@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 409798}
   - 212: {fileID: 21279030}
-  - 61: {fileID: 6198978}
   - 114: {fileID: 11427652}
   - 114: {fileID: 11465358}
+  - 114: {fileID: 11499606}
+  - 60: {fileID: 6039326}
   m_Layer: 0
   m_Name: DestructibleUpArrow
   m_TagString: Untagged
@@ -26,24 +27,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.60000002, y: 3.44000006, z: 0}
+  m_LocalPosition: {x: -1.5, y: 1.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6198978
-BoxCollider2D:
+--- !u!60 &6039326
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164674}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .100000001}
+  m_Points:
+    m_Paths:
+    - - {x: -0.012088239, y: 0.21857035}
+      - {x: -0.008241057, y: 0.21857035}
+      - {x: -0.010876119, y: 0.21527678}
+      - {x: -0.15065873, y: 0.025494099}
+      - {x: -0.14582342, y: 0.013188481}
+      - {x: -0.06340569, y: 0.011765957}
+      - {x: -0.06999999, y: -0.23065871}
+      - {x: 0.06307626, y: -0.23065871}
+      - {x: 0.05845833, y: 0.014947474}
+      - {x: 0.14307636, y: 0.0137351155}
+      - {x: -0.0043011904, y: 0.22282147}
+      - {x: -0.0035178661, y: 0.21274704}
 --- !u!114 &11427652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +81,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5d84315f208004fbf65f1500adfb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11499606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f277c762f2e0d4da26503e3bb6ff1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
 --- !u!212 &21279030
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,14 +111,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300006, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

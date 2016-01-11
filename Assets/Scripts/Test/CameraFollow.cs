@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class CameraFollow : MonoBehaviour {
+namespace Assets.Scripts.Test
+{
+    public class CameraFollow : MonoBehaviour {
 
-    public GameObject target;
+        public GameObject Target;
+        public float Size;
 
-    private Transform _t;
+        private Transform _t;
 
-    void Awake()
-    {
-        GetComponent<Camera>().orthographicSize = ((Screen.height / 2.0f) / 100f);
-    }
+        void Awake()
+        {
+            GetComponent<Camera>().orthographicSize = ((Screen.height * Size) / 100f);
+        }
 
-    // Use this for initialization
-    void Start()
-    {
-        _t = target.transform;
-    }
+        // Use this for initialization
+        void Start()
+        {
+            _t = Target.transform;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (_t)
-            transform.position = new Vector3(_t.position.x, _t.position.y, transform.position.z);
+        // Update is called once per frame
+        void Update()
+        {
+            if (_t)
+                transform.position = new Vector3(_t.position.x, _t.position.y, transform.position.z);
+        }
     }
 }
