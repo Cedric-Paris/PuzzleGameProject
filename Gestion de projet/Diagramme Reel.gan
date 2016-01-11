@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-11-02" view-index="0" gantt-divider-location="535" resource-divider-location="358" version="2.7.1" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2015-10-26" view-index="0" gantt-divider-location="535" resource-divider-location="479" version="2.7.1" locale="fr">
     <description/>
-    <view zooming-state="default:6" id="gantt-chart">
+    <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Nom" width="64" order="0"/>
         <field id="tpd4" name="Date de début" width="18" order="1"/>
         <field id="tpd5" name="Date de fin" width="17" order="2"/>
+        <option id="taskLabelDown" value=""/>
         <option id="color.recent"><![CDATA[#ff0033 #f4f4f4 #ff3333 #ff0000 #999999]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="50" order="0"/>
-        <field id="1" name="Rôle par défaut" width="50" order="1"/>
+        <field id="0" name="Nom" width="53" order="0"/>
+        <field id="1" name="Rôle par défaut" width="46" order="1"/>
     </view>
     <!-- -->
     <calendars base-id="Aucun">
@@ -113,17 +114,33 @@
         <task id="84" name="Ajout d'une fonctionnalité qui annule l'effet d'un élément" color="#8cb6ce" meeting="false" start="2015-12-01" duration="1" complete="0" expand="true"/>
         <task id="94" name="Débogage flèches" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
         <task id="110" name="Débogage script FinalCase" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
-        <task id="183" name="Formation vidéo pour la création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-07" duration="1" complete="0" expand="true"/>
         <task id="103" name="Création de l'élément Jump" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
         <task id="106" name="Modification d'éléments" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
         <task id="117" name="Ajout éléments du jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="1" complete="0" expand="true"/>
+        <task id="183" name="Formation vidéo pour la création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-07" duration="1" complete="0" expand="true">
+            <depend id="214" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="214" name="Début de la création d'un systeme de sauvegarde" color="#8cb6ce" meeting="false" start="2015-12-14" duration="6" complete="0" expand="true"/>
         <task id="122" name="Création d'obstacles" color="#8cb6ce" meeting="false" start="2015-12-07" duration="1" complete="0" expand="true"/>
         <task id="187" name="Création de l'algorithme de génération de map" color="#8cb6ce" meeting="false" start="2015-12-03" duration="8" complete="0" expand="true"/>
         <task id="156" name="Editeur de map" color="#8cb6ce" meeting="false" start="2015-12-12" duration="1" complete="0" expand="true"/>
-        <task id="193" name="Création de niveaux pour le jeu" color="#8cb6ce" meeting="false" start="2015-12-14" duration="3" complete="0" expand="true"/>
-        <task id="157" name="Création et gestion de la case départ" color="#8cb6ce" meeting="false" start="2015-12-14" duration="1" complete="0" expand="true"/>
-        <task id="133" name="Création d'un systeme audio" color="#8cb6ce" meeting="false" start="2015-12-07" duration="14" complete="0" expand="true"/>
-        <task id="97" name="Création de graphismes" color="#8cb6ce" meeting="false" start="2015-11-16" duration="51" complete="0" expand="true"/>
+        <task id="193" name="Création de niveaux pour le jeu" color="#8cb6ce" meeting="false" start="2015-12-14" duration="3" complete="0" expand="true">
+            <depend id="210" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="210" name="Création de niveaux supplémentaires" color="#8cb6ce" meeting="false" start="2016-01-04" duration="2" complete="0" expand="true"/>
+        <task id="213" name="Débogage" color="#8cb6ce" meeting="false" start="2016-01-04" duration="1" complete="0" expand="true"/>
+        <task id="157" name="Création et gestion de la case départ" color="#8cb6ce" meeting="false" start="2015-12-14" duration="1" complete="0" expand="true">
+            <depend id="194" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="194" name="Création et gestion de la case d'arrivée" color="#8cb6ce" meeting="false" start="2016-01-04" duration="1" complete="0" expand="true">
+            <depend id="198" type="2" difference="0" hardness="Rubber"/>
+        </task>
+        <task id="198" name="Création des objetifs" color="#8cb6ce" meeting="false" start="2016-01-05" duration="1" complete="0" expand="true"/>
+        <task id="133" name="Création d'un systeme audio" color="#8cb6ce" meeting="false" start="2015-12-07" duration="12" complete="0" expand="true"/>
+        <task id="220" name="Systeme Multilingue" color="#8cb6ce" meeting="false" start="2016-01-04" duration="1" complete="0" expand="true"/>
+        <task id="97" name="Création de graphismes" color="#8cb6ce" meeting="false" start="2015-11-16" duration="37" complete="0" expand="true"/>
+        <task id="201" name="Création du menu de jeu" color="#8cb6ce" meeting="false" start="2015-11-30" duration="23" complete="0" expand="true"/>
+        <task id="208" name="Amélioration de l'interrupteur" color="#8cb6ce" meeting="false" start="2015-12-14" duration="5" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Maxime Lanouziere" function="SoftwareDevelopment:2" contacts="" phone=""/>
@@ -141,6 +158,7 @@
         <allocation task-id="106" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="110" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="33.0"/>
         <allocation task-id="183" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="214" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="0" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
         <allocation task-id="24" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="27" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
@@ -169,10 +187,13 @@
         <allocation task-id="156" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="187" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
         <allocation task-id="193" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="210" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="213" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
         <allocation task-id="0" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
-        <allocation task-id="20" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
         <allocation task-id="27" resource-id="3" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
+        <allocation task-id="20" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
         <allocation task-id="97" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
+        <allocation task-id="201" resource-id="3" function="SoftwareDevelopment:2" responsible="true" load="75.0"/>
         <allocation task-id="0" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="75.0"/>
         <allocation task-id="18" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
         <allocation task-id="27" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
@@ -183,6 +204,8 @@
         <allocation task-id="94" resource-id="4" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
         <allocation task-id="121" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
         <allocation task-id="157" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="194" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="198" resource-id="4" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
     </allocations>
     <vacations>
         <vacation start="2015-12-19" end="2016-01-04" resourceid="0"/>

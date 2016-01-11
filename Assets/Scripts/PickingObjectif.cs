@@ -5,13 +5,16 @@ public class PickingObjectif : Objectif {
 
 	// Use this for initialization
 	void Start () {
-
+		FinalCase.AddObjectif();
 	}
 	
 	public override EffectTransformation Effect (bool isTreated = false) {
 		EffectTransformation effect = new EffectTransformation ();
 		effect.isObjectif = true;
-		FinalCase.objectifIterator += 1;
+		if (isTreated) 
+		{
+			FinalCase.PickObjectif();
+		}
 		return effect;
 	}
 }

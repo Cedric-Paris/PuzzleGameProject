@@ -16,6 +16,8 @@ public class EffectTransformation {
 
     public bool isObstacle;
 
+	public bool isWater;
+
 	public bool isObjectif;
 
 	public bool isEnergy;
