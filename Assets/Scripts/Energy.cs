@@ -24,6 +24,7 @@ public class Energy : MonoBehaviour {
 			//décrémenter les ressources en fonction d'une variable (temps/distance/changement de case) a choisir plus tard.
 		} else {
 			//GameOver: Appelle d'une methode destruction qui effectuera la destruction en rapport au thème choisis (pattern stratégie?)
+			player.Explode();
 		}
 	}
 

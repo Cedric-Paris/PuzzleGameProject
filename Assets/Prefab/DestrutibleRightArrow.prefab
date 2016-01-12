@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21219258}
   - 114: {fileID: 11433562}
   - 114: {fileID: 11443594}
-  - 61: {fileID: 6188492}
+  - 114: {fileID: 11446752}
+  - 60: {fileID: 6046542}
   m_Layer: 0
   m_Name: DestrutibleRightArrow
   m_TagString: Untagged
@@ -26,24 +27,34 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.55999994, y: 5.5, z: 0}
+  m_LocalPosition: {x: -1.5, y: 4.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6188492
-BoxCollider2D:
+--- !u!60 &6046542
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174768}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .100000001}
+  m_Points:
+    m_Paths:
+    - - {x: 0.011541724, y: 0.06845856}
+      - {x: -0.22582346, y: 0.06681132}
+      - {x: -0.2258234, y: -0.057911634}
+      - {x: 0.01252979, y: -0.056040764}
+      - {x: 0.011646867, y: -0.14065886}
+      - {x: 0.23274708, y: 0.0028591156}
+      - {x: 0.23307645, y: 0.0014295578}
+      - {x: 0.23549408, y: 0.005823374}
+      - {x: 0.010546505, y: 0.15065885}
 --- !u!114 &11433562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +78,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57aae61e24208fc40b6c790bc06a74e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11446752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f277c762f2e0d4da26503e3bb6ff1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21219258
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,14 +107,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

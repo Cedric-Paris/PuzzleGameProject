@@ -1,38 +1,76 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using UnityEngine.UI;
 
-public class Menu : MonoBehaviour {
+public class Menu : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+{
+    public static DraggableElement DraggedObject;
+    private Dictionary<DraggableElementType, int> Count = new Dictionary<DraggableElementType, int>(); 
 
-    public Texture2D BackgroundTexture;
-    public Texture2D RightArrowTexture;
-    public Texture2D DownArrowTexture;
-    public Texture2D LeftArrowTexture;
-    public Texture2D UpArrowTexture;
-    public Texture2D JumpTexture;
-    private GUIStyle Style = new GUIStyle();
-
-    // Use this for initialization
-    void Start () {
-        Style.fontSize = 50;
-	}
-
-    void OnGUI()
+    void Start()
     {
-        GUI.DrawTexture(new Rect(Screen.width - 320, 50, 300, 600), BackgroundTexture);
-        GUI.Label(new Rect(Screen.width - 280, 80, 100, 100), RightArrowTexture);
-        GUI.Label(new Rect(Screen.width - 180, 100, 100, 100), " x ?", Style);
-        GUI.Label(new Rect(Screen.width - 280, 190, 100, 100), DownArrowTexture);
-        GUI.Label(new Rect(Screen.width - 180, 210, 100, 100), " x ?", Style);
-        GUI.Label(new Rect(Screen.width - 280, 300, 100, 100), LeftArrowTexture);
-        GUI.Label(new Rect(Screen.width - 180, 320, 100, 100), " x ?", Style);
-        GUI.Label(new Rect(Screen.width - 280, 410, 100, 100), UpArrowTexture);
-        GUI.Label(new Rect(Screen.width - 180, 430, 100, 100), " x ?", Style);
-        GUI.Label(new Rect(Screen.width - 280, 520, 100, 100), JumpTexture);
-        GUI.Label(new Rect(Screen.width - 180, 540, 100, 100), " x ?", Style);
+        Count.Add(DraggableElementType.UpArrow, 0);
+        Count.Add(DraggableElementType.RightArrow, 0);
+        Count.Add(DraggableElementType.DownArrow, 0);
+        Count.Add(DraggableElementType.LeftArrow, 0);
+        Count.Add(DraggableElementType.Jump, 0);
     }
 
-	// Update is called once per frame
-	void Update () {
-	    
-	}
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        //Debug.Log("OnPointerEnter");
+        if (DraggedObject == null)
+        {
+            Debug.Log("Nobody in.");
+            return;
+        }
+        Debug.Log("Hello " + DraggedObject.name);
+        DraggedObject.AwakeOnMenu();
+        HandleDroppedObject();
+    }
+
+    private void HandleDroppedObject()
+    {
+        Debug.Log("Type de l'élément droppé = " + DraggedObject.DraggableElementType);
+        UpTheRightCount(DraggedObject.DraggableElementType);
+
+        Debug.Log("OnDrop");
+    }
+
+    private void UpTheRightCount(DraggableElementType d)
+    {
+        this.Count[d] ++;
+        // POSSIBILITE D'IMPLEMENTER UN PATRON OBSERVATEUR
+        RectTransform[] UIObjects = this.transform.parent.GetComponentsInChildren<RectTransform>();
+        DraggableElementHandler draggableElementHandler = null;
+        Text countToModify = null;
+        foreach (var obj in UIObjects)
+        {
+            if ((draggableElementHandler = obj.GetComponent<DraggableElementHandler>()) != null && (countToModify = obj.GetComponent<Text>()) != null) // obj is a UIText assigned to one DraggableElementType
+            {
+                if (draggableElementHandler.DraggableElementType == d) // obj is a UIText assigned to the DraggableElementType we are looking for
+                    countToModify.text = string.Format("x {0}", this.Count[d]);
+            }
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //Debug.Log("OnPointerExit");
+        if (DraggedObject == null)
+        {
+            Debug.Log("Nobody out.");
+            return;
+        }
+        Debug.Log("Byebye " + DraggedObject.name);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        Debug.Log("Dragging from " + this.name);
+    }
 }
