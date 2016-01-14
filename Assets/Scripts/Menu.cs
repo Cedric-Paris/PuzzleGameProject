@@ -9,7 +9,9 @@ using UnityEngine.UI;
 public class Menu : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public static DraggableElement DraggedObject;
-    private Dictionary<DraggableElementType, int> Count = new Dictionary<DraggableElementType, int>(); 
+    public static GameObject SelectedObject;
+    public static DraggableElementType SelectedObjectsDraggableElementType;
+    public Dictionary<DraggableElementType, int> Count = new Dictionary<DraggableElementType, int>();
 
     void Start()
     {
@@ -44,15 +46,29 @@ public class Menu : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerE
     private void UpTheRightCount(DraggableElementType d)
     {
         this.Count[d] ++;
+        this.ChangeTheRightCount(d);
+    }
+
+    public void DownTheRightCount(DraggableElementType d)
+    {
+        this.Count[d]--;
+        this.ChangeTheRightCount(d);
+    }
+
+    private void ChangeTheRightCount(DraggableElementType d)
+    {
         // POSSIBILITE D'IMPLEMENTER UN PATRON OBSERVATEUR
         RectTransform[] UIObjects = this.transform.parent.GetComponentsInChildren<RectTransform>();
         DraggableElementHandler draggableElementHandler = null;
         Text countToModify = null;
         foreach (var obj in UIObjects)
         {
-            if ((draggableElementHandler = obj.GetComponent<DraggableElementHandler>()) != null && (countToModify = obj.GetComponent<Text>()) != null) // obj is a UIText assigned to one DraggableElementType
+            if ((draggableElementHandler = obj.GetComponent<DraggableElementHandler>()) != null &&
+                (countToModify = obj.GetComponent<Text>()) != null)
+            // obj is a UIText assigned to one DraggableElementType
             {
-                if (draggableElementHandler.DraggableElementType == d) // obj is a UIText assigned to the DraggableElementType we are looking for
+                if (draggableElementHandler.DraggableElementType == d)
+                    // obj is a UIText assigned to the DraggableElementType we are looking for
                     countToModify.text = string.Format("x {0}", this.Count[d]);
             }
         }
