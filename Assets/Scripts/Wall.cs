@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Wall : Element {
+public class Wall : DeathElement {
 
 	// Use this for initialization
 	void Start () {

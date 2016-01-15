@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Special : Element {
-	
+public abstract class DeathElement : Element {
 
 
 }
