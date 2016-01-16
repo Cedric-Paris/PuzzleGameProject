@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bridge : Element {
+public class Bridge : SpecialElement {
 
 	private Animator animator;
 	public bool isDown;

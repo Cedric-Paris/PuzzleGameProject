@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class UpArrow : ChangeDirection
+public class UpArrow : ChangeDirectionElement
 {
 	void Start () {
 		newDirection = PlayerMovementController.GO_UP;	

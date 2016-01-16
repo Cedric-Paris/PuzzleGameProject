@@ -3,9 +3,11 @@ using System.Collections;
 using System.Linq;
 using Assets.Scripts;
 
-public class DraggableElement : Draggable
+public class DraggableElement : Element, Draggable
 {
     public DraggableElementType DraggableElementType;
+
+	public Element elementBase;
 
     void Start()
     {
@@ -19,13 +21,24 @@ public class DraggableElement : Draggable
         menu = canvas.GetComponentInChildren<Menu>();*/
     }
 
-    public void OnMouseDown()
-    {
-        Debug.Log(this.name + " : OnMouseDown");
-        Menu.DraggedObject = this;
-    }
+	//La methode OnMouseDrag necessite un collider sur l'element a bouger 
+	public void OnMouseDrag()
+	{
+		Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+		mousePos.z = 0;
+		this.transform.position = mousePos; 
+	}
 
-	public override void OnMouseDrop()
+	public void OnMouseUp()
+	{
+		Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+		mousePos.z = 0;
+		this.transform.position = mousePos;
+		OnMouseDrop();
+		
+	}
+
+	public void OnMouseDrop()
     {
         Debug.Log(this.name + " : OnMouseDrop");
         Menu.DraggedObject = null;
@@ -37,11 +50,22 @@ public class DraggableElement : Draggable
 		this.transform.position = favoritePosition;
 	}
 
+	public void OnMouseDown()
+	{
+		Debug.Log(this.name + " : OnMouseDown");
+		Menu.DraggedObject = this;
+	}
+
 	private float CalculDemiLePlusProche(float value)
 	{
 		if (value < 0)
 			return ((int)value) - 0.5f;
 		return ((int)value) + 0.5f;
+	}
+
+	public override EffectTransformation Effect(bool isTreated = false)
+	{
+		return elementBase.Effect(isTreated);
 	}
 
     public void AwakeOnMenu()

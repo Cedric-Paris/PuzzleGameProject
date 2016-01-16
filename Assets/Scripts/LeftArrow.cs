@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class LeftArrow : ChangeDirection
+public class LeftArrow : ChangeDirectionElement
 {
 
 	void Start () {
