@@ -1,13 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public abstract class ChangeDirection : Special
+public abstract class ChangeDirectionElement : Element
 {
-
-	protected DirectionProperties newDirection;
-
 	
-	// Update is called once per frame
+	protected DirectionProperties newDirection;
+	
+	
 	public override EffectTransformation Effect(bool isTreated = false)
 	{
 		EffectTransformation eTransf = new EffectTransformation ();
@@ -16,4 +15,3 @@ public abstract class ChangeDirection : Special
 		return eTransf;
 	}
 }
-

@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 429954}
   - 212: {fileID: 21240674}
+  - 114: {fileID: 11455020}
   - 114: {fileID: 11493620}
   - 114: {fileID: 11471252}
   - 60: {fileID: 6061250}
-  - 114: {fileID: 11455020}
   m_Layer: 0
   m_Name: DestrutibleLeftArrow
   m_TagString: Untagged
@@ -39,20 +39,19 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151258}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -0.010581851, y: 0.1646514}
-      - {x: -0.23732561, y: 0.0058147907}
-      - {x: -0.013722241, y: -0.14930272}
-      - {x: -0.013253093, y: -0.06372213}
-      - {x: 0.22860485, y: -0.064419985}
-      - {x: 0.23127931, y: 0.06860471}
-      - {x: -0.013487697, y: 0.0656991}
+    - - {x: -.010581851, y: .164651394}
+      - {x: -.237325609, y: .00581479073}
+      - {x: -.0137222409, y: -.149302721}
+      - {x: -.0132530928, y: -.0637221336}
+      - {x: .228604853, y: -.0644199848}
+      - {x: .231279314, y: .0686047077}
+      - {x: -.0134876966, y: .0656991005}
 --- !u!114 &11455020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f277c762f2e0d4da26503e3bb6ff1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DraggableElementType: 3
+  elementBase: {fileID: 11493620}
 --- !u!114 &11471252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,25 +106,29 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300004, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: elementBase
+      value: 
+      objectReference: {fileID: 11493620}
+    - target: {fileID: 0}
+      propertyPath: DraggableElementType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 151258}

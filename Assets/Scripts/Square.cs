@@ -4,8 +4,7 @@ using System.Collections;
 public class Square : MonoBehaviour {
 
 	public Element squareElement;
-
-	// Use this for initialization
+	
 	void Start () {
 		if (squareElement != null) {
 			if (!squareElement.isActiveAndEnabled)
@@ -13,9 +12,5 @@ public class Square : MonoBehaviour {
 			squareElement.transform.position = transform.position;
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

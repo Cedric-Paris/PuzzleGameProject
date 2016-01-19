@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BridgeSwitch : Special {
+public class BridgeSwitch : SpecialElement {
 
 	private Animator animator;
 	public ArrayList lBridge = new ArrayList ();
