@@ -4,7 +4,12 @@ using UnityEngine.UI;
 
 public class CameraCheckBoxOnEditor : MonoBehaviour {
 
+	public Camera cameraManaged;
+	private CameraMovementManager camManager;
+
 	void Start () {
+		camManager = cameraManaged.GetComponent<CameraMovementManager>();
+		camManager.enabled = false;
 		Toggle t = GetComponent<Toggle> ();
 		if (t == null)
 			Debug.LogError ("CameraChackBoxOnEditor soit etre associé a un Toggle (UI)");
@@ -20,13 +25,15 @@ public class CameraCheckBoxOnEditor : MonoBehaviour {
 	private void OnToggleCheck()
 	{
 		SelectElementOnEditorMenu.enableTileSet = false;
+		camManager.enabled = true;
 	}
 
 	private void OnToggleUnCheck()
 	{
+		camManager.enabled = false;
+		SelectElementOnEditorMenu.enableTileSet = true;
 		if (SelectElementOnEditorMenu.currentButton == null)
 			return;
-		SelectElementOnEditorMenu.enableTileSet = true;
 	}
 
 
