@@ -21,7 +21,7 @@ public class DrawGrid : MonoBehaviour {
 		{
 			for (float j = xMin; j<=xMax; j++)
 			{
-				((GameObject) Instantiate (gridPart, new Vector3(j,i,0), Quaternion.identity)).transform.SetParent(this.gameObject.transform);
+				((GameObject) Instantiate (gridPart, new Vector3(j,i, this.transform.position.z), Quaternion.identity)).transform.SetParent(this.gameObject.transform);
 			}
 		}
 	}
