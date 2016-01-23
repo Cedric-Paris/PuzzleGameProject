@@ -1654,9 +1654,9 @@ RectTransform:
   - {fileID: 2090985019}
   m_Father: {fileID: 2087177030}
   m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -424, y: -205}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 20}
   m_SizeDelta: {x: 67, y: 53}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1397929110
