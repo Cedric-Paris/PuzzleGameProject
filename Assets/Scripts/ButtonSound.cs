@@ -6,8 +6,6 @@ public class ButtonSound : MonoBehaviour {
 	public enum ButtonTypes { Play, Pause, Stop, Mute}
 	
 	public ButtonTypes type;
-	public Texture mute;
-	public Texture unMute;
 	
 	private SoundControl sound;
 	//End of Region
@@ -15,14 +13,17 @@ public class ButtonSound : MonoBehaviour {
 	
 	//Region Unity methods
 	void start() {
-		sound = Camera.main.GetComponent<SoundControl> ();
-		
+		sound = Camera.main.GetComponent<SoundControl>();
 	}
 	
 	
 	void OnMouseDown() {
+		Debug.Log ("Mouse Detected");
 
-		if(sound == null) return;
+		if (sound == null)
+		{
+			sound = Camera.main.GetComponent<SoundControl>();
+		}
 		Debug.Log ("Mouse Detected");
 		switch(type) {
 		case ButtonTypes.Play: sound.Play(); break;
