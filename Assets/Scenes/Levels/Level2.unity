@@ -2511,6 +2511,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 653346590}
+  - 114: {fileID: 653346591}
   m_Layer: 0
   m_Name: TileMap
   m_TagString: TileMap
@@ -2620,6 +2621,20 @@ Transform:
   - {fileID: 1032350235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &653346591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653346589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071367fe7bd30784f83a5ecda94c70e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 193752, guid: 2022ab63d96f14048a2c303e07f3ec34, type: 2}
+  width: 10
+  height: 9
 --- !u!1 &673449449
 GameObject:
   m_ObjectHideFlags: 0

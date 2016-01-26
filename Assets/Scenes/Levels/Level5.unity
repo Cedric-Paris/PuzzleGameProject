@@ -7431,6 +7431,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1886412319}
+  - 114: {fileID: 1886412320}
   m_Layer: 0
   m_Name: TileMap
   m_TagString: TileMap
@@ -7522,6 +7523,7 @@ Transform:
   - {fileID: 384101985}
   - {fileID: 424149617}
   - {fileID: 318679441}
+  - {fileID: 1794863136}
   - {fileID: 1035528865}
   - {fileID: 1461854434}
   - {fileID: 2063330741}
@@ -7530,11 +7532,10 @@ Transform:
   - {fileID: 185198399}
   - {fileID: 811987741}
   - {fileID: 383514040}
-  - {fileID: 1794863136}
   - {fileID: 332496245}
   - {fileID: 1912855125}
-  - {fileID: 1488155245}
   - {fileID: 1058719835}
+  - {fileID: 1488155245}
   - {fileID: 504564513}
   - {fileID: 1740961666}
   - {fileID: 984169132}
@@ -7558,6 +7559,20 @@ Transform:
   - {fileID: 738150810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1886412320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1886412318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071367fe7bd30784f83a5ecda94c70e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 193752, guid: 2022ab63d96f14048a2c303e07f3ec34, type: 2}
+  width: 12
+  height: 9
 --- !u!4 &1912855125 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
