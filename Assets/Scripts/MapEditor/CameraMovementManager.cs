@@ -1,10 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Manage the movements (Move / Zoom) of the camera associated with it.
+/// </summary>
 public class CameraMovementManager : MonoBehaviour {
 
-	private static readonly int ZOOM_FORCE = 60;//Plus il est élever plus il est précis (lent)
+
+	/// <summary>
+	/// Zoom force
+	/// Plus il est élever plus il est précis (lent)
+	/// </summary>
+	private static readonly int ZOOM_FORCE = 60;
+	/// <summary>
+	/// Maximum value for zooming (size attribute on camera)
+	/// </summary>
 	private static readonly int MAX_ZOOM_SIZE = 10;
+	/// <summary>
+	/// Minimum value for zooming (size attribute on camera)
+	/// </summary>
 	private static readonly int MIN_ZOOM_SIZE = 2;
 
 	private Vector3 currentPosition;
@@ -14,6 +28,10 @@ public class CameraMovementManager : MonoBehaviour {
 	private Camera cameraAttached;
 	private float currentDistanceForZoom;
 
+	/// <summary>
+	/// Processing performed by Unity when an instance is created.
+	/// Initializes some attributes.
+	/// </summary>
 	void Start () {
 		cameraAttached = this.GetComponent<Camera>();
 		if(cameraAttached == null)
@@ -23,6 +41,10 @@ public class CameraMovementManager : MonoBehaviour {
 		currentPosition = this.transform.position;
 	}
 
+	/// <summary>
+	/// Called every frame, if the MonoBehaviour is enabled.
+	/// Call dragCamera(), zoomActionsOnCamera() or does nothing according to number of fingers detected on the screen.
+	/// </summary>
 	void Update () {
 		if (Input.touchCount <= 0)
 		{
@@ -40,6 +62,9 @@ public class CameraMovementManager : MonoBehaviour {
 		dragCamera();
 	}
 
+	/// <summary>
+	/// Check if the user wants to move the camera and move it if it's the case.
+	/// </summary>
 	private void dragCamera()
 	{
 		if (!isDragging)
@@ -58,6 +83,9 @@ public class CameraMovementManager : MonoBehaviour {
 		this.transform.position = newCamPosition;
 	}
 
+	/// <summary>
+	/// Check if the user wants to zoom or zoom out the map and then apply the zoom.
+	/// </summary>
 	private void zoomActionsOnCamera()
 	{
 		if (! isZooming)
@@ -78,6 +106,12 @@ public class CameraMovementManager : MonoBehaviour {
 		currentDistanceForZoom = getDistance(Input.touches[0].position, Input.touches[1].position);
 	}
 
+	/// <summary>
+	/// Calculate the distance between two points passed as arguments.
+	/// </summary>
+	/// <returns>Distance between point1 et point2.</returns>
+	/// <param name="point1">Point 1.</param>
+	/// <param name="point2">Point 2.</param>
 	private float getDistance(Vector2 point1, Vector2 point2)
 	{
 		float dpointsX = Mathf.Abs(point1.x - point2.x);
@@ -85,11 +119,21 @@ public class CameraMovementManager : MonoBehaviour {
 		return Mathf.Sqrt(Mathf.Pow(dpointsX, 2) + Mathf.Pow(dpointsY, 2));
 	}
 
+	/// <summary>
+	/// Calculate the zoom (or zoom out )to apply to the size attribute of the camera from the movement of the user's fingers.
+	/// </summary>
+	/// <returns>zoom value</returns>
+	/// <param name="ecart">Gap between the starting position of the finger of the user and their current location.</param>
 	private float calculZoom(float ecart)
 	{
 		return Mathf.Abs(ecart/ZOOM_FORCE);
 	}
 
+	/// <summary>
+	/// Control the new value to apply to the size attribute of the camera to check if it complies (Min_Zoom_Size < value < Max_Zoom_Size).
+	/// </summary>
+	/// <returns>The new value (Corrected if it does not match).</returns>
+	/// <param name="v">Value to check</param>
 	private float controlNewValue(float v)
 	{
 		if (v > MAX_ZOOM_SIZE)

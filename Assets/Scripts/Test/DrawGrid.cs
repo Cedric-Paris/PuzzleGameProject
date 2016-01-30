@@ -6,6 +6,9 @@ public class DrawGrid : MonoBehaviour {
 	public Camera camera;
 	public GameObject gridPart;
 
+	/// <summary>
+	/// Processing performed by Unity when an instance is created
+	/// </summary>
 	void Start ()
 	{
 		float xMin, xMax, yMin, yMax;
