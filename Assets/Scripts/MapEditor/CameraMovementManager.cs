@@ -9,7 +9,7 @@ public class CameraMovementManager : MonoBehaviour {
 
 	/// <summary>
 	/// Zoom force
-	/// Plus il est élever plus il est précis (lent)
+	/// Bigger the number is, the more precise the zoom is. (slow)
 	/// </summary>
 	private static readonly int ZOOM_FORCE = 60;
 	/// <summary>
@@ -130,7 +130,7 @@ public class CameraMovementManager : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Control the new value to apply to the size attribute of the camera to check if it complies (Min_Zoom_Size < value < Max_Zoom_Size).
+	/// Control the new value to apply to the size attribute of the camera to check if it complies (<see cref="MIN_ZOOM_SIZE"/> < value < <see cref="MAX_ZOOM_SIZE"/>).
 	/// </summary>
 	/// <returns>The new value (Corrected if it does not match).</returns>
 	/// <param name="v">Value to check</param>

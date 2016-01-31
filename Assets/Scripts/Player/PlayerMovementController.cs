@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Manages all Player movements
+/// </summary>
 public class PlayerMovementController : MonoBehaviour {
 	
 	public static readonly DirectionProperties GO_UP = new DirectionProperties (new Vector3 (0, 1, 0), new Vector2(0.23f, 0.43f), new Vector3 (0, 0.5f, 0), 3,
@@ -39,14 +42,25 @@ public class PlayerMovementController : MonoBehaviour {
 																									if (currentPos.x > 0 && (currentPos.x % 1) <= 0.5f) return true;
 																									return false;
 																								});
-
+	/// <summary>
+	/// ElementObserver observing all non-obstacle elements
+	/// </summary>
 	public ElementObserver currentElement;
+	/// <summary>
+	/// ElementObserver observing all obstacle elements
+	/// </summary>
 	public ElementObserver obstacleElement;
 
+	/// <summary>
+	/// Player associated to this PlayerMovementController.
+	/// </summary>
 	public Player playerAssociated;
 
+	/// <summary>
+	/// Player speed.
+	/// </summary>
 	private float speed = 0.05f;
-
+	
 	public DirectionProperties CurrentDirection
 	{
 		get
@@ -63,7 +77,10 @@ public class PlayerMovementController : MonoBehaviour {
 	public delegate void DirectionChange(DirectionProperties dir);
 	public event DirectionChange onPlayerDirectionChanging;
 
-
+	/// <summary>
+	/// Called every frame, if the MonoBehaviour is enabled.
+	/// Apply the effects of the encountered elements and moves the player.
+	/// </summary>
 	void Update () {
 		if (! obstacleElement.isTreated)
 			TreatObstacleElement(obstacleElement);
@@ -78,7 +95,7 @@ public class PlayerMovementController : MonoBehaviour {
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect(true);
 		if (! eTransf.isChangingSomething)
 			return;
-		TreatmentIfObstacle (eTransf);//Evite Un cas de bug ou on passerait sur un obstacle
+		TreatmentIfObstacle(eTransf);//Evite Un cas de bug ou on passerait sur un obstacle
 		if (eTransf.isWinner)
 		{
 			OnPlayerWin ();
@@ -88,8 +105,6 @@ public class PlayerMovementController : MonoBehaviour {
 		{
 			transform.position = CurrentDirection.calculFavoritePos(transform.position);
 			CurrentDirection = eTransf.newDirection;
-			/*nextSquare.transform.position = transform.position + eTransf.newDirection.positionNextObserver;
-			 	A supprimer si plus utilisé*/
 		}
 	}
 
@@ -111,6 +126,10 @@ public class PlayerMovementController : MonoBehaviour {
 		this.speed = 0;
 	}
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="dir">New direction.</param>
 	private void OnPlayerDirectionChanging(DirectionProperties dir)
 	{
 		if (onPlayerDirectionChanging != null)

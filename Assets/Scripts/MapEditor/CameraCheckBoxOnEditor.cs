@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 /// <summary>
-/// Manages events associated to the checkbox on Map Editor.
+/// Manage events associated to the checkbox on Map Editor.
 /// </summary>
 public class CameraCheckBoxOnEditor : MonoBehaviour {
 

@@ -12,10 +12,12 @@ public class PutEditorTiles : MonoBehaviour {
 	/// List of Vector3 corresponding to the position of all the squares placed on the scene
 	/// </summary>
 	private List<Vector3> baseTilesAlreadySet = new List<Vector3>();
+	public List<Vector3> getBaseTiles() { return baseTilesAlreadySet; }
 	/// <summary>
 	/// List of Vector3 corresponding to the position of all the elements placed on the scene
 	/// </summary>
 	private List<Vector3> elementTilesAlreadySet = new List<Vector3>();
+	public List<Vector3> getElementTiles() { return elementTilesAlreadySet; }
 
 	public float xMaximumEnPartantDroite;//devra etre géré tout seul plus tard
 
