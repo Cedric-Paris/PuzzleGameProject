@@ -9,11 +9,9 @@ public class RemoveEditorTiles : MonoBehaviour {
 	private List<Vector3> baseTilesAlreadySet;
 	private List<Vector3> elementTilesAlreadySet = new List<Vector3>();
 
-
 	void Update () {
 		Camera c = Camera.main;
 		Vector3 worldPos;
-		Vector3 tt = new Vector3();
 		foreach (Touch t in Input.touches) {
 			worldPos = c.ScreenToWorldPoint(t.position);
 			worldPos.x = CalculDemiLePlusProche(worldPos.x);
@@ -43,10 +41,30 @@ public class RemoveEditorTiles : MonoBehaviour {
 		{
 			pEditTilesAssociated = GetComponent<PutEditorTiles>();
 			if(pEditTilesAssociated == null)
+			{
 				this.enabled = false;
+				return;
+			}
 		}
+		pEditTilesAssociated.enabled = false;
 		baseTilesAlreadySet = pEditTilesAssociated.getBaseTiles();
 		elementTilesAlreadySet = pEditTilesAssociated.getElementTiles();
+	}
+
+	void OnDisable()
+	{
+		if(pEditTilesAssociated != null)
+		{
+			pEditTilesAssociated.enabled = true;
+			return;
+		}
+		else
+		{
+			pEditTilesAssociated = GetComponent<PutEditorTiles>();
+			if(pEditTilesAssociated == null)
+				return;
+			pEditTilesAssociated.enabled = true;
+		}
 	}
 
 	/// <summary>

@@ -31,6 +31,7 @@ public class PutEditorTiles : MonoBehaviour {
 			return;
 		Camera c = Camera.main;
 		Vector3 worldPos;
+		GameObject instancePrefab;
 		foreach (Touch t in Input.touches) {
 			if(t.position.x > Screen.width - xMaximumEnPartantDroite)
 				continue;
@@ -43,14 +44,17 @@ public class PutEditorTiles : MonoBehaviour {
 				if(baseTilesAlreadySet.Contains(worldPos))
 					continue;
 				baseTilesAlreadySet.Add(worldPos);
+				instancePrefab = (GameObject)Instantiate(SelectElementOnEditorMenu.selectedObject, worldPos, Quaternion.identity);
+				instancePrefab.AddComponent<BoxCollider2D>().size = new Vector2(0.2f, 0.2f);
 			}
 			else
 			{
 				if(elementTilesAlreadySet.Contains(worldPos))
 					continue;
 				elementTilesAlreadySet.Add(worldPos);
+				instancePrefab = (GameObject)Instantiate(SelectElementOnEditorMenu.selectedObject, worldPos, Quaternion.identity);
 			}
-			((GameObject)Instantiate(SelectElementOnEditorMenu.selectedObject, worldPos, Quaternion.identity)).transform.SetParent(this.gameObject.transform);
+			instancePrefab.transform.SetParent(this.gameObject.transform);
 		}
 	}
 

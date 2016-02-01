@@ -2,23 +2,18 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class StartCase : MonoBehaviour {
+public class StartCase : Element {
 
 	public Player startPlayer;
 	public DirectionProperties startDirection;
 	private Animator animator;
 	private int anim;
 
-	// Use this for initialization
+
 	void Start () {
 		animator = GetComponent<Animator> ();
 		animator.SetInteger ("animState", 0);
 		startDirection = PlayerMovementController.GO_RIGHT;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	public void OnMouseUp(){
