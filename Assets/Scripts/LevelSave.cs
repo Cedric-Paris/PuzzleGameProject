@@ -44,7 +44,7 @@ public class LevelSave : MonoBehaviour{
 	/// Read a level in a file and create the elements in it with the SquareInstanciation méthode
 	/// </summary>
 	/// <param name="fileName">File name.</param>
-	/// <param name="debug">If set to <c>true</c> debug.</param>
+	/// <param name="debug">If set to <c>true</c> display the list of all the elements loaded in the console</param>
 	public static void LoadTileMap(string fileName, bool debug=false){
 
 		
