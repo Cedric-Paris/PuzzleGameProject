@@ -7,14 +7,24 @@ using UnityEditor;
 using System;
 using System.Collections.Generic;
 
+
+/// <summary>
+/// Contains all the methods to save and load all of the elements of a level, the elements contained in the TileMap
+/// </summary>
 public class LevelSave : MonoBehaviour{
 
 		
-	void Start(){
-		//SaveTileMap("TileMap");
-		//LoadTileMap("TileMap");
+	void Start () {
+		SaveTileMap("Test", true);
+		LoadTileMap("Test", true);
 	}
 
+
+	/// <summary>
+	/// Saves in a file the tile map of the scene using the serializable object TileMapSave.
+	/// </summary>
+	/// <param name="fileName">Name of the file where the level will be save.</param>
+	/// <param name="debug">If set to <c>true</c> display the list of all the elements saved in the console.</param>
 	public static void SaveTileMap(string fileName, bool debug=false){
 		TileMapSave tSave = new TileMapSave();
 		GameObject[] tilemap=GameObject.FindGameObjectsWithTag("TileMap");
@@ -24,20 +34,26 @@ public class LevelSave : MonoBehaviour{
 
 		//Debug
 		if (debug) {
-			string texte="ElementList: ";
-			foreach(var square in tSave.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+"; "; }
+			string texte="ElementList saved: ";
+			foreach(var square in tSave.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   "; }
 			Debug.Log(texte);
 		}
 	}
 
+	/// <summary>
+	/// Read a level in a file and create the elements in it with the SquareInstanciation méthode
+	/// </summary>
+	/// <param name="fileName">File name.</param>
+	/// <param name="debug">If set to <c>true</c> debug.</param>
 	public static void LoadTileMap(string fileName, bool debug=false){
 
 		
 		TileMapSave tLoad = (TileMapSave) Load(fileName);
 
 		if (debug) {
-			string texte="ElementList: ";
-			foreach(var square in tLoad.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+"; " ; }
+			string texte="ElementList that will be load: ";
+			foreach(var square in tLoad.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   " ; }
+			Debug.Log(texte);
 		}
 
 		var oldTileMap = GameObject.FindGameObjectsWithTag("TileMap");
@@ -49,17 +65,26 @@ public class LevelSave : MonoBehaviour{
 		foreach (var square in tLoad.squareList){
 			SquareInstanciation(square, tileMap);
 		}
+		if (debug) {
+			Debug.Log("Successfuly loaded");
+		}
 	}
 
+
+	/// <summary>
+	/// Instanciate the square passed in argument, and the element in the square if there's one.
+	/// </summary>
+	/// <param name="square">Square, represented with a vector3 for the position, and a string for the type of the square, which can contain 2 elements separedby a "|".</param>
+	/// <param name="parent">The parent element of the square.</param>
 	private static void SquareInstanciation(KeyValuePair<Vector3Save, string> square, GameObject parent){
 		string[] nom=square.Value.Split(new string[] {"|"}, StringSplitOptions.None);
 		if (nom.Count()==1){
-			GameObject squarePrefab = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefab/"+nom[0]+".prefab", typeof(GameObject));
+			GameObject squarePrefab = (GameObject) Resources.Load(nom[0], typeof(GameObject));
 			((GameObject) Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity)).transform.SetParent(parent.transform);
 		}
 		else{
-			GameObject squarePrefab = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefab/"+nom[0]+".prefab", typeof(GameObject));
-			GameObject elementPrefab = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefab/"+nom[1]+".prefab", typeof(GameObject));
+			GameObject squarePrefab = (GameObject) Resources.Load(nom[0], typeof(GameObject));
+			GameObject elementPrefab = (GameObject) Resources.Load(nom[1], typeof(GameObject));
 			GameObject squareInstance = (GameObject) Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity);
 			GameObject elementInstance = (GameObject) Instantiate(elementPrefab, square.Key.getVector3(), Quaternion.identity);
 			squareInstance.transform.SetParent(parent.transform);
@@ -71,7 +96,11 @@ public class LevelSave : MonoBehaviour{
 	}
 
 
-
+	/// <summary>
+	/// Save the specified entity in a file created with the fileName passed in argument.
+	/// </summary>
+	/// <param name="entity">Entity, must be serializable.</param>
+	/// <param name="fileName">File name.</param>
 	public static void Save(object entity, string fileName)
 	{
 
@@ -81,6 +110,10 @@ public class LevelSave : MonoBehaviour{
 			stream.Close();
 	}
 		
+	/// <summary>
+	/// Load the file at the specified fileName.
+	/// </summary>
+	/// <param name="fileName">File name.</param>
 	public static object Load(string fileName)
 	{
 			BinaryFormatter formatter = new BinaryFormatter();
