@@ -16,7 +16,7 @@ public class UIMessageBox : MonoBehaviour {
 		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/YesNoMessageBox");
 		messageBox = Instantiate(messageBox);
 		messageBox.transform.SetParent(canvas.transform, false);
-		messageBox.transform.name = "CanvasMessageBox";
+		messageBox.transform.name = "YesNoMessageBox";
 		Text textMessage = messageBox.GetComponentInChildren<Text>();
 		textMessage.text = message;
 		Button[] b = messageBox.GetComponentsInChildren<Button>();
