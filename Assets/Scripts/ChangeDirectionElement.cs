@@ -2,19 +2,20 @@
 using System.Collections;
 
 /// <summary>
-/// Change the Player's direction.
+/// Element which changes the player direction.
 /// </summary>
 public abstract class ChangeDirectionElement : Element
 {
 	/// <summary>
-	/// The new direction.
+	/// The new direction applied by the element.
 	/// </summary>
 	protected DirectionProperties newDirection;
 	
 	/// <summary>
-	/// Change the current Player's direction to a new direction.
+	/// Element Effect. An EffectTransformation object type is returned with the modification applied by the effect.
+	/// The EffectTransformation object indicates the new direction(<see cref="newDirection"/>) for the Player.
 	/// </summary>
-	/// <param name="isTreated">If set to <c>true</c> is treated.</param>
+	/// <param name="isTreated">true = the element is treated definitively. / false = the element effect may be requested again.</param>
 	public override EffectTransformation Effect(bool isTreated = false)
 	{
 		EffectTransformation eTransf = new EffectTransformation ();

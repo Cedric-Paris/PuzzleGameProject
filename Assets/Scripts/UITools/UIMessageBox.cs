@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Provides methods to display message boxes for the user.
+/// </summary>
 public class UIMessageBox : MonoBehaviour {
-
-
+	
+	/// <summary>
+	/// Displays a message box with Yes and No buttons.
+	/// Performs treatments passed as parameters according to user response.
+	/// </summary>
+	/// <param name="message">The message in the message box.</param>
+	/// <param name="actionIfYes">Action performed if the response is yes.</param>
+	/// <param name="actionIfNo">Action performed if the response is no.</param>
 	public static void ShowYesNo(string message, UnityEngine.Events.UnityAction actionIfYes, UnityEngine.Events.UnityAction actionIfNo)
 	{
 		GameObject g = new GameObject("CanvasMessageBox");

@@ -2,12 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 /// <summary>
-/// Up arrow.
+/// ChangeDirectionElement which makes the player go up.
 /// </summary>
 public class UpArrow : ChangeDirectionElement
 {
 	/// <summary>
-	/// Apply a newDirection to the Player to the up.
+	/// Processing performed by Unity when an instance is created.
+	/// Set the <see cref="newDirection"/> attribute to PlayerMovementController.GO_UP.
 	/// </summary>
 	void Start () {
 		newDirection = PlayerMovementController.GO_UP;	

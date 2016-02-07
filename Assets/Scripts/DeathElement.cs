@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class DeathElement : Element {
-
-	//Permet d'ajouter un niveau d'abstraction
+/// <summary>
+/// Any element derived from this class must have (Among others) the effect of cause the death of the player.
+/// Adds a level of abstraction.
+/// </summary>
+public abstract class DeathElement : Element
+{
 
 }

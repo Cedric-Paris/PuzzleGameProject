@@ -18,7 +18,7 @@ public class GlobalMultiling : MonoBehaviour {
 		switch (Application.systemLanguage)
 		{
 			case SystemLanguage.French:
-									currentLanguage="en";
+									currentLanguage="fr";
 									break;
 			case SystemLanguage.English:
 									currentLanguage="en";
