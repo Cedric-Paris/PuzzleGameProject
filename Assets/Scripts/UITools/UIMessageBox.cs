@@ -5,7 +5,19 @@ using UnityEngine.UI;
 /// Provides methods to display message boxes for the user.
 /// </summary>
 public class UIMessageBox : MonoBehaviour {
-	
+
+	private static Canvas initializeCanvas(GameObject gameObject)
+	{
+		Canvas canvas = gameObject.AddComponent<Canvas>();
+		gameObject.AddComponent<CanvasScaler>();
+		gameObject.AddComponent<GraphicRaycaster>();
+		canvas.renderMode = RenderMode.ScreenSpaceCamera;
+		canvas.worldCamera = Camera.main;
+		canvas.sortingOrder = 51;
+		return canvas;
+	}
+
+
 	/// <summary>
 	/// Displays a message box with Yes and No buttons.
 	/// Performs treatments passed as parameters according to user response.
@@ -16,12 +28,7 @@ public class UIMessageBox : MonoBehaviour {
 	public static void ShowYesNo(string message, UnityEngine.Events.UnityAction actionIfYes, UnityEngine.Events.UnityAction actionIfNo)
 	{
 		GameObject g = new GameObject("CanvasMessageBox");
-		Canvas canvas = g.AddComponent<Canvas>();
-		g.AddComponent<CanvasScaler>();
-		g.AddComponent<GraphicRaycaster>();
-		canvas.renderMode = RenderMode.ScreenSpaceCamera;
-		canvas.worldCamera = Camera.main;
-		canvas.sortingOrder = 51;
+		Canvas canvas = initializeCanvas(g);
 		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/YesNoMessageBox");
 		messageBox = Instantiate(messageBox);
 		messageBox.transform.SetParent(canvas.transform, false);
@@ -49,5 +56,21 @@ public class UIMessageBox : MonoBehaviour {
 				actionIfYes();
 			});
 		}
+	}
+
+	public static string ShowEditText(string placeHolderMessage)
+	{
+		GameObject g = new GameObject("CanvasMessageBox");
+		Canvas canvas = initializeCanvas(g);
+		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/EditTextMessageBox");
+		messageBox = Instantiate(messageBox);
+		messageBox.transform.SetParent(canvas.transform, false);
+		messageBox.transform.name = "EditTextMessageBox";
+		Text textMessage = messageBox.GetComponentInChildren<Text>();
+		textMessage.text = placeHolderMessage;
+		Button[] b = messageBox.GetComponentsInChildren<Button>();
+		b[0].onClick.AddListener( ()=> {Destroy(g);});
+		b[1].onClick.AddListener( ()=> {Destroy(g);});
+		return "";
 	}
 }
