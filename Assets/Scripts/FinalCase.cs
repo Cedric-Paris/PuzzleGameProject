@@ -51,7 +51,6 @@ public class FinalCase : Objectif {
 	public static void PickObjectif()
 	{
 		nbobjectif--;
-
 	}
 
 	/// <summary>

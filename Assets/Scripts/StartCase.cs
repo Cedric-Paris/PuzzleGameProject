@@ -2,12 +2,11 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
+using System.Collections.Generic;
+
 /// <summary>
 /// Start case of the player on the TileMap
 /// </summary>
-using System.Collections.Generic;
-
-
 public class StartCase : Element {
 
 	/// <summary>

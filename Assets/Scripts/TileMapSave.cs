@@ -9,6 +9,7 @@ using System;
 /// </summary>
 [Serializable]
 public class TileMapSave{
+	
 
 	/// <summary>
 	/// The square list. Vector3Save is the position of the element, string is his name (also the name of his prefab). A square containing an element will have a string value as 'Square|Element'

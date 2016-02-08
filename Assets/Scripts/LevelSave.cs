@@ -13,13 +13,28 @@ using System.Collections.Generic;
 /// </summary>
 public class LevelSave : MonoBehaviour{
 
-		
+	/// <summary>
+	/// The path of the directory containing the level saves.
+	/// </summary>
+	private static string pathLevelSaves= Application.persistentDataPath+"/Levels";
+	/// <summary>
+	/// The level saves extension.
+	/// </summary>
+	private static string levelSavesExtension= ".lvls";
+
+	/// <summary>
+	/// Checks if the saves directory exists, creates it if not
+	/// </summary>
 	void Start () {
-		SaveTileMap("Test", true);
-		LoadTileMap("Test", true);
+		if (Directory.Exists (pathLevelSaves) == false) {
+			Directory.CreateDirectory(pathLevelSaves);
+		} 
+
+		//SaveTileMap("Test");
+		//LoadTileMap("Test");
 	}
 
-
+	
 	/// <summary>
 	/// Saves in a file the tile map of the scene using the serializable object TileMapSave.
 	/// </summary>
@@ -29,12 +44,12 @@ public class LevelSave : MonoBehaviour{
 		TileMapSave tSave = new TileMapSave();
 		GameObject[] tilemap=GameObject.FindGameObjectsWithTag("TileMap");
 		foreach (Transform child in tilemap[0].transform) { tSave.addSquare(child); }
-
-		Save(tSave, fileName);
-
+		
+		Save(tSave, "Levels/"+fileName+levelSavesExtension);
+		
 		//Debug
 		if (debug) {
-			string texte="ElementList saved: ";
+			string texte="ElementList saved in "+pathLevelSaves+fileName+levelSavesExtension+": ";
 			foreach(var square in tSave.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   "; }
 			Debug.Log(texte);
 		}
@@ -48,20 +63,18 @@ public class LevelSave : MonoBehaviour{
 	public static void LoadTileMap(string fileName, bool debug=false){
 
 		
-		TileMapSave tLoad = (TileMapSave) Load(fileName);
+		TileMapSave tLoad = (TileMapSave) Load("Levels/"+fileName+levelSavesExtension);
 
 		if (debug) {
-			string texte="ElementList that will be load: ";
+			string texte="ElementList that will be load from "+pathLevelSaves+fileName+levelSavesExtension+": ";
 			foreach(var square in tLoad.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   " ; }
 			Debug.Log(texte);
 		}
 
-		var oldTileMap = GameObject.FindGameObjectsWithTag("TileMap");
-		Destroy(oldTileMap[0]);
-		GameObject tileMap = new GameObject();
-		tileMap.name = "TileMap";
-		tileMap.tag = "TileMap";
-
+		GameObject tileMap = GameObject.FindGameObjectsWithTag("TileMap")[0];
+		foreach (Transform child in tileMap.transform) {
+			GameObject.Destroy(child.gameObject);
+		}
 		foreach (var square in tLoad.squareList){
 			SquareInstanciation(square, tileMap);
 		}
@@ -110,6 +123,22 @@ public class LevelSave : MonoBehaviour{
 			stream.Close();
 	}
 		
+	/// <summary>
+	/// Gets the list of the levels names.
+	/// </summary>
+	/// <returns>A String List of the levels</returns>
+	public static List<string> GetLevels(){
+		List<string> levelList = new List<String>();
+		foreach (string file in System.IO.Directory.GetFiles(pathLevelSaves))
+		{
+			if (file.EndsWith(levelSavesExtension)){
+				string fileName=file.Split('\\').Last();
+				levelList.Add(fileName.Remove(fileName.Length-levelSavesExtension.Length));
+			}
+		}
+		return levelList;
+	}
+
 	/// <summary>
 	/// Load the file at the specified fileName.
 	/// </summary>
