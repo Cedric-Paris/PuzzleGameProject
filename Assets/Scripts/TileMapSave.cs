@@ -21,12 +21,12 @@ public class TileMapSave{
 	/// </summary>
 	/// <param name="a">The square that will be added</param>
 	public void addSquare(Transform square){
-		string test="";
+		string test;
 		string nom=square.name;
 		if (square.transform.childCount>0)
 			nom+="|"+square.transform.GetChild(0).name;
 		Vector3Save vSave= Vector3Save.getVector3Save(square.position);
-		if (!squareList.TryGetValue(vSave,out test)){
+		if (!squareList.TryGetValue(vSave, out test)){
 			squareList.Add(vSave, nom);
 		}
 	}

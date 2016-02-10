@@ -17,4 +17,19 @@ public class Element : MonoBehaviour {
     {
         return new EffectTransformation();
     }
+
+
+	public void CheckSquareAroundToAttach()
+	{
+		Square s;
+		foreach (Collider2D col in Physics2D.OverlapCircleAll(this.transform.position, 0.15f)) 
+		{
+			if( (s = col.gameObject.GetComponent<Square>()) != null)// && s.squareElement == null)
+			{
+				s.squareElement = this;
+				this.transform.SetParent(s.transform);
+				return;
+			}
+		}
+	}
 }

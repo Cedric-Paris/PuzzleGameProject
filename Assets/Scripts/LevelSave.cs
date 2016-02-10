@@ -1,39 +1,37 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using UnityEditor;
-using System;
-using System.Collections.Generic;
+using UnityEngine;
 
 
 /// <summary>
-/// Contains all the methods to save and load all of the elements of a level, the elements contained in the TileMap
+/// Contains all the methods to save and load all of the elements of a level, the elements contained in the TileMap.
 /// </summary>
-public class LevelSave : MonoBehaviour{
+public class LevelSave {
 
 	/// <summary>
 	/// The path of the directory containing the level saves.
 	/// </summary>
-	private static string pathLevelSaves= Application.persistentDataPath+"/Levels";
+	private static string pathLevelSaves = Application.persistentDataPath+"/Levels";
+
 	/// <summary>
 	/// The level saves extension.
 	/// </summary>
 	private static string levelSavesExtension= ".lvls";
 
+
 	/// <summary>
-	/// Checks if the saves directory exists, creates it if not
+	/// Static constructor is called at most one time, before any instance constructor is invoked or member is accessed.
+	/// Checks if the saves directory exists, creates it if not.
 	/// </summary>
-	void Start () {
-		if (Directory.Exists (pathLevelSaves) == false) {
+	static LevelSave()
+	{
+		if (Directory.Exists (pathLevelSaves) == false)
 			Directory.CreateDirectory(pathLevelSaves);
-		} 
-
-		//SaveTileMap("Test");
-		//LoadTileMap("Test");
 	}
-
 	
 	/// <summary>
 	/// Saves in a file the tile map of the scene using the serializable object TileMapSave.
@@ -43,13 +41,14 @@ public class LevelSave : MonoBehaviour{
 	public static void SaveTileMap(string fileName, bool debug=false){
 		TileMapSave tSave = new TileMapSave();
 		GameObject[] tilemap=GameObject.FindGameObjectsWithTag("TileMap");
-		foreach (Transform child in tilemap[0].transform) { tSave.addSquare(child); }
-		
-		Save(tSave, "Levels/"+fileName+levelSavesExtension);
+		foreach (Transform child in tilemap[0].transform)
+			tSave.addSquare(child);
+
+		Save(tSave, fileName+levelSavesExtension);
 		
 		//Debug
 		if (debug) {
-			string texte="ElementList saved in "+pathLevelSaves+fileName+levelSavesExtension+": ";
+			string texte="ElementList saved in "+pathLevelSaves+"/"+fileName+levelSavesExtension+": ";
 			foreach(var square in tSave.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   "; }
 			Debug.Log(texte);
 		}
@@ -63,7 +62,7 @@ public class LevelSave : MonoBehaviour{
 	public static void LoadTileMap(string fileName, bool debug=false){
 
 		
-		TileMapSave tLoad = (TileMapSave) Load("Levels/"+fileName+levelSavesExtension);
+		TileMapSave tLoad = (TileMapSave) Load(fileName+levelSavesExtension);
 
 		if (debug) {
 			string texte="ElementList that will be load from "+pathLevelSaves+fileName+levelSavesExtension+": ";
@@ -93,16 +92,20 @@ public class LevelSave : MonoBehaviour{
 		string[] nom=square.Value.Split(new string[] {"|"}, StringSplitOptions.None);
 		if (nom.Count()==1){
 			GameObject squarePrefab = (GameObject) Resources.Load(nom[0], typeof(GameObject));
-			((GameObject) Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity)).transform.SetParent(parent.transform);
+			GameObject squareInstance = (GameObject) GameObject.Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity);
+			squareInstance.transform.SetParent(parent.transform);
+			squareInstance.name = squarePrefab.name;
 		}
 		else{
 			GameObject squarePrefab = (GameObject) Resources.Load(nom[0], typeof(GameObject));
 			GameObject elementPrefab = (GameObject) Resources.Load(nom[1], typeof(GameObject));
-			GameObject squareInstance = (GameObject) Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity);
-			GameObject elementInstance = (GameObject) Instantiate(elementPrefab, square.Key.getVector3(), Quaternion.identity);
+			GameObject squareInstance = (GameObject) GameObject.Instantiate(squarePrefab, square.Key.getVector3(), Quaternion.identity);
+			GameObject elementInstance = (GameObject) GameObject.Instantiate(elementPrefab, square.Key.getVector3(), Quaternion.identity);
 			squareInstance.transform.SetParent(parent.transform);
+			squareInstance.name = squarePrefab.name;
 			elementInstance.transform.SetParent(squareInstance.transform);
-
+			elementInstance.name = elementPrefab.name;
+			
 			Square squareScript = squareInstance.GetComponent<Square>();
 			squareScript.squareElement = (Element) elementInstance.GetComponent<Element>();
 		}
@@ -118,7 +121,7 @@ public class LevelSave : MonoBehaviour{
 	{
 
 			BinaryFormatter formatter = new BinaryFormatter();
-			FileStream stream = File.Create(Application.persistentDataPath + "/" + fileName);
+			FileStream stream = File.Create(pathLevelSaves + "/" + fileName);
 			formatter.Serialize(stream, entity);
 			stream.Close();
 	}
@@ -146,7 +149,7 @@ public class LevelSave : MonoBehaviour{
 	public static object Load(string fileName)
 	{
 			BinaryFormatter formatter = new BinaryFormatter();
-			FileStream stream = File.Open(Application.persistentDataPath + "/" + fileName, FileMode.Open);
+			FileStream stream = File.Open(pathLevelSaves + "/" + fileName, FileMode.Open);
 			var entity = formatter.Deserialize(stream);
 			stream.Close();
 			return entity;

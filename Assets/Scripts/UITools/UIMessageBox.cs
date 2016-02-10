@@ -58,7 +58,8 @@ public class UIMessageBox : MonoBehaviour {
 		}
 	}
 
-	public static string ShowEditText(string placeHolderMessage)
+	public delegate void ShowEditTextCallback(string userText);
+	public static void ShowEditText(string placeHolderMessage, ShowEditTextCallback callbackFonctionIfClickOk)
 	{
 		GameObject g = new GameObject("CanvasMessageBox");
 		Canvas canvas = initializeCanvas(g);
@@ -66,11 +67,17 @@ public class UIMessageBox : MonoBehaviour {
 		messageBox = Instantiate(messageBox);
 		messageBox.transform.SetParent(canvas.transform, false);
 		messageBox.transform.name = "EditTextMessageBox";
-		Text textMessage = messageBox.GetComponentInChildren<Text>();
-		textMessage.text = placeHolderMessage;
+		Text[] textMessage = messageBox.GetComponentsInChildren<Text>();
+		textMessage[0].text = placeHolderMessage;
+		Text inputText = textMessage[1];
 		Button[] b = messageBox.GetComponentsInChildren<Button>();
 		b[0].onClick.AddListener( ()=> {Destroy(g);});
-		b[1].onClick.AddListener( ()=> {Destroy(g);});
-		return "";
+		b[1].onClick.AddListener( ()=> {
+			string userMessage = inputText.text;
+			Destroy(g);
+			if(callbackFonctionIfClickOk != null)
+				callbackFonctionIfClickOk(userMessage);
+		});
 	}
+
 }

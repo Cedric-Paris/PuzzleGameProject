@@ -15,11 +15,16 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	public void OnClickSave()
 	{
-		UIMessageBox.ShowEditText("Saisir un nom de sauvegarde");
+		UIMessageBox.ShowEditText("Saisir un nom de sauvegarde", Save);
+	}
+
+	private void Save(string nomFichier)
+	{
+		LevelSave.SaveTileMap(nomFichier);
 	}
 
 	public void OnClickLoad()
 	{
-		
+		LevelSave.LoadTileMap("test");
 	}
 }

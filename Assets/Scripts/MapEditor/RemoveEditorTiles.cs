@@ -17,7 +17,7 @@ public class RemoveEditorTiles : MonoBehaviour {
 			worldPos.x = CalculDemiLePlusProche(worldPos.x);
 			worldPos.y = CalculDemiLePlusProche(worldPos.y);
 			worldPos.z = 0;
-			foreach(Collider2D col in Physics2D.OverlapCircleAll(worldPos, 1.5f))
+			foreach(Collider2D col in Physics2D.OverlapCircleAll(worldPos, 0.5f))
 			{
 				if(col.gameObject.transform.position == worldPos)
 				{
