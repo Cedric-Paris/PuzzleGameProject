@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ButtonsLeftSidePanel : MonoBehaviour {
 
@@ -25,6 +26,17 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	public void OnClickLoad()
 	{
-		LevelSave.LoadTileMap("test");
+		List<string> fileSaved = LevelSave.GetLevels();
+		if(fileSaved.Count == 0)
+		{
+			UIMessageBox.ShowMessage("Aucune map enregistrée.");
+			return;
+		}
+		UIMessageBox.ShowSelectElementOnList(fileSaved, Load);
+	}
+
+	private void Load(string nomFichier)
+	{
+		LevelSave.LoadTileMap(nomFichier);
 	}
 }

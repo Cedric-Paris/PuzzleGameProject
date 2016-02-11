@@ -146,7 +146,7 @@ public class LevelSave {
 	/// Load the file at the specified fileName.
 	/// </summary>
 	/// <param name="fileName">File name.</param>
-	public static object Load(string fileName)
+	private static object Load(string fileName)
 	{
 			BinaryFormatter formatter = new BinaryFormatter();
 			FileStream stream = File.Open(pathLevelSaves + "/" + fileName, FileMode.Open);

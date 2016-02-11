@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 /// <summary>
 /// Provides methods to display message boxes for the user.
@@ -17,6 +18,21 @@ public class UIMessageBox : MonoBehaviour {
 		return canvas;
 	}
 
+	public static void ShowMessage(string message)
+	{
+		GameObject g = new GameObject("CanvasMessageBox");
+		Canvas canvas = initializeCanvas(g);
+		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/YesNoMessageBox");
+		messageBox = Instantiate(messageBox);
+		messageBox.transform.SetParent(canvas.transform, false);
+		messageBox.transform.name = "MessageBox";
+		Text textMessage = messageBox.GetComponentInChildren<Text>();
+		textMessage.text = message;
+		Button[] b = messageBox.GetComponentsInChildren<Button>();
+		b[0].onClick.AddListener( ()=> {Destroy(g);});
+		b[0].GetComponentInChildren<Text>().text = "OK";
+		Destroy(b[1].gameObject);
+	}
 
 	/// <summary>
 	/// Displays a message box with Yes and No buttons.
@@ -77,6 +93,42 @@ public class UIMessageBox : MonoBehaviour {
 			Destroy(g);
 			if(callbackFonctionIfClickOk != null)
 				callbackFonctionIfClickOk(userMessage);
+		});
+	}
+
+	public delegate void ShowSelectElementCallback(string valueSelected);
+	public static void ShowSelectElementOnList(List<string> elements, ShowSelectElementCallback callbackFonctionIfValueIsSelected)
+	{
+		GameObject g = new GameObject("CanvasMessageBox");
+		Canvas canvas = initializeCanvas(g);
+		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/SelectListMessageBox");
+		messageBox = Instantiate(messageBox);
+		messageBox.transform.SetParent(canvas.transform, false);
+		messageBox.transform.name = "SelectListMessageBox";
+		Toggle modelToggle = messageBox.GetComponentInChildren<Toggle>();
+		modelToggle.isOn = true;
+		Text textOnToggle = modelToggle.GetComponentInChildren<Text>();
+		foreach(string str in elements)
+		{
+			textOnToggle.text = str;
+			Instantiate(modelToggle.gameObject).transform.SetParent(modelToggle.transform.parent.transform);
+			modelToggle.isOn = false;
+		}
+		ToggleGroup toggleGroup = modelToggle.transform.parent.GetComponent<ToggleGroup>();
+		Destroy(modelToggle.gameObject);
+
+		Button[] b = messageBox.GetComponentsInChildren<Button>();
+		b[0].onClick.AddListener( ()=> {Destroy(g);});
+		b[1].onClick.AddListener( ()=> {
+			Destroy(g);
+			if(callbackFonctionIfValueIsSelected != null)
+			{
+				foreach(Toggle t in toggleGroup.ActiveToggles())
+				{
+					callbackFonctionIfValueIsSelected(t.GetComponentInChildren<Text>().text);
+					break;
+				}
+			}
 		});
 	}
 
