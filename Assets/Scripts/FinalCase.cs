@@ -29,6 +29,8 @@ public class FinalCase : Objectif {
 	/// If there is some objectives to pick, disable the square, else enable it
 	/// </summary>
 	void Update () {
+		if(animator == null)
+			return;
 		if (nbobjectif <= 0) {
 			animator.SetBool("isEnabled", true);
 		}

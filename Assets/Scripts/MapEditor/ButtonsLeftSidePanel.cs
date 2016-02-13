@@ -6,7 +6,7 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	public void OnClickExit()
 	{
-		UIMessageBox.ShowYesNo("Voulez vous vraiment quitter l'éditeur?", ()=>{}, ()=>{});
+		UIMessageBox.ShowYesNo("Voulez vous vraiment quitter l'éditeur?", ()=>{Application.LoadLevel("MenuPrincTemp");}, ()=>{});
 	}
 
 	public void OnClickClear()

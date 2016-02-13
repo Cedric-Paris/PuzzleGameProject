@@ -65,6 +65,8 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		get
 		{
+			if(currentDirection == null)
+				return GO_RIGHT;//Direction by default
 			return currentDirection;
 		}
 		set
@@ -73,7 +75,7 @@ public class PlayerMovementController : MonoBehaviour {
 			OnPlayerDirectionChanging(value);
 		}
 	}
-	private DirectionProperties currentDirection = GO_RIGHT;
+	private DirectionProperties currentDirection;
 	public delegate void DirectionChange(DirectionProperties dir);
 	public event DirectionChange onPlayerDirectionChanging;
 

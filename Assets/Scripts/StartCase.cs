@@ -61,7 +61,7 @@ public class StartCase : Element {
 	/// Create the player with the startDirection, and destroy the StartCase
 	/// </summary>
 	public void Play() {
-		startPlayer=(Player)Instantiate(startPlayer, this.gameObject.transform.position, Quaternion.identity);
+		startPlayer=(Player)Instantiate(startPlayer, this.transform.position, Quaternion.identity);
 		startPlayer.GetComponent<PlayerMovementController>().CurrentDirection = startDirection;
 		Destroy (this.gameObject);
 	}
