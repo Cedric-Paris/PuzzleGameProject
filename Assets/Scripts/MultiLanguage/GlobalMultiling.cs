@@ -60,9 +60,9 @@ public class GlobalMultiling {
 		switch (Application.systemLanguage)
 		{
 			case SystemLanguage.French:
-									CurrentLanguage="en";
+									CurrentLanguage="fr";
 									break;
-			case SystemLanguage.English:
+			default:
 									CurrentLanguage="en";
 									break;
 		}
