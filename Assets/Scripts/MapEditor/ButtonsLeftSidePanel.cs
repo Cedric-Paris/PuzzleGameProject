@@ -6,17 +6,17 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	public void OnClickExit()
 	{
-		UIMessageBox.ShowYesNo("Voulez vous vraiment quitter l'éditeur?", ()=>{Application.LoadLevel("MenuPrincTemp");}, ()=>{});
+		UIMessageBox.ShowYesNo(new GlobalMultiling().getTranslatedValue("@+/Exit?"), ()=>{Application.LoadLevel("MenuPrincTemp");}, ()=>{});
 	}
 
 	public void OnClickClear()
 	{
-		UIMessageBox.ShowYesNo("Toute la carte va etre réinitialisée, voulez-vous continuer?", ()=>{Application.LoadLevel("MapEditorScene");}, ()=>{});
+		UIMessageBox.ShowYesNo(new GlobalMultiling().getTranslatedValue("@+/EditorMessageClear"), ()=>{Application.LoadLevel("MapEditorScene");}, ()=>{});
 	}
 
 	public void OnClickSave()
 	{
-		UIMessageBox.ShowEditText("Saisir un nom de sauvegarde", Save);
+		UIMessageBox.ShowEditText(new GlobalMultiling().getTranslatedValue("@+/EditorSaveName"), Save);
 	}
 
 	private void Save(string nomFichier)
@@ -29,7 +29,7 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 		List<string> fileSaved = LevelSave.GetLevels();
 		if(fileSaved.Count == 0)
 		{
-			UIMessageBox.ShowMessage("Aucune map enregistrée.");
+			UIMessageBox.ShowMessage(new GlobalMultiling().getTranslatedValue("@+/NoMap"));
 			return;
 		}
 		UIMessageBox.ShowSelectElementOnList(fileSaved, Load);

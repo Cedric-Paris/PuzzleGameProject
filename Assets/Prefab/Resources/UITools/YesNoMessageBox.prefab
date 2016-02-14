@@ -508,7 +508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: '@+/Yes'
 --- !u!114 &11466790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,7 +540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: '@+/No'
 --- !u!114 &11468340
 MonoBehaviour:
   m_ObjectHideFlags: 1

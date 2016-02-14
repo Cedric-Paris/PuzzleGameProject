@@ -85,6 +85,48 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &122129793
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 416832, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 123c11253548c2945b11bc466f2175c6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &130199554
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +157,7 @@ RectTransform:
   m_Children:
   - {fileID: 862202653}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -369,7 +411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mode Arcade
+  m_Text: '@+/MenuArcadeMode'
 --- !u!222 &504789718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -907,7 +949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1109223121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Levels
+  m_Text: '@+/MenuLevels'
 --- !u!222 &1683794473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1204,7 +1246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Menu de principal Temporaire Pour les tests
+  m_Text: Menu principal Temporaire Pour les tests
 --- !u!222 &1714176576
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1259,7 +1301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Editeur de Map
+  m_Text: '@+/MenuMapEditor'
 --- !u!222 &1909986942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1356,4 +1398,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3

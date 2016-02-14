@@ -1,3 +1,22 @@
 {
-"test" : "I'm a test."
+    "Yes" : "Yes",
+    "No" : "No",
+    "Cancel" : "Cancel",
+    "Ok" : "OK",
+    "NoMap" : "No map saved.",
+    "EditorMessageClear" : "The map will be reset. Would you like to continue?",
+    "EditorSaveName" : "Enter a save name",
+    "Exit?" : "Are you sure you want to quit?",
+    "Exit" : "Exit",
+    "Squares" : "Squares",
+    "ClearMap" : "Clear Map",
+    "LoadMap" : "Load Map",
+    "SaveMap" : "Save Map",
+    "EditorStartEnd" : "Start / End",
+    "Arrows" : "Arrows",
+    "EditorWaterBridge" : "Water / Bridge",
+    "EditorOthers" : "Others",
+    "MenuLevels" : "Levels",
+    "MenuArcadeMode" : "Arcade mode",
+    "MenuMapEditor" : "Map Editor"    
 }

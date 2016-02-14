@@ -30,7 +30,8 @@ public class UIMessageBox : MonoBehaviour {
 		textMessage.text = message;
 		Button[] b = messageBox.GetComponentsInChildren<Button>();
 		b[0].onClick.AddListener( ()=> {Destroy(g);});
-		b[0].GetComponentInChildren<Text>().text = "OK";
+		GlobalMultiling globalMultiLing = new GlobalMultiling();
+		b[0].GetComponentInChildren<Text>().text = globalMultiLing.getTranslatedValue("@+/Ok");
 		Destroy(b[1].gameObject);
 	}
 
@@ -72,6 +73,8 @@ public class UIMessageBox : MonoBehaviour {
 				actionIfYes();
 			});
 		}
+		GlobalMultiling globalMultiLing = new GlobalMultiling();
+		globalMultiLing.translateForGameObject(messageBox.gameObject);
 	}
 
 	public delegate void ShowEditTextCallback(string userText);
@@ -94,6 +97,8 @@ public class UIMessageBox : MonoBehaviour {
 			if(callbackFonctionIfClickOk != null)
 				callbackFonctionIfClickOk(userMessage);
 		});
+		GlobalMultiling globalMultiLing = new GlobalMultiling();
+		globalMultiLing.translateForGameObject(messageBox.gameObject);
 	}
 
 	public delegate void ShowSelectElementCallback(string valueSelected);
@@ -130,6 +135,8 @@ public class UIMessageBox : MonoBehaviour {
 				}
 			}
 		});
+		GlobalMultiling globalMultiLing = new GlobalMultiling();
+		globalMultiLing.translateForGameObject(messageBox.gameObject);
 	}
 
 }

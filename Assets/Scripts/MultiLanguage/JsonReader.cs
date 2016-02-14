@@ -2,17 +2,11 @@
 using System.Collections;
 using SimpleJSON;
 
-public class JsonReader : MonoBehaviour {
+public class JsonReader {
 
 
 	private JSONNode _json;
 	private Object _jsonFile;
-
-	//Utilisé pour l'initialisation des variables (appelé avant tous les start())
-	void Awake()
-	{
-		GlobalMultiling.jsonReader = this;
-	}
 
 
 	public string ReadValue(string key) {
@@ -25,7 +19,7 @@ public class JsonReader : MonoBehaviour {
 	}
 
 	private void GetJsonFile() {
-		string path = string.Format("Languages/strings_{0}",GlobalMultiling.currentLanguage);
+		string path = string.Format("Languages/strings_{0}",GlobalMultiling.CurrentLanguage);
 		_jsonFile = Resources.Load (path, typeof(object));
 		_json = JSON.Parse (_jsonFile.ToString());
 	}
