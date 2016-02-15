@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DebugScenes/MenuPrincTemp.unity
+    path: Assets/Scenes/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
   - enabled: 1
