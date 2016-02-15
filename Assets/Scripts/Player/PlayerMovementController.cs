@@ -108,6 +108,10 @@ public class PlayerMovementController : MonoBehaviour {
 			transform.position = CurrentDirection.calculFavoritePos(transform.position);
 			CurrentDirection = eTransf.newDirection;
 		}
+		if (eTransf.newPosition != new Vector3())
+		{
+			transform.position = CurrentDirection.calculFavoritePos(eTransf.newPosition);
+		}
 	}
 
 	private void TreatObstacleElement(ElementObserver elementObs)
