@@ -20,13 +20,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: -.419999987
-        outSlope: -.419999987
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       - time: .333333343
-        value: -.140000001
-        inSlope: -.419999987
-        outSlope: -.419999987
+        value: -.200000003
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -38,14 +38,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: .140000001
-        inSlope: -.419999987
-        outSlope: -.419999987
+        value: .200000003
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       - time: .333333343
         value: 0
-        inSlope: -.419999987
-        outSlope: -.419999987
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -97,13 +97,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: -.419999987
-        outSlope: -.419999987
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       - time: .333333343
-        value: -.140000001
-        inSlope: -.419999987
-        outSlope: -.419999987
+        value: -.200000003
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -115,14 +115,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: .140000001
-        inSlope: -.419999987
-        outSlope: -.419999987
+        value: .200000003
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       - time: .333333343
         value: 0
-        inSlope: -.419999987
-        outSlope: -.419999987
+        inSlope: -.599999964
+        outSlope: -.599999964
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2

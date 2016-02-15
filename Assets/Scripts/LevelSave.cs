@@ -135,7 +135,7 @@ public class LevelSave {
 		foreach (string file in System.IO.Directory.GetFiles(pathLevelSaves))
 		{
 			if (file.EndsWith(levelSavesExtension)){
-				string fileName=file.Split('\\').Last();
+				string fileName=file.Split('/').Last();
 				levelList.Add(fileName.Remove(fileName.Length-levelSavesExtension.Length));
 			}
 		}

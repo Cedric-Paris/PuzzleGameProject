@@ -4,6 +4,9 @@ using System.Collections;
 /// <summary>
 /// Used to associate a GameObject sprite to a UI element in the Map Editor menu.
 /// </summary>
+using UnityEngine.UI;
+
+
 public class ElementOnMapEditorMenu : MonoBehaviour {
 
 	/// <summary>
@@ -28,6 +31,8 @@ public class ElementOnMapEditorMenu : MonoBehaviour {
 			return;
 		SpriteRenderer spriteRend = gObject.GetComponent<SpriteRenderer> ();
 		sRenderer.sprite = spriteRend.sprite;
-		rTransform.localScale = new Vector3 (sRenderer.sprite.pixelsPerUnit,sRenderer.sprite.pixelsPerUnit);
+		float val = Screen.width * 0.15f;
+		GetComponentInParent<LayoutElement>().preferredHeight = val;
+		rTransform.localScale = new Vector3 (val, val);
 	}
 }
