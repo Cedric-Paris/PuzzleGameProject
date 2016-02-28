@@ -14,7 +14,7 @@ public class FinalCase : Objectif {
 	/// <summary>
 	/// The animator.
 	/// </summary>
-	private static Animator animator;
+	private Animator animator;
 
 
 	/// <summary>

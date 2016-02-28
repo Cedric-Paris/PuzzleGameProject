@@ -36,6 +36,7 @@ public class EditorGrid : MonoBehaviour {
 		if (gridPosition == this.transform.position)
 			return;
 		this.transform.position = new Vector3 (CalculDemiLePlusProche (camAssociated.transform.position.x), CalculDemiLePlusProche (camAssociated.transform.position.y), this.transform.position.z);
+		gridPosition = this.transform.position;
 	}
 
 	/// <summary>
