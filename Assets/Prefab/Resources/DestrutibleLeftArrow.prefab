@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 429954}
   - 212: {fileID: 21240674}
-  - 114: {fileID: 11455020}
   - 114: {fileID: 11493620}
   - 114: {fileID: 11471252}
   - 60: {fileID: 6061250}
+  - 114: {fileID: 11472272}
   m_Layer: 0
   m_Name: DestrutibleLeftArrow
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 3.5, z: 0}
+  m_LocalPosition: {x: -1.5, y: -0.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,19 +53,6 @@ PolygonCollider2D:
       - {x: 0.22860485, y: -0.064419985}
       - {x: 0.23127931, y: 0.06860471}
       - {x: -0.013487697, y: 0.0656991}
---- !u!114 &11455020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f277c762f2e0d4da26503e3bb6ff1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DraggableElementType: 3
-  elementBase: {fileID: 11493620}
 --- !u!114 &11471252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,6 +64,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56f978f593a2a54f8fa3706d52b98f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11472272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99755545a4e63f448a8e36972473041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementBase: {fileID: 11430636, guid: 1bffb37079f6688419f0fbbb8956a4f0, type: 2}
 --- !u!114 &11493620
 MonoBehaviour:
   m_ObjectHideFlags: 1

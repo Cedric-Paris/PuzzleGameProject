@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 460438}
   - 212: {fileID: 21244976}
-  - 114: {fileID: 11436522}
   - 114: {fileID: 11460094}
   - 114: {fileID: 11444402}
   - 60: {fileID: 6055182}
+  - 114: {fileID: 11439562}
   m_Layer: 0
   m_Name: DestrutibleDownArrow
   m_TagString: Untagged
@@ -53,7 +53,7 @@ PolygonCollider2D:
       - {x: -0.001475513, y: -0.23740983}
       - {x: 0.14740968, y: -0.014098048}
       - {x: 0.062852204, y: -0.012295961}
---- !u!114 &11436522
+--- !u!114 &11439562
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -61,11 +61,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 165576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f277c762f2e0d4da26503e3bb6ff1c, type: 3}
+  m_Script: {fileID: 11500000, guid: c99755545a4e63f448a8e36972473041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DraggableElementType: 2
-  elementBase: {fileID: 11460094}
+  elementBase: {fileID: 11416080, guid: e8051de09829cea448065d13253c4042, type: 2}
 --- !u!114 &11444402
 MonoBehaviour:
   m_ObjectHideFlags: 1

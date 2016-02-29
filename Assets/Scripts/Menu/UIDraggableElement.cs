@@ -8,7 +8,7 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
     // Use this for initialization
     void Start ()
     {
-        this.transform.SetParent(GameObject.Find("Canvas").transform);
+        this.transform.SetParent(GameObject.Find("MenuCanvas").transform);
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(1, 1);
         this.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
 
