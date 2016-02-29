@@ -39,21 +39,22 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174768}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .0115417242, y: .0684585571}
-      - {x: -.225823462, y: .0668113232}
-      - {x: -.225823402, y: -.0579116344}
-      - {x: .0125297904, y: -.0560407639}
-      - {x: .0116468668, y: -.140658855}
-      - {x: .232747078, y: .0028591156}
-      - {x: .233076453, y: .0014295578}
-      - {x: .235494077, y: .00582337379}
-      - {x: .0105465055, y: .150658846}
+    - - {x: 0.011541724, y: 0.06845856}
+      - {x: -0.22582346, y: 0.06681132}
+      - {x: -0.2258234, y: -0.057911634}
+      - {x: 0.01252979, y: -0.056040764}
+      - {x: 0.011646867, y: -0.14065886}
+      - {x: 0.23274708, y: 0.0028591156}
+      - {x: 0.23307645, y: 0.0014295578}
+      - {x: 0.23549408, y: 0.005823374}
+      - {x: 0.010546505, y: 0.15065885}
 --- !u!114 &11433562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,14 +109,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -129,6 +134,10 @@ Prefab:
       objectReference: {fileID: 11433562}
     - target: {fileID: 0}
       propertyPath: DraggableElementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
