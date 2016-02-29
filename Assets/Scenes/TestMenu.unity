@@ -483,7 +483,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -557,32 +557,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409798, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 164674, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
       propertyPath: m_Name
-      value: DestructibleUpArrow (2)
+      value: DestructibleUpArrow
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11499606, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1155929739 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 164674, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
-  m_PrefabInternal: {fileID: 2130488559}
---- !u!114 &1155929740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1155929739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99755545a4e63f448a8e36972473041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elementBase: {fileID: 0}
 --- !u!1 &1406591379
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,22 +774,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d8d3a7bbf5d97b40abe66448d9663b4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1463090879 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 164674, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
-  m_PrefabInternal: {fileID: 1120888411}
---- !u!114 &1463090880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1463090879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99755545a4e63f448a8e36972473041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  elementBase: {fileID: 0}
 --- !u!1 &2092378381
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,13 +935,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409798, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 164674, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
-      propertyPath: m_Name
-      value: DestructibleUpArrow (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11499606, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28838d2d8319c4a40a8d4419f9dd6f88, type: 2}
   m_IsPrefabParent: 0
