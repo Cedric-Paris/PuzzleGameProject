@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SceneLoader : MonoBehaviour {
 	
-	public void loadScene(string scene)
+	public void LoadScene(string scene)
 	{
 		Application.LoadLevel(scene);
 	}
