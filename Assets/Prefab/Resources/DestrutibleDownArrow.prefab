@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11460094}
   - 114: {fileID: 11444402}
   - 60: {fileID: 6055182}
-  - 114: {fileID: 11439562}
+  - 114: {fileID: 11433970}
   m_Layer: 0
   m_Name: DestrutibleDownArrow
   m_TagString: Untagged
@@ -53,7 +53,7 @@ PolygonCollider2D:
       - {x: -0.001475513, y: -0.23740983}
       - {x: 0.14740968, y: -0.014098048}
       - {x: 0.062852204, y: -0.012295961}
---- !u!114 &11439562
+--- !u!114 &11433970
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300002, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

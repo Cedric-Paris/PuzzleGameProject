@@ -11,6 +11,11 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
         this.transform.SetParent(GameObject.Find("MenuCanvas").transform);
         this.GetComponent<RectTransform>().sizeDelta = new Vector2(1, 1);
         this.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
+        Vector3 pos = this.GetComponent<RectTransform>().localPosition;
+        pos.z = -1f;          // Empeche le collider de l'objet de se bloquer à cause du collider du bouton.
+        this.GetComponent<RectTransform>().localPosition = pos;
+
+        Debug.Log("Spawned object : " + this.GetComponent<RectTransform>().localPosition);
 
         _associatedMenuButton = GameObject.Find(GetAssociatedMenuButtonName()).GetComponent<MenuButton>();
     }

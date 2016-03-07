@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11493620}
   - 114: {fileID: 11471252}
   - 60: {fileID: 6061250}
-  - 114: {fileID: 11472272}
+  - 114: {fileID: 11452144}
   m_Layer: 0
   m_Name: DestrutibleLeftArrow
   m_TagString: Untagged
@@ -53,18 +53,7 @@ PolygonCollider2D:
       - {x: 0.22860485, y: -0.064419985}
       - {x: 0.23127931, y: 0.06860471}
       - {x: -0.013487697, y: 0.0656991}
---- !u!114 &11471252
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d56f978f593a2a54f8fa3706d52b98f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11472272
+--- !u!114 &11452144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -76,6 +65,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elementBase: {fileID: 11430636, guid: 1bffb37079f6688419f0fbbb8956a4f0, type: 2}
+--- !u!114 &11471252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56f978f593a2a54f8fa3706d52b98f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11493620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300004, guid: 7e66798bb2a2f284da8c99655b8f56f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
