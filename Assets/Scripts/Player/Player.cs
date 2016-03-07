@@ -46,7 +46,8 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	public void Explode()
 	{
-		Instantiate(explosion, this.transform.position, Quaternion.identity);
+		Explosion e = ((GameObject)Instantiate(explosion, this.transform.position, Quaternion.identity) ).GetComponent<Explosion>();
+		e.onAnimationFinished += () => SceneLevelManager.main.ReloadCurrentScene();
 		Destroy(this.gameObject);
 	}
 

@@ -130,6 +130,7 @@ public class PlayerMovementController : MonoBehaviour {
 	private void OnPlayerWin()
 	{
 		this.speed = 0;
+		SceneLevelManager.main.LoadNextScene();
 	}
 
 	/// <summary>

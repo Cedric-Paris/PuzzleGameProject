@@ -9,8 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 434740}
   - 212: {fileID: 21218136}
+  - 114: {fileID: 11485884}
   - 114: {fileID: 11480962}
   - 60: {fileID: 6053434}
+  - 114: {fileID: 11450822}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.49000001, y: 3.46000004, z: 0}
+  m_LocalPosition: {x: 12.7091179, y: 6.64882517, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,6 +54,18 @@ PolygonCollider2D:
       - {x: -.230000004, y: -.129999995}
       - {x: .193061709, y: -.129999995}
       - {x: .191825032, y: -.0477526188}
+--- !u!114 &11450822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99755545a4e63f448a8e36972473041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementBase: {fileID: 0}
 --- !u!114 &11480962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,6 +77,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193149e4494615340b64b035e0a399c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11485884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64cdf318c13ef747bacd31f481c235b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementBase: {fileID: 11480962}
 --- !u!212 &21218136
 SpriteRenderer:
   m_ObjectHideFlags: 1
