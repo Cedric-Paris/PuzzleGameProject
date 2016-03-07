@@ -131,6 +131,7 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		this.speed = 0;
 		SceneLevelManager.main.LoadNextScene();
+		Destroy(this.gameObject);
 	}
 
 	/// <summary>

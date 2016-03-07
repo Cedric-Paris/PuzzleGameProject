@@ -29,6 +29,7 @@ public class MapGenerator : MonoBehaviour {
 	public void GenerateEmpty(int hauteurArg, int largeurArg, bool stockReferences = false)
 	{
 		Square[,] tab = new Square[hauteurArg, largeurArg];
+		this.transform.position = new Vector3(0.5f,0.5f,0);
 		for (int i= 0; i<hauteurArg; i++)
 		{
 			for(int j = 0; j<largeurArg; j++)

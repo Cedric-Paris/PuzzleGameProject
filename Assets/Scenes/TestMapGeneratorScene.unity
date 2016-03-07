@@ -171,6 +171,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &791397084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 791397086}
+  - 114: {fileID: 791397085}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &791397085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791397084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea360165a0a435499ed5024786d5b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousScene: 
+  nextScene: 
+  currentScene: 
+  mapGeneratorPrefab: {fileID: 134936, guid: af73d6158c0ec1f4fad9d9685aadd51c, type: 2}
+  currentMapGenerated: {fileID: 1911001531}
+--- !u!4 &791397086
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791397084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.77261209, y: 4.79767704, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1001 &1432900337
 Prefab:
   m_ObjectHideFlags: 0
@@ -210,6 +254,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11434272, guid: af73d6158c0ec1f4fad9d9685aadd51c, type: 2}
+      propertyPath: nbChangementDirection
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af73d6158c0ec1f4fad9d9685aadd51c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1911001531 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 134936, guid: af73d6158c0ec1f4fad9d9685aadd51c, type: 2}
+  m_PrefabInternal: {fileID: 1432900337}
