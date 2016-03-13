@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 1.5, y: .5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,22 +39,21 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175014}
   m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: 0.24081445, y: -0.036153793}
-      - {x: 0.24280071, y: 0.11415744}
-      - {x: -0.1835686, y: 0.11081445}
-      - {x: -0.18631983, y: -0.0545249}
-      - {x: -0.24081457, y: -0.058371067}
-      - {x: -0.25, y: -0.12}
-      - {x: -0.23, y: -0.13}
-      - {x: 0.19306171, y: -0.13}
-      - {x: 0.19182503, y: -0.04775262}
+    - - {x: .240814447, y: -.0361537933}
+      - {x: .242800713, y: .114157438}
+      - {x: -.183568597, y: .110814452}
+      - {x: -.186319828, y: -.0545248985}
+      - {x: -.240814567, y: -.058371067}
+      - {x: -.25, y: -.119999997}
+      - {x: -.230000004, y: -.129999995}
+      - {x: .193061709, y: -.129999995}
+      - {x: .191825032, y: -.0477526188}
 --- !u!114 &11418924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,18 +107,14 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: ad4983908cf5df349a8df3c52e4fe644, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -132,6 +127,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11480962, guid: 8fd4347d25e6bc34ca0acb4ac97b4bd8,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 175014}
