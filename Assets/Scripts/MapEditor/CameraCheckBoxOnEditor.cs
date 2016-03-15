@@ -51,6 +51,7 @@ public class CameraCheckBoxOnEditor : MonoBehaviour {
 	/// </summary>
 	private void OnToggleUnCheck()
 	{
+		PositionData.UpdatePositions();
 		camManager.enabled = false;
 		SelectElementOnEditorMenu.enableTileSet = true;
 		if (SelectElementOnEditorMenu.currentButton == null)

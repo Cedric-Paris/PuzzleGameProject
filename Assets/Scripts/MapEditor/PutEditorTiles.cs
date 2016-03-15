@@ -39,6 +39,8 @@ public class PutEditorTiles : MonoBehaviour {
 			worldPos.x = CalculDemiLePlusProche(worldPos.x);
 			worldPos.y = CalculDemiLePlusProche(worldPos.y);
 			worldPos.z = 0;
+			if(!PositionData.IsPositionAllowed(worldPos))
+				return;
 			if(SelectElementOnEditorMenu.selectedObject.GetComponent<Square>() != null)
 			{
 				if(baseTilesAlreadySet.Contains(worldPos))
