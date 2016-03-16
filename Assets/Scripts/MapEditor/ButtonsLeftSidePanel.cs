@@ -21,7 +21,7 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	private void Save(string nomFichier)
 	{
-		LevelSave.SaveTileMap(nomFichier);
+		LevelSave.SaveTileMap(nomFichier, null);
 	}
 
 	public void OnClickLoad()

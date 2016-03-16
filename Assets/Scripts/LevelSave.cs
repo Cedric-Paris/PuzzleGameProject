@@ -37,38 +37,28 @@ public class LevelSave {
 	/// Saves in a file the tile map of the scene using the serializable object TileMapSave.
 	/// </summary>
 	/// <param name="fileName">Name of the file where the level will be save.</param>
-	/// <param name="debug">If set to <c>true</c> display the list of all the elements saved in the console.</param>
-	public static void SaveTileMap(string fileName, bool debug=false){
+	/// <param name="items">Items that are availables in the level</param>
+	public static void SaveTileMap(string fileName, Dictionary<string, int> items){
 		TileMapSave tSave = new TileMapSave();
 		GameObject[] tilemap=GameObject.FindGameObjectsWithTag("TileMap");
 		foreach (Transform child in tilemap[0].transform)
 			tSave.addSquare(child);
+		tSave.items=items;
 
 		Save(tSave, fileName+levelSavesExtension);
 		
-		//Debug
-		if (debug) {
-			string texte="ElementList saved in "+pathLevelSaves+"/"+fileName+levelSavesExtension+": ";
-			foreach(var square in tSave.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   "; }
-			Debug.Log(texte);
-		}
+
 	}
 
 	/// <summary>
 	/// Read a level in a file and create the elements in it with the SquareInstanciation méthode
 	/// </summary>
+	/// <returns> Return the availables items for the loaded level</returns>
 	/// <param name="fileName">File name.</param>
-	/// <param name="debug">If set to <c>true</c> display the list of all the elements loaded in the console</param>
-	public static void LoadTileMap(string fileName, bool debug=false){
+	public static Dictionary<string, int> LoadTileMap(string fileName){
 
 		
 		TileMapSave tLoad = (TileMapSave) Load(fileName+levelSavesExtension);
-
-		if (debug) {
-			string texte="ElementList that will be load from "+pathLevelSaves+fileName+levelSavesExtension+": ";
-			foreach(var square in tLoad.squareList) { texte+=square.Value+" - "+square.Key.getVector3()+";   " ; }
-			Debug.Log(texte);
-		}
 
 		GameObject tileMap = GameObject.FindGameObjectsWithTag("TileMap")[0];
 		foreach (Transform child in tileMap.transform) {
@@ -77,9 +67,8 @@ public class LevelSave {
 		foreach (var square in tLoad.squareList){
 			SquareInstanciation(square, tileMap);
 		}
-		if (debug) {
-			Debug.Log("Successfuly loaded");
-		}
+
+		return tLoad.items;
 	}
 
 

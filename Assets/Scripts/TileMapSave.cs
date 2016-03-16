@@ -16,6 +16,8 @@ public class TileMapSave{
 	/// </summary>
 	public Dictionary<Vector3Save, string> squareList = new Dictionary<Vector3Save, string>();
 
+	public Dictionary<string, int> items;
+
 	/// <summary>
 	/// Adds a square to the squareList.
 	/// </summary>
