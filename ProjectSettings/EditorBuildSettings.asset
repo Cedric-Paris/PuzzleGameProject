@@ -31,3 +31,5 @@ EditorBuildSettings:
     path: Assets/Scenes/DebugScenes/LevelsMenuTemp.unity
   - enabled: 1
     path: Assets/Scenes/MapEditor/MapEditorScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MapEditor/EmptySceneWithMenu.unity

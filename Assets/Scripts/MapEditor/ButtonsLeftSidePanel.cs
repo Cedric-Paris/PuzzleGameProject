@@ -21,6 +21,7 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 
 	private void Save(string nomFichier)
 	{
+		nomFichier = nomFichier.Replace("/","").Replace(".","-");
 		LevelSave.SaveTileMap(nomFichier, null);
 	}
 

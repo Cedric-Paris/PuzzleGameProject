@@ -9,7 +9,7 @@ public class FinalCase : Objectif {
 	/// <summary>
 	/// The number of Objectifs to pick to activate the Square
 	/// </summary>
-	public static int nbobjectif;
+	public static int nbobjectif = 0;
 
 	/// <summary>
 	/// The animator.
@@ -66,6 +66,11 @@ public class FinalCase : Objectif {
 			effect.isWinner = true;
 		}
 		return effect;
+	}
+
+	void OnLevelWasLoaded(int level)
+	{
+		nbobjectif = 0;
 	}
 
 }

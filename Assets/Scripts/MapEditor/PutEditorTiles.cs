@@ -18,10 +18,7 @@ public class PutEditorTiles : MonoBehaviour {
 	/// </summary>
 	private List<Vector3> elementTilesAlreadySet = new List<Vector3>();
 	public List<Vector3> getElementTiles() { return elementTilesAlreadySet; }
-
-	public float xMaximumEnPartantDroite;//devra etre géré tout seul plus tard
-
-	//TRAITER CAS BOUTON POUR PAS AFFICHER
+	
 	/// <summary>
 	/// Called every frame, if the MonoBehaviour is enabled.
 	/// Check the current touches on the screen and places the selected item on the editor menu on the scene at every touch position
@@ -33,14 +30,14 @@ public class PutEditorTiles : MonoBehaviour {
 		Vector3 worldPos;
 		GameObject instancePrefab;
 		foreach (Touch t in Input.touches) {
-			if(t.position.x > Screen.width - xMaximumEnPartantDroite)
-				continue;
 			worldPos = c.ScreenToWorldPoint(t.position);
 			worldPos.x = CalculDemiLePlusProche(worldPos.x);
 			worldPos.y = CalculDemiLePlusProche(worldPos.y);
 			worldPos.z = 0;
 			if(!PositionData.IsPositionAllowed(worldPos))
-				return;
+			{
+				continue;
+			}
 			if(SelectElementOnEditorMenu.selectedObject.GetComponent<Square>() != null)
 			{
 				if(baseTilesAlreadySet.Contains(worldPos))
