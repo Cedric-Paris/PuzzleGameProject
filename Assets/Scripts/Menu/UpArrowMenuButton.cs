@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 /// <summary>
-/// The UpArrowUIMenuButton is a <see cref="MenuButton"/>. Its use is to specify which elements are bound to the <see cref="MenuButton"/> for the Up Arrow.
+/// The UpArrowMenuButton is a <see cref="MenuButton"/>. Its use is to specify which elements are bound to the <see cref="MenuButton"/> for the Up Arrow.
 /// </summary>
 public class UpArrowMenuButton : MenuButton
 {

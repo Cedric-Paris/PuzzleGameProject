@@ -4,8 +4,8 @@ using System.Collections;
 /// <summary>
 /// The UpArrowUIDraggableElement is a <see cref="UIDraggableElement"/>. Its use is to specify which elements are bound to the <see cref="UIDraggableElement"/> for the Up Arrow.
 /// </summary>
-public class UpArrowUIDraggableElement : UIDraggableElement {
-
+public class UpArrowUIDraggableElement : UIDraggableElement
+{
     /// <summary>
     /// Informs which Element the <see cref="UIDraggableElement"/> has to spawn.
     /// </summary>

@@ -2,9 +2,9 @@
 using System.Collections;
 
 /// <summary>
-/// The LeftArrowUIDraggableElement is a <see cref="UIDraggableElement"/>. Its use is to specify which elements are bound to the <see cref="UIDraggableElement"/> for the Left Arrow.
+/// The JumpUIDraggableElement is a <see cref="UIDraggableElement"/>. Its use is to specify which elements are bound to the <see cref="UIDraggableElement"/> for the Jump movement.
 /// </summary>
-public class LeftArrowUIDraggableElement : UIDraggableElement
+public class JumpUIDraggableElement : UIDraggableElement
 {
     /// <summary>
     /// Informs which Element the <see cref="UIDraggableElement"/> has to spawn.
@@ -12,7 +12,7 @@ public class LeftArrowUIDraggableElement : UIDraggableElement
     /// <returns>The Base Element the <see cref="UIDraggableElement"/> has to spawn</returns>
     protected override DraggableElement GetElementBase()
     {
-        return ((GameObject)Resources.Load("DestrutibleLeftArrow")).GetComponent<DraggableElement>();
+        return ((GameObject)Resources.Load("DestructibleJump")).GetComponent<DraggableElement>();
     }
 
     /// <summary>
@@ -21,6 +21,6 @@ public class LeftArrowUIDraggableElement : UIDraggableElement
     /// <returns>The name of the button associated with the <see cref="UIDraggableElement"/>.</returns>
     protected override string GetAssociatedMenuButtonName()
     {
-        return "LeftArrowIcon";
+        return "JumpIcon";
     }
 }
