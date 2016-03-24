@@ -18,5 +18,6 @@
     "EditorOthers" : "Others",
     "MenuLevels" : "Levels",
     "MenuArcadeMode" : "Arcade mode",
-    "MenuMapEditor" : "Map Editor"    
+    "MenuMapEditor": "Map Editor",
+    "MenuOptions" : "Options"
 }

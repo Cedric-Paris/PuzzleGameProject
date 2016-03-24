@@ -633,7 +633,7 @@ GameObject:
   - 114: {fileID: 205949878}
   - 114: {fileID: 205949877}
   m_Layer: 5
-  m_Name: OtherButton
+  m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2131,7 +2131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '@+/MenuOptions'
 --- !u!222 &915942771
 CanvasRenderer:
   m_ObjectHideFlags: 0
