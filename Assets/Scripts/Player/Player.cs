@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	/// The GameObject used when the player explode.
 	/// </summary>
 	public GameObject explosion;
+	public GameObject splashWater;
 
 	/// <summary>
 	/// Processing performed by Unity when an instance is created.
@@ -48,6 +49,13 @@ public class Player : MonoBehaviour {
 	{
 		Explosion e = ((GameObject)Instantiate(explosion, this.transform.position, Quaternion.identity) ).GetComponent<Explosion>();
 		e.onAnimationFinished += () => SceneLevelManager.main.ReloadCurrentScene();
+		Destroy(this.gameObject);
+	}
+
+	public void FallInWater()
+	{
+		Explosion splash = ((GameObject)Instantiate(splashWater, this.transform.position, Quaternion.identity) ).GetComponent<Explosion>();
+		splash.onAnimationFinished += () => SceneLevelManager.main.ReloadCurrentScene();
 		Destroy(this.gameObject);
 	}
 

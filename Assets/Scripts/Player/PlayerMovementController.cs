@@ -103,6 +103,10 @@ public class PlayerMovementController : MonoBehaviour {
 			OnPlayerWin ();
 			return;
 		}
+		if (eTransf.isWater && playerAssociated!=null)
+		{
+			playerAssociated.FallInWater();
+		}
 		if (eTransf.newDirection != null)
 		{
 			transform.position = CurrentDirection.calculFavoritePos(transform.position);

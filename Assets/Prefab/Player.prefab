@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 142328, guid: 62b6a4b41aba2274497e5a9f9907851f, type: 2}
+  splashWater: {fileID: 136122, guid: 4e6aba91016327f4eaf36ca083c6bb40, type: 2}
 --- !u!114 &11423638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +264,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: splashWater
+      value: 
+      objectReference: {fileID: 136122, guid: 4e6aba91016327f4eaf36ca083c6bb40, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188176}
