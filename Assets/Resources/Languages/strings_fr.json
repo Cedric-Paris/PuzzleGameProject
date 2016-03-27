@@ -19,5 +19,7 @@
     "MenuLevels" : "Niveaux",
     "MenuArcadeMode" : "Mode Arcade",
     "MenuMapEditor" : "Editeur de Map",
-    "MenuOptions" : "Options"
+    "MenuOptions" : "Options",
+    "Volume": "Volume des musiques et sons",
+    "Retour" :  "Retour"
 }

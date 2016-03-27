@@ -34,7 +34,18 @@ public class SoundControl : MonoBehaviour {
 		} else {
 			audio_music.mute = true;
 		}
-
 	}
+
+    public void SetVolume(float volume)
+    {
+        if (volume < 0) volume = 0;
+        if (volume > 1) volume = 1;
+        audio_music.volume = volume;
+    }
+
+    public float GetVolume()
+    {
+        return audio_music.volume;
+    }
 	//End of Region
 }

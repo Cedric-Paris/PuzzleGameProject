@@ -89,7 +89,7 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
 
         Instantiate(GetElementBase(), favoritePosition, Quaternion.identity);
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -111,6 +111,15 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
         if (value < 0)
             return ((int)value) - 0.5f;
         return ((int)value) + 0.5f;
+    }
+
+    /// <summary>
+    /// Returns the UIDraggableElement to its original place.
+    /// </summary>
+    private void UndoMoveUIDraggableElement()
+    {
+        _associatedMenuButton.UpElementCount();
+        Destroy(gameObject);
     }
 
     /// <summary>
