@@ -17,6 +17,7 @@ public class MenuGameAdapter : MonoBehaviour {
 	public GameObject menuCanvas;
 
 	public bool firstTime = true;
+	public bool needToInverse = true;
 
 	public void adaptMenu(StartCase startCase, Dictionary<string, int> actions)
 	{
@@ -29,13 +30,29 @@ public class MenuGameAdapter : MonoBehaviour {
 		{
 			playButton.onClick.AddListener( () => startCase.Play() );
 		}
-		downArrowMenuButton.ElementCount = actions["UpArrow"];
-		upArrowMenuButton.ElementCount = actions["DownArrow"];
+		if(needToInverse)
+		{
+			downArrowMenuButton.ElementCount = actions["UpArrow"];
+			upArrowMenuButton.ElementCount = actions["DownArrow"];
+		}
+		else
+		{
+			downArrowMenuButton.ElementCount = actions["DownArrow"];
+			upArrowMenuButton.ElementCount = actions["UpArrow"];
+		}
 		leftArrowMenuButton.ElementCount = actions["LeftArrow"];
 		rightArrowMenuButton.ElementCount = actions["RightArrow"];
 
-		downArrowCount.text = "x "+actions["UpArrow"];
-		upArrowCount.text = "x "+actions["DownArrow"];
+		if(needToInverse)
+		{
+			downArrowCount.text = "x "+actions["UpArrow"];
+			upArrowCount.text = "x "+actions["DownArrow"];
+		}
+		else
+		{
+			downArrowCount.text = "x "+actions["DownArrow"];
+			upArrowCount.text = "x "+actions["UpArrow"];
+		}
 		leftArrowCount.text = "x "+actions["LeftArrow"];
 		rightArrowCount.text = "x "+actions["RightArrow"];
 		if(firstTime)

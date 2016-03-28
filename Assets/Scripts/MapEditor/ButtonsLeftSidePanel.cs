@@ -39,5 +39,7 @@ public class ButtonsLeftSidePanel : MonoBehaviour {
 	private void Load(string nomFichier)
 	{
 		LevelSave.LoadTileMap(nomFichier);
+		PutEditorTiles putTiles = GameObject.FindGameObjectWithTag("TileMap").GetComponent<PutEditorTiles>();
+		putTiles.RefreshPosition();
 	}
 }

@@ -63,6 +63,20 @@ public class PutEditorTiles : MonoBehaviour {
 		}
 	}
 
+	public void RefreshPosition()
+	{
+		baseTilesAlreadySet = new List<Vector3>();
+		elementTilesAlreadySet = new List<Vector3>();
+		GameObject tileMap = GameObject.FindGameObjectWithTag("TileMap");
+		foreach (Transform child in tileMap.transform)
+		{
+			if(child.gameObject.GetComponent<Square>() != null)
+				baseTilesAlreadySet.Add (child.position);
+			else
+				elementTilesAlreadySet.Add(child.position);
+		}
+	}
+
 	/// <summary>
 	/// Calculate the number in .5 nearest to the value passed as argument.
 	/// </summary>

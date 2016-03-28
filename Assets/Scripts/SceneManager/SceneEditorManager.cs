@@ -10,11 +10,13 @@ public class SceneEditorManager : SceneManager {
 	
 	public override void ReloadCurrentScene()
 	{
-
+		Application.LoadLevel(currentScene);
 	}
 	
 	public override void LoadPreviousScene()
 	{
-
+		SceneReloader.needToBeReload = true;
+		Application.LoadLevel(previousScene);
+		Debug.Log ("Temp");
 	}
 }

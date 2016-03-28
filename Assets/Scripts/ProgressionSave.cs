@@ -23,7 +23,7 @@ public class ProgressionSave : MonoBehaviour
 			return;
 		PlayerPrefs.SetInt("ScoreLevel"+currentlevel, score);
 		int lastLevelN = PlayerPrefs.GetInt("Last Unlocked Level");
-		if(lastLevelN < currentlevel)
+		if(lastLevelN <= currentlevel)
 		{
 			PlayerPrefs.SetInt("Last Unlocked Level", currentlevel+1);
 		}
