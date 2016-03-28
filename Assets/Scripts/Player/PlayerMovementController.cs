@@ -86,8 +86,8 @@ public class PlayerMovementController : MonoBehaviour {
 	/// Called every frame, if the MonoBehaviour is enabled.
 	/// Apply the effects of the encountered elements and moves the player.
 	/// </summary>
-	void Update () {
-		Debug.Log ("--------------------------------------------------------");
+	void Update ()
+	{
 		if(isJumping)
 			CheckJumpState();
 		if (! obstacleElement.isTreated)
@@ -111,7 +111,6 @@ public class PlayerMovementController : MonoBehaviour {
 		}
 		if(eTransf.isStartingJump)
 		{
-			Debug.Log ("Is Starting Jump");
 			OnPlayerJump();
 		}
 		if (eTransf.isWater && playerAssociated!=null)
@@ -135,7 +134,6 @@ public class PlayerMovementController : MonoBehaviour {
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
 		if(isJumping && !eTransf.isTall)
 		{
-			Debug.Log ("RETURNING");
 			return;
 		}
 		TreatmentIfObstacle (eTransf);
@@ -143,7 +141,6 @@ public class PlayerMovementController : MonoBehaviour {
 
 	private void TreatmentIfObstacle(EffectTransformation eTransf)
 	{
-		Debug.Log ("TREATING OBSTACLE");
 		if (eTransf.isObstacle && playerAssociated!=null)
 			playerAssociated.Explode();
 	}
@@ -152,12 +149,12 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		this.speed = 0;
 		SceneLevelManager.main.LoadNextScene();
+		ProgressionSave.LevelFinish(3);
 		Destroy(this.gameObject);
 	}
 
 	private void OnPlayerJump()
 	{
-		Debug.Log ("Start Jump");
 		this.isJumping = true;
 		Vector3 currentPosition = CurrentDirection.calculFavoritePos(this.transform.position);
 		currentPosition.x += CurrentDirection.direction.x * 2;
@@ -185,7 +182,6 @@ public class PlayerMovementController : MonoBehaviour {
 
 	private void OnPlayerEndJump()
 	{
-		Debug.Log ("End Jump");
 		this.isJumping = false;
 		playerAssociated.OnPlayerEndJump();
 	}

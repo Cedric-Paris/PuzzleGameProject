@@ -4,38 +4,34 @@ using System.Collections;
 /// <summary>
 /// Tempory class to save the level progression.
 /// </summary>
-public class TestSauvegarde2 : MonoBehaviour
+public class ProgressionSave : MonoBehaviour
 {
-	/// <summary>
-	/// The currentlevel.
-	/// </summary>
-	public int currentlevel;
 
+	public static int currentlevel = -1;
 
-	/// <summary>
-	/// .
-	/// </summary>
-	void Start ()
-	{	
-		Debug.Log ("Ceci est un test de Sauvegarde");
-		Debug.Log (PlayerPrefs.GetInt("LevelComplete"));
-		if (PlayerPrefs.GetInt ("Level Complete") > 0) {
-			currentlevel = PlayerPrefs.GetInt ("Level Complete");
-		} else {
-			currentlevel = 0;
-		}
-		Application.LoadLevel (currentlevel);
-		if (currentlevel < 10) {
-			currentlevel= currentlevel + 1;
-			PlayerPrefs.SetInt ("Level Complete", currentlevel);
-		} else {
-			print ("This is the End!!!");
-		}
-
-	}
-	
-	void Update ()
+	void Awake()
 	{
-	
+		if(! PlayerPrefs.HasKey("Last Unlocked Level"))
+		{
+			initialiseProgression();
+		}
+	}
+
+	public static void LevelFinish(int score)
+	{
+		if(currentlevel < 0)
+			return;
+		PlayerPrefs.SetInt("ScoreLevel"+currentlevel, score);
+		int lastLevelN = PlayerPrefs.GetInt("Last Unlocked Level");
+		if(lastLevelN < currentlevel)
+		{
+			PlayerPrefs.SetInt("Last Unlocked Level", currentlevel+1);
+		}
+		currentlevel = -1;
+	}
+
+	private void initialiseProgression()
+	{
+		PlayerPrefs.SetInt("Last Unlocked Level", 1);
 	}
 }
