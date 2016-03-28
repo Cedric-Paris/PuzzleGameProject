@@ -11,6 +11,8 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
     /// The <see cref="MenuButton"/> associated with this UIDraggableElement, the one the UIDraggableElement is on top of.
     /// </summary>
     private MenuButton _associatedMenuButton;
+	private Vector3 startPosition;
+	private bool isDragging;
 
     /// <summary>
     /// Initializes the UIDraggableElement.
@@ -60,6 +62,11 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
     /// </summary>
     public void OnMouseDrag()
     {
+		if(!isDragging)
+		{
+			startPosition = this.transform.position;
+			isDragging = true;
+		}
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         mousePos.z = 0;
         this.transform.position = mousePos;
@@ -83,12 +90,21 @@ public abstract class UIDraggableElement : MonoBehaviour, Draggable
     /// </summary>
     public void OnMouseDrop()
     {
+		isDragging = false;
         Vector3 favoritePosition = new Vector3(0, 0, 0);
         favoritePosition.x = CalculDemiLePlusProche(this.transform.position.x);
         favoritePosition.y = CalculDemiLePlusProche(this.transform.position.y);
+		Vector3 tempPosition = new Vector3(favoritePosition.x - 3, favoritePosition.y - 3, -3f);
+        GameObject o = Instantiate(GetElementBase().gameObject, tempPosition, Quaternion.identity) as GameObject;
 
-        Instantiate(GetElementBase(), favoritePosition, Quaternion.identity);
-
+		if(! o.GetComponent<Element>().ElementCanBePlacedHere(favoritePosition))
+		{
+			o.transform.position = startPosition;
+		}
+		else
+		{
+			o.transform.position = favoritePosition;
+		}
         Destroy(gameObject);
     }
 

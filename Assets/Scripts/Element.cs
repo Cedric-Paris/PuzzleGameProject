@@ -25,8 +25,10 @@ public class Element : MonoBehaviour {
 		foreach (Collider2D col in Physics2D.OverlapCircleAll(position, 0.15f)) 
 		{
 			if( col.gameObject.GetComponent<Element>() != null)
+			{
 				elementFound = true;
-		}
+			Debug.Log (col.gameObject.name);
+			}}
 		position.z = position.z + 0.2f;
 		foreach (Collider col in Physics.OverlapSphere(position, 0.15f))
 		{
