@@ -79,11 +79,17 @@ public class PlayerMovementController : MonoBehaviour {
 	public delegate void DirectionChange(DirectionProperties dir);
 	public event DirectionChange onPlayerDirectionChanging;
 
+	private bool isJumping;
+	private Vector3 posEndJump;
+
 	/// <summary>
 	/// Called every frame, if the MonoBehaviour is enabled.
 	/// Apply the effects of the encountered elements and moves the player.
 	/// </summary>
 	void Update () {
+		Debug.Log ("--------------------------------------------------------");
+		if(isJumping)
+			CheckJumpState();
 		if (! obstacleElement.isTreated)
 			TreatObstacleElement(obstacleElement);
 		if ((!currentElement.isTreated) && CurrentDirection.squareCanBeTreat(transform.position))
@@ -95,13 +101,18 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		elementObs.isTreated = true;
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect(true);
-		if (! eTransf.isChangingSomething)
+		if (isJumping || !eTransf.isChangingSomething)
 			return;
 		TreatmentIfObstacle(eTransf);//Evite Un cas de bug ou on passerait sur un obstacle
 		if (eTransf.isWinner)
 		{
 			OnPlayerWin ();
 			return;
+		}
+		if(eTransf.isStartingJump)
+		{
+			Debug.Log ("Is Starting Jump");
+			OnPlayerJump();
 		}
 		if (eTransf.isWater && playerAssociated!=null)
 		{
@@ -122,11 +133,17 @@ public class PlayerMovementController : MonoBehaviour {
 	{
 		elementObs.isTreated = true;
 		EffectTransformation eTransf = elementObs.ElementDetected.Effect();
+		if(isJumping && !eTransf.isTall)
+		{
+			Debug.Log ("RETURNING");
+			return;
+		}
 		TreatmentIfObstacle (eTransf);
 	}
 
 	private void TreatmentIfObstacle(EffectTransformation eTransf)
 	{
+		Debug.Log ("TREATING OBSTACLE");
 		if (eTransf.isObstacle && playerAssociated!=null)
 			playerAssociated.Explode();
 	}
@@ -136,6 +153,41 @@ public class PlayerMovementController : MonoBehaviour {
 		this.speed = 0;
 		SceneLevelManager.main.LoadNextScene();
 		Destroy(this.gameObject);
+	}
+
+	private void OnPlayerJump()
+	{
+		Debug.Log ("Start Jump");
+		this.isJumping = true;
+		Vector3 currentPosition = CurrentDirection.calculFavoritePos(this.transform.position);
+		currentPosition.x += CurrentDirection.direction.x * 2;
+		currentPosition.y += CurrentDirection.direction.y * 2;
+		posEndJump = currentPosition;
+
+		playerAssociated.OnPlayerJump();
+
+	}
+
+	private void CheckJumpState()
+	{
+		bool end = false;
+		if(CurrentDirection == GO_UP && (this.transform.position.y >= posEndJump.y))
+			end = true;
+		if(CurrentDirection == GO_DOWN && (this.transform.position.y <= posEndJump.y))
+			end = true;
+		if(CurrentDirection == GO_RIGHT && (this.transform.position.x >= posEndJump.x))
+			end = true;
+		if(CurrentDirection == GO_LEFT && (this.transform.position.x <= posEndJump.x))
+			end = true;
+		if(end)
+			OnPlayerEndJump();
+	}
+
+	private void OnPlayerEndJump()
+	{
+		Debug.Log ("End Jump");
+		this.isJumping = false;
+		playerAssociated.OnPlayerEndJump();
 	}
 
 	/// <summary>
@@ -149,5 +201,12 @@ public class PlayerMovementController : MonoBehaviour {
 		BoxCollider2D bc = obstacleElement.GetComponent<BoxCollider2D>();
 		if (bc != null)
 			bc.size = dir.posObstacleObserver;
+	}
+
+	private float CalculDemiLePlusProche(float value)
+	{
+		if (value < 0)
+			return ((int)value) - 0.5f;
+		return ((int)value) + 0.5f;
 	}
 }

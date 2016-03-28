@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468746}
   - 212: {fileID: 21256252}
-  - 114: {fileID: 11410984}
+  - 114: {fileID: 11452390}
   - 60: {fileID: 6037356}
   m_Layer: 0
   m_Name: Mountain
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.51100016, y: 3.49900007, z: 0}
+  m_LocalPosition: {x: 5.5, y: 4.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,15 +43,15 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: .00221252441, y: .248558998}
-      - {x: -.0847258568, y: .1357584}
-      - {x: -.240718365, y: -.0742508173}
-      - {x: -.242225647, y: -.24533546}
-      - {x: .242575645, y: -.25}
-      - {x: .242339849, y: -.0651733875}
-      - {x: .0901043415, y: .137563467}
-      - {x: .0408923626, y: .25006628}
---- !u!114 &11410984
+    - - {x: .00999379158, y: .225214481}
+      - {x: -.0847258568, y: .112413883}
+      - {x: -.221264601, y: -.117048979}
+      - {x: -.203318119, y: -.233663321}
+      - {x: .227012873, y: -.226655483}
+      - {x: .222886324, y: -.0768456459}
+      - {x: .0745413303, y: .14145422}
+      - {x: .0136573315, y: .226721764}
+--- !u!114 &11452390
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 101212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f0dd5f60e5730438a2f773a967f2b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 240748438bb40ed49b2ebe260b5668bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21256252

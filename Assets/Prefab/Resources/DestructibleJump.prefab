@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 405406}
   - 212: {fileID: 21236064}
+  - 114: {fileID: 11468144}
   - 114: {fileID: 11418924}
   - 60: {fileID: 6061340}
-  - 114: {fileID: 11468144}
   - 114: {fileID: 11469384}
   m_Layer: 0
   m_Name: DestructibleJump
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64cdf318c13ef747bacd31f481c235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elementBase: {fileID: 11468144}
+  elementBase: {fileID: 11418924}
 --- !u!114 &11469384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,8 +125,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: elementBase
       value: 
-      objectReference: {fileID: 11480962, guid: 8fd4347d25e6bc34ca0acb4ac97b4bd8,
-        type: 2}
+      objectReference: {fileID: 11418924}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 10

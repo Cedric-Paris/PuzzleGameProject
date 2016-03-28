@@ -29,6 +29,11 @@ public class EffectTransformation {
     public bool isObstacle;
 
 	/// <summary>
+	/// Indicate whether the element encountered is tall. If it is the case the player can't jump over.
+	/// </summary>
+	public bool isTall;
+
+	/// <summary>
 	/// Indicate whether the element encountered is water.
 	/// </summary>
 	public bool isWater;

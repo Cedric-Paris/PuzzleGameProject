@@ -66,4 +66,14 @@ public class Player : MonoBehaviour {
 	public void setAnimation(int anim){
 		animator.SetInteger ("AnimState", anim);
 	}
+
+	public void OnPlayerJump()
+	{
+		this.transform.localScale = new Vector3(3,3,0);
+	}
+
+	public void OnPlayerEndJump()
+	{
+		this.transform.localScale = new Vector3(2,2,0);
+	}
 }
