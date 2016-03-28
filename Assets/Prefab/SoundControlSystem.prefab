@@ -39,7 +39,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0d09c808498dc6648a60b63677cf3607, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80593772466071e47a1a27d808f9fb37, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio_music: {fileID: 8236324}
-  ambient: {fileID: 8300000, guid: 0d09c808498dc6648a60b63677cf3607, type: 3}
+  ambient: {fileID: 8300000, guid: 80593772466071e47a1a27d808f9fb37, type: 3}
 --- !u!114 &11448766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b0de730bf42764d8bada78e6b69892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstOne: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
