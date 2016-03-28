@@ -35,6 +35,24 @@ public class UIMessageBox : MonoBehaviour {
 		Destroy(b[1].gameObject);
 	}
 
+	public static void ShowMessage(string message, UnityEngine.Events.UnityAction actionOnClick)
+	{
+		GameObject g = new GameObject("CanvasMessageBox");
+		Canvas canvas = initializeCanvas(g);
+		GameObject messageBox = (GameObject)Resources.Load<GameObject>("UITools/YesNoMessageBox");
+		messageBox = Instantiate(messageBox);
+		messageBox.transform.SetParent(canvas.transform, false);
+		messageBox.transform.name = "MessageBox";
+		Text textMessage = messageBox.GetComponentInChildren<Text>();
+		textMessage.text = message;
+		Button[] b = messageBox.GetComponentsInChildren<Button>();
+		b[0].onClick.AddListener( ()=> {Destroy(g);});
+		b[0].onClick.AddListener(actionOnClick);
+		GlobalMultiling globalMultiLing = new GlobalMultiling();
+		b[0].GetComponentInChildren<Text>().text = globalMultiLing.getTranslatedValue("@+/Ok");
+		Destroy(b[1].gameObject);
+	}
+
 	/// <summary>
 	/// Displays a message box with Yes and No buttons.
 	/// Performs treatments passed as parameters according to user response.

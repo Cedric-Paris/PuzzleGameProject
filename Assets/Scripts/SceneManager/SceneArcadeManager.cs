@@ -27,6 +27,7 @@ public class SceneArcadeManager : SceneManager {
 	
 	public override void ReloadCurrentScene()
 	{
+		UIMessageBox.ShowMessage(string.Format("Dommage, vous avez perdu. \nVous avez complété {0} niveaux avant de perdre!", numeroLevel-1), ()=> Application.LoadLevel(previousScene));
 	}
 	
 	public override void LoadPreviousScene()
