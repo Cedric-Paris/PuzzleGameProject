@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MapGenerator : MonoBehaviour {
 
+	private MenuGameAdapter menuAdapter;
+
 	public Square emptySquare;
 	public int hauteur;
 	public int largeur;
@@ -11,6 +13,8 @@ public class MapGenerator : MonoBehaviour {
 	private Square[,] mapSquares;
 	public Element[] elements;
 
+	private RandomElementOnMapGenerator elementGenerator;
+
 	public enum GenerationType{//Pour etre utilisé dans l'editeur unity
 		Empty,
 		WithRandomElements
@@ -18,6 +22,8 @@ public class MapGenerator : MonoBehaviour {
 	public GenerationType modeDeGeneration;
 
 	void Start () {
+		if(menuAdapter == null)
+			menuAdapter = GameObject.Find("MenuAdapter").GetComponent<MenuGameAdapter>();
 		GenerateEmpty(hauteur, largeur);
 		if (modeDeGeneration == GenerationType.WithRandomElements)
 		{
@@ -43,14 +49,14 @@ public class MapGenerator : MonoBehaviour {
 
 	public int[,] GenerateRandom(int hauteur, int largeur, int nbChangeDirect)
 	{
-		RandomElementOnMapGenerator r = new RandomElementOnMapGenerator();
-		return r.GenerateRandom(hauteur, largeur, nbChangeDirect);
+		elementGenerator = new RandomElementOnMapGenerator();
+		return elementGenerator.GenerateRandom(hauteur, largeur, nbChangeDirect);
 	}
 
 	private void InstanciateForAllSquare(int[,] tab)
 	{
 		Element e;
-
+		StartCase caseDepart = null;
 		for (int i = 0; i<hauteur; i++)
 		{
 			for(int j=0; j<largeur; j++)
@@ -58,10 +64,20 @@ public class MapGenerator : MonoBehaviour {
 				if(tab[i,j]>=0)
 				{
 					e = (Element) Instantiate (elements[tab[i,j]], mapSquares[i,j].transform.position, Quaternion.identity);
+					if(tab[i,j] == 0)
+						caseDepart = e as StartCase;
 					e.transform.SetParent(mapSquares[i,j].transform);
 					mapSquares[i,j].squareElement = e;
 				}
 			}
 		}
+		if(caseDepart == null)
+		{
+			foreach (Transform child in this.gameObject.transform)
+				Destroy(child.gameObject);
+			Start();
+			return;
+		}
+		menuAdapter.adaptMenu(caseDepart, elementGenerator.getTabActionsPossible());
 	}
 }

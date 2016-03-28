@@ -23,10 +23,34 @@ public class RandomElementOnMapGenerator {
 	private bool cheminSansObjectif;
 	private List<ElementName> listActions = new List<ElementName>();
 
-	public List<int> getTabActionsPossible()
+	public Dictionary<string, int> getTabActionsPossible()
 	{
-		List<int> convertTab = new List<int> ();
-		return convertTab;
+		Dictionary<string, int> actions = new Dictionary<string , int>();
+		actions.Add ("UpArrow", 0);
+		actions.Add ("DownArrow", 0);
+		actions.Add ("LeftArrow", 0);
+		actions.Add ("RightArrow", 0);
+		foreach(ElementName element in listActions)
+		{
+			switch(element)
+			{
+			case ElementName.UpArrow:
+				actions["UpArrow"] += 1; 
+				break;
+			case ElementName.DownArrow:
+				actions["DownArrow"] += 1; 
+				break;
+			case ElementName.LeftArrow:
+				actions["LeftArrow"] += 1; 
+				break;
+			case ElementName.RightArrow:
+				actions["RightArrow"] += 1; 
+				break;
+			}
+		}
+		Debug.Log ("Up:" +actions["UpArrow"]);
+		Debug.Log ("Down:" + actions["DownArrow"]);
+		return actions;
 	}
 
 	private int[,] ConvertTabInt(ElementName[,] tab, int hauteur, int largeur)
