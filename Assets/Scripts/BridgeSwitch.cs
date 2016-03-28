@@ -18,7 +18,6 @@ public class BridgeSwitch : SpecialElement {
 	public override EffectTransformation Effect (bool isTreated = false) {
 		if (isTreated == false)
 			return new EffectTransformation(false);
-		Debug.Log ("Changement de position des ponts et des interrupteurs.");
 		foreach (Bridge b in lBridge)
 			b.ChangePosition ();
 		foreach (BridgeSwitch s in lSwitch)

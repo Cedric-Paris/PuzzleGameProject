@@ -47,5 +47,10 @@ public class SoundControl : MonoBehaviour {
     {
         return audio_music.volume;
     }
+
+    public bool isPlaying()
+    {
+        return audio_music.isPlaying;
+    }
 	//End of Region
 }

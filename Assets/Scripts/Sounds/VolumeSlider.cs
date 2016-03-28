@@ -13,14 +13,22 @@ public class VolumeSlider : MonoBehaviour
     public Slider Slider;
 
     /// <summary>
+    /// The <see cref="SoundControlComponent"/> we use to reguilate the volume of music and sounds.
+    /// </summary>
+    private SoundControlComponent soundControlComponent;
+
+    /// <summary>
     /// Initializes the Volume Slider.
     /// </summary>
 	void Start ()
     {
-        Camera camera = Camera.main;
-        if (camera == null) return;
-        SoundControl soundControl = camera.GetComponent<SoundControl>();
-        if (soundControl == null) return;
-        Slider.value = soundControl.GetVolume();
+        soundControlComponent = GameObject.FindObjectOfType<SoundControlComponent>();
+        if (soundControlComponent == null) return;
+        Slider.value = soundControlComponent.GetVolume();
+    }
+    
+    public void SetVolume(float volume)
+    {
+        soundControlComponent.SetVolume(volume);
     }
 }
