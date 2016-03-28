@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 [RequireComponent(typeof(SoundControl))]
 public class SoundControlComponent : MonoBehaviour {
 
     private SoundControl soundControlInstance;
     private static bool alreadyExistInScene = false;
+    public bool isFirstOne = false;
 
     void Awake()
     {
@@ -21,12 +23,18 @@ public class SoundControlComponent : MonoBehaviour {
 
     void OnLevelWasLoaded(int level)
     {
-        if (level == 0 && alreadyExistInScene)
+        if (isFirstOne)
         {
-            Destroy(this.gameObject);
-            alreadyExistInScene = false;
-            return;
+            SoundControlComponent[] soundControlComponents = GameObject.FindObjectsOfType<SoundControlComponent>();
+            if (soundControlComponents.Length > 1)
+            { 
+                foreach (SoundControlComponent scc in soundControlComponents.Where(scc => scc != this))
+                {
+                    Destroy(scc.gameObject);
+                }
+            }
         }
+
         Play();
     }
 
