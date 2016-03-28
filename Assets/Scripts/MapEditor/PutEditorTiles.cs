@@ -44,7 +44,6 @@ public class PutEditorTiles : MonoBehaviour {
 					continue;
 				baseTilesAlreadySet.Add(worldPos);
 				instancePrefab = (GameObject)Instantiate(SelectElementOnEditorMenu.selectedObject, worldPos, Quaternion.identity);
-				instancePrefab.AddComponent<BoxCollider2D>().size = new Vector2(0.2f, 0.2f);
 				if(elementTilesAlreadySet.Contains(worldPos))
 					instancePrefab.AddComponent<Square>().CheckElementAroundIfNull();
 				instancePrefab.transform.SetParent(this.gameObject.transform);

@@ -18,6 +18,27 @@ public class Element : MonoBehaviour {
         return new EffectTransformation();
     }
 
+	public bool ElementCanBePlacedHere(Vector3 position)
+	{
+		bool squareFound = false;
+		bool elementFound = false;
+		foreach (Collider2D col in Physics2D.OverlapCircleAll(position, 0.15f)) 
+		{
+			if( col.gameObject.GetComponent<Element>() != null)
+				elementFound = true;
+		}
+		position.z = position.z + 0.2f;
+		foreach (Collider col in Physics.OverlapSphere(position, 0.15f))
+		{
+			if( col.gameObject.GetComponent<Square>() != null)
+				squareFound = true;
+		}
+		if(elementFound || !squareFound)
+		{
+			return false;
+		}
+		return true;
+	}
 
 	public void CheckSquareAroundToAttach()
 	{

@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: 0.25
+    smallestHole: .25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
+  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
+  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 0}
-  m_HaloStrength: 0.5
+  m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 6
+  serializedVersion: 5
   m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -74,15 +74,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: 0.5
+    agentRadius: .5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: .400000006
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: 0.16666667
+    cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
 --- !u!4 &30819017 stripped
@@ -143,6 +143,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 56503271}
+--- !u!1 &56503273 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 56503271}
+--- !u!65 &56503274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56503273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &59520178 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -244,9 +260,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &108321988 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 108321987}
+--- !u!65 &108321989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 108321988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &116235643
 Prefab:
   m_ObjectHideFlags: 0
@@ -290,9 +334,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &116235644 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 116235643}
+--- !u!65 &116235645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116235644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &122329595
 Prefab:
   m_ObjectHideFlags: 0
@@ -347,6 +419,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 122329595}
+--- !u!1 &122329597 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 122329595}
+--- !u!65 &122329598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122329597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &132386524 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -593,9 +681,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &190898924 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 190898923}
+--- !u!65 &190898925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 190898924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &193502988 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -643,9 +759,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &205975523 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 205975522}
+--- !u!65 &205975524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205975523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &209395245
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +823,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &209395247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,7 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -707,7 +851,6 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -775,6 +918,7 @@ GameObject:
   - 4: {fileID: 211753466}
   - 212: {fileID: 211753468}
   - 114: {fileID: 211753467}
+  - 65: {fileID: 211753469}
   m_Layer: 0
   m_Name: BasicSquare
   m_TagString: Untagged
@@ -789,7 +933,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211753465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: .5, y: 4.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 142071046}
@@ -827,18 +971,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf0519154aad0fe489f72c62589d3cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &211753469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211753465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &212314163 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -882,6 +1034,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -889,6 +1053,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 213616566}
+--- !u!1 &213616568 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 213616566}
+--- !u!65 &213616569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213616568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &224702285 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -932,7 +1112,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &233202179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,11 +1133,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: .100000001
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1125,9 +1305,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &243739204 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 243739203}
+--- !u!65 &243739205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243739204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &256356930 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -1295,9 +1503,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &331812225 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 331812224}
+--- !u!65 &331812226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331812225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &334852860
 Prefab:
   m_ObjectHideFlags: 0
@@ -1341,9 +1577,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &334852861 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 334852860}
+--- !u!65 &334852862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 334852861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &342505775
 Prefab:
   m_ObjectHideFlags: 0
@@ -1447,6 +1711,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1283927606}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -1454,6 +1730,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 344919815}
+--- !u!1 &344919817 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 344919815}
+--- !u!65 &344919818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344919817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &354308578 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -1512,6 +1804,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 355644674}
+--- !u!1 &355644676 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 355644674}
+--- !u!65 &355644677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 355644676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &363878982
 Prefab:
   m_ObjectHideFlags: 0
@@ -1611,6 +1919,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 44
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -1618,6 +1938,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 374857158}
+--- !u!1 &374857160 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 374857158}
+--- !u!65 &374857161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374857160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &392917018
 Prefab:
   m_ObjectHideFlags: 0
@@ -1672,6 +2008,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 392917018}
+--- !u!1 &392917020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 392917018}
+--- !u!65 &392917021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392917020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &402156715 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -1815,6 +2167,18 @@ Prefab:
       propertyPath: m_Name
       value: PathSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -1822,6 +2186,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 436283833}
+--- !u!1 &436283835 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 436283833}
+--- !u!65 &436283836
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 436283835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &465561901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1832,6 +2212,7 @@ GameObject:
   - 4: {fileID: 465561902}
   - 212: {fileID: 465561904}
   - 114: {fileID: 465561903}
+  - 65: {fileID: 465561905}
   m_Layer: 0
   m_Name: BasicSquare
   m_TagString: Untagged
@@ -1884,18 +2265,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf0519154aad0fe489f72c62589d3cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &465561905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465561901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &468998911
 Prefab:
   m_ObjectHideFlags: 0
@@ -1999,6 +2388,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 917931875}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -2006,6 +2407,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 490088249}
+--- !u!1 &490088251 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 490088249}
+--- !u!65 &490088252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490088251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &514401518
 Prefab:
   m_ObjectHideFlags: 0
@@ -2049,6 +2466,18 @@ Prefab:
       propertyPath: m_Name
       value: PathSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -2056,6 +2485,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 514401518}
+--- !u!1 &514401520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 514401518}
+--- !u!65 &514401521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 514401520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &518215178
 Prefab:
   m_ObjectHideFlags: 0
@@ -2099,9 +2544,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &518215179 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 518215178}
+--- !u!65 &518215180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518215179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &522003117 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -2116,6 +2589,7 @@ GameObject:
   - 4: {fileID: 523135817}
   - 212: {fileID: 523135819}
   - 114: {fileID: 523135818}
+  - 65: {fileID: 523135820}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -2167,18 +2641,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &523135820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 523135816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &536159048
 Prefab:
   m_ObjectHideFlags: 0
@@ -2222,9 +2704,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &536159049 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 536159048}
+--- !u!65 &536159050
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536159049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &557799372
 Prefab:
   m_ObjectHideFlags: 0
@@ -2272,6 +2782,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1137601086}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -2279,6 +2801,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 557799372}
+--- !u!1 &557799374 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 557799372}
+--- !u!65 &557799375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 557799374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &559857688
 Prefab:
   m_ObjectHideFlags: 0
@@ -2322,9 +2860,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &559857689 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 559857688}
+--- !u!65 &559857690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 559857689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &568317043 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -2399,6 +2965,7 @@ GameObject:
   - 4: {fileID: 595556673}
   - 212: {fileID: 595556675}
   - 114: {fileID: 595556674}
+  - 65: {fileID: 595556676}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -2413,7 +2980,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 595556672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 1.5, y: .5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804013284}
@@ -2450,18 +3017,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &595556676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595556672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1 &599552740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,6 +3047,7 @@ GameObject:
   - 4: {fileID: 599552741}
   - 212: {fileID: 599552743}
   - 114: {fileID: 599552742}
+  - 65: {fileID: 599552744}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -2523,18 +3099,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &599552744
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599552740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &645040829
 Prefab:
   m_ObjectHideFlags: 0
@@ -2582,6 +3166,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 693239942}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -2589,6 +3185,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 645040829}
+--- !u!1 &645040831 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 645040829}
+--- !u!65 &645040832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645040831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &683331382
 Prefab:
   m_ObjectHideFlags: 0
@@ -2632,9 +3244,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &683331383 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 683331382}
+--- !u!65 &683331384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683331383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &685258401
 Prefab:
   m_ObjectHideFlags: 0
@@ -2678,9 +3318,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &685258402 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 685258401}
+--- !u!65 &685258403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685258402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &690390968 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -2751,6 +3419,7 @@ GameObject:
   - 4: {fileID: 701496808}
   - 212: {fileID: 701496810}
   - 114: {fileID: 701496809}
+  - 65: {fileID: 701496811}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -2802,18 +3471,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &701496811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701496807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1 &710185228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,11 +3529,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: .100000001
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -2934,7 +3611,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!4 &711690216 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -2953,6 +3630,7 @@ GameObject:
   - 4: {fileID: 717580989}
   - 212: {fileID: 717580991}
   - 114: {fileID: 717580990}
+  - 65: {fileID: 717580992}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -2967,7 +3645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 717580988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 5.5, z: 0}
+  m_LocalPosition: {x: .5, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804013284}
@@ -3004,18 +3682,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &717580992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 717580988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &718743887
 Prefab:
   m_ObjectHideFlags: 0
@@ -3059,9 +3745,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &718743888 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 718743887}
+--- !u!65 &718743889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718743888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &723252448
 Prefab:
   m_ObjectHideFlags: 0
@@ -3116,6 +3830,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 723252448}
+--- !u!1 &723252450 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 723252448}
+--- !u!65 &723252451
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723252450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &723505149
 Prefab:
   m_ObjectHideFlags: 0
@@ -3170,6 +3900,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 723505149}
+--- !u!1 &723505151 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 723505149}
+--- !u!65 &723505152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723505151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &742677062
 Prefab:
   m_ObjectHideFlags: 0
@@ -3263,9 +4009,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &748781645 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 748781644}
+--- !u!65 &748781646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748781645}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &759622968
 Prefab:
   m_ObjectHideFlags: 0
@@ -3421,9 +4195,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &761295676 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 761295675}
+--- !u!65 &761295677
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761295676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &771505407
 Prefab:
   m_ObjectHideFlags: 0
@@ -3467,6 +4269,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1671762402}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -3474,6 +4288,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 771505407}
+--- !u!1 &771505409 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 771505407}
+--- !u!65 &771505410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771505409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &775910319
 Prefab:
   m_ObjectHideFlags: 0
@@ -3517,9 +4347,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &775910320 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 775910319}
+--- !u!65 &775910321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775910320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &779468122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,6 +4388,7 @@ GameObject:
   - 4: {fileID: 779468123}
   - 212: {fileID: 779468125}
   - 114: {fileID: 779468124}
+  - 65: {fileID: 779468126}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -3581,18 +4440,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &779468126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 779468122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1 &795128482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,6 +4470,7 @@ GameObject:
   - 4: {fileID: 795128483}
   - 212: {fileID: 795128485}
   - 114: {fileID: 795128484}
+  - 65: {fileID: 795128486}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -3654,18 +4522,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &795128486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795128482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &800542099
 Prefab:
   m_ObjectHideFlags: 0
@@ -3905,9 +4781,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &826979647 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 826979646}
+--- !u!65 &826979648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826979647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &828466725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +4822,7 @@ GameObject:
   - 4: {fileID: 828466726}
   - 212: {fileID: 828466728}
   - 114: {fileID: 828466727}
+  - 65: {fileID: 828466729}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -3932,7 +4837,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 828466725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 7.5, z: 0}
+  m_LocalPosition: {x: .5, y: 7.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804013284}
@@ -3969,18 +4874,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &828466729
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 828466725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &833442782
 Prefab:
   m_ObjectHideFlags: 0
@@ -4028,6 +4941,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1431989839}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -4035,6 +4960,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 833442782}
+--- !u!1 &833442784 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 833442782}
+--- !u!65 &833442785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833442784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &841383203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,6 +4986,7 @@ GameObject:
   - 4: {fileID: 841383204}
   - 212: {fileID: 841383206}
   - 114: {fileID: 841383205}
+  - 65: {fileID: 841383207}
   m_Layer: 0
   m_Name: BasicSquare
   m_TagString: Untagged
@@ -4059,7 +5001,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841383203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 242470006}
@@ -4097,18 +5039,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf0519154aad0fe489f72c62589d3cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &841383207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841383203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &873544921
 Prefab:
   m_ObjectHideFlags: 0
@@ -4152,9 +5102,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &873544922 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 873544921}
+--- !u!65 &873544923
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873544922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &893748295 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -4169,6 +5147,7 @@ GameObject:
   - 4: {fileID: 895869530}
   - 212: {fileID: 895869532}
   - 114: {fileID: 895869531}
+  - 65: {fileID: 895869533}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -4183,7 +5162,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895869529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 6.5, z: 0}
+  m_LocalPosition: {x: .5, y: 6.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804013284}
@@ -4220,18 +5199,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &895869533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895869529}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &908019806
 Prefab:
   m_ObjectHideFlags: 0
@@ -4391,9 +5378,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &925791689 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 925791688}
+--- !u!65 &925791690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925791689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &925960152 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -4452,6 +5467,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 926910973}
+--- !u!1 &926910975 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 926910973}
+--- !u!65 &926910976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 926910975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &929251989
 Prefab:
   m_ObjectHideFlags: 0
@@ -4495,9 +5526,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &929251990 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 929251989}
+--- !u!65 &929251991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929251990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &939846337
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,6 +5567,7 @@ GameObject:
   - 4: {fileID: 939846338}
   - 212: {fileID: 939846340}
   - 114: {fileID: 939846339}
+  - 65: {fileID: 939846341}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -4559,18 +5619,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &939846341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 939846337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &941287822
 Prefab:
   m_ObjectHideFlags: 0
@@ -4678,9 +5746,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &982160586 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 982160585}
+--- !u!65 &982160587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982160586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &996391354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +5866,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &1003934143
 Prefab:
   m_ObjectHideFlags: 0
@@ -4814,6 +5909,18 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -4821,6 +5928,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1003934143}
+--- !u!1 &1003934145 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1003934143}
+--- !u!65 &1003934146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003934145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1004928516 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -4991,6 +6114,7 @@ GameObject:
   - 4: {fileID: 1036765933}
   - 212: {fileID: 1036765935}
   - 114: {fileID: 1036765934}
+  - 65: {fileID: 1036765936}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -5042,18 +6166,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1036765936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1036765932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &1041855565 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -5101,9 +6233,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1042122557 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1042122556}
+--- !u!65 &1042122558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042122557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1056147906
 Prefab:
   m_ObjectHideFlags: 0
@@ -5215,9 +6375,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1115513527 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1115513526}
+--- !u!65 &1115513528
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115513527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1132097835
 Prefab:
   m_ObjectHideFlags: 0
@@ -5377,9 +6565,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1187896236 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1187896235}
+--- !u!65 &1187896237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187896236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1207043061 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -5438,6 +6654,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 1210228027}
+--- !u!1 &1210228029 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 1210228027}
+--- !u!65 &1210228030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210228029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1211092226
 Prefab:
   m_ObjectHideFlags: 0
@@ -5481,9 +6713,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1211092227 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1211092226}
+--- !u!65 &1211092228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1211092227}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1216303445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5494,6 +6754,7 @@ GameObject:
   - 4: {fileID: 1216303446}
   - 212: {fileID: 1216303448}
   - 114: {fileID: 1216303447}
+  - 65: {fileID: 1216303449}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -5508,7 +6769,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1216303445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 3.5, y: .5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 804013284}
@@ -5545,18 +6806,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1216303449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216303445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &1223535024 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -5600,9 +6869,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1225707791 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1225707790}
+--- !u!65 &1225707792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1225707791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1245674119
 Prefab:
   m_ObjectHideFlags: 0
@@ -5646,9 +6943,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1245674120 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1245674119}
+--- !u!65 &1245674121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245674120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1251508219 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -5723,6 +7048,7 @@ GameObject:
   - 4: {fileID: 1286781281}
   - 212: {fileID: 1286781283}
   - 114: {fileID: 1286781282}
+  - 65: {fileID: 1286781284}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -5774,18 +7100,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1286781284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1286781280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1294268281
 Prefab:
   m_ObjectHideFlags: 0
@@ -5829,9 +7163,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1294268282 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1294268281}
+--- !u!65 &1294268283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294268282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1309857773
 Prefab:
   m_ObjectHideFlags: 0
@@ -5886,6 +7248,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 1309857773}
+--- !u!1 &1309857775 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 1309857773}
+--- !u!65 &1309857776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309857775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1 &1328431809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5896,6 +7274,7 @@ GameObject:
   - 4: {fileID: 1328431810}
   - 212: {fileID: 1328431812}
   - 114: {fileID: 1328431811}
+  - 65: {fileID: 1328431813}
   m_Layer: 0
   m_Name: BasicSquare
   m_TagString: Untagged
@@ -5948,18 +7327,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf0519154aad0fe489f72c62589d3cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1328431813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1328431809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &1337806826 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -6007,9 +7394,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1339311532 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1339311531}
+--- !u!65 &1339311533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1339311532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1341745570
 Prefab:
   m_ObjectHideFlags: 0
@@ -6109,9 +7524,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1354509555 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1354509554}
+--- !u!65 &1354509556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354509555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1355257991
 Prefab:
   m_ObjectHideFlags: 0
@@ -6159,6 +7602,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 760225630}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -6166,6 +7621,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1355257991}
+--- !u!1 &1355257993 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1355257991}
+--- !u!65 &1355257994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355257993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1377577361
 Prefab:
   m_ObjectHideFlags: 0
@@ -6209,9 +7680,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1377577362 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1377577361}
+--- !u!65 &1377577363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377577362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1385755766
 Prefab:
   m_ObjectHideFlags: 0
@@ -6259,6 +7758,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 908019807}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -6266,6 +7777,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1385755766}
+--- !u!1 &1385755768 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1385755766}
+--- !u!65 &1385755769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385755768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1407236653 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -6284,6 +7811,7 @@ GameObject:
   - 4: {fileID: 1411165986}
   - 212: {fileID: 1411165988}
   - 114: {fileID: 1411165987}
+  - 65: {fileID: 1411165989}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -6335,18 +7863,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1411165989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411165985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1431989838
 Prefab:
   m_ObjectHideFlags: 0
@@ -6446,9 +7982,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1447782111 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1447782110}
+--- !u!65 &1447782112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1447782111}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1474265181
 GameObject:
   m_ObjectHideFlags: 0
@@ -6459,6 +8023,7 @@ GameObject:
   - 4: {fileID: 1474265182}
   - 212: {fileID: 1474265184}
   - 114: {fileID: 1474265183}
+  - 65: {fileID: 1474265185}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -6510,18 +8075,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1474265185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474265181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1476618833
 Prefab:
   m_ObjectHideFlags: 0
@@ -6621,9 +8194,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1477510491 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1477510490}
+--- !u!65 &1477510492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477510491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1496679797
 Prefab:
   m_ObjectHideFlags: 0
@@ -6667,6 +8268,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1020868528}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -6674,6 +8287,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 1496679797}
+--- !u!1 &1496679799 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 1496679797}
+--- !u!65 &1496679800
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496679799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1503771060
 Prefab:
   m_ObjectHideFlags: 0
@@ -6717,9 +8346,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1503771061 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1503771060}
+--- !u!65 &1503771062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503771061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1510363004 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -6825,9 +8482,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1562710065 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1562710064}
+--- !u!65 &1562710066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1562710065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1578582157
 Prefab:
   m_ObjectHideFlags: 0
@@ -6927,9 +8612,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1588211891 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1588211890}
+--- !u!65 &1588211892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588211891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1592828749
 Prefab:
   m_ObjectHideFlags: 0
@@ -6973,9 +8686,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1592828750 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1592828749}
+--- !u!65 &1592828751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592828750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1596623435
 Prefab:
   m_ObjectHideFlags: 0
@@ -7019,9 +8760,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1596623436 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1596623435}
+--- !u!65 &1596623437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596623436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1607965715
 Prefab:
   m_ObjectHideFlags: 0
@@ -7121,9 +8890,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1617149786 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1617149785}
+--- !u!65 &1617149787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1617149786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1635455550
 GameObject:
   m_ObjectHideFlags: 0
@@ -7173,14 +8970,14 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0.019607844}
+  m_BackGroundColor: {r: .13333334, g: .13333334, b: .13333334, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -7196,7 +8993,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
+  m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
 --- !u!4 &1635455555
 Transform:
@@ -7205,7 +9002,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635455550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.42, y: 4.53, z: -10}
+  m_LocalPosition: {x: 7.42000008, y: 4.53000021, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7220,6 +9017,7 @@ GameObject:
   - 4: {fileID: 1638628322}
   - 212: {fileID: 1638628324}
   - 114: {fileID: 1638628323}
+  - 65: {fileID: 1638628325}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -7271,18 +9069,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1638628325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1638628321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!4 &1644821308 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -7376,9 +9182,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1662242598 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1662242597}
+--- !u!65 &1662242599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662242598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1671762401
 Prefab:
   m_ObjectHideFlags: 0
@@ -7482,9 +9316,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1690355874 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1690355873}
+--- !u!65 &1690355875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690355874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1694365304 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -7535,7 +9397,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
+  m_RepeatDelay: .5
   m_ForceModuleActive: 0
 --- !u!114 &1700151647
 MonoBehaviour:
@@ -7621,6 +9483,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 1721317718}
+--- !u!1 &1721317720 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 1721317718}
+--- !u!65 &1721317721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1721317720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1 &1721717846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7631,6 +9509,7 @@ GameObject:
   - 4: {fileID: 1721717847}
   - 212: {fileID: 1721717849}
   - 114: {fileID: 1721717848}
+  - 65: {fileID: 1721717850}
   m_Layer: 0
   m_Name: BasicSquare
   m_TagString: Untagged
@@ -7683,18 +9562,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cf0519154aad0fe489f72c62589d3cff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1721717850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1721717846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1724755002
 Prefab:
   m_ObjectHideFlags: 0
@@ -7742,6 +9629,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1578582158}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -7749,6 +9648,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1724755002}
+--- !u!1 &1724755004 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1724755002}
+--- !u!65 &1724755005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724755004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1727452574 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -7796,9 +9711,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1730507539 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1730507538}
+--- !u!65 &1730507540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1730507539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1731871001
 Prefab:
   m_ObjectHideFlags: 0
@@ -7846,6 +9789,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1476618834}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -7853,6 +9808,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1731871001}
+--- !u!1 &1731871003 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1731871001}
+--- !u!65 &1731871004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731871003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1745836021
 Prefab:
   m_ObjectHideFlags: 0
@@ -8056,6 +10027,18 @@ Prefab:
       propertyPath: squareElement
       value: 
       objectReference: {fileID: 1812710405}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
@@ -8063,6 +10046,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_PrefabInternal: {fileID: 1780871125}
+--- !u!1 &1780871127 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1780871125}
+--- !u!65 &1780871128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780871127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1781696078
 GameObject:
   m_ObjectHideFlags: 0
@@ -8143,9 +10142,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1786138630 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1786138629}
+--- !u!65 &1786138631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786138630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1788937682
 GameObject:
   m_ObjectHideFlags: 0
@@ -8156,6 +10183,7 @@ GameObject:
   - 4: {fileID: 1788937683}
   - 212: {fileID: 1788937685}
   - 114: {fileID: 1788937684}
+  - 65: {fileID: 1788937686}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -8207,18 +10235,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &1788937686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788937682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &1793863378
 Prefab:
   m_ObjectHideFlags: 0
@@ -8262,9 +10298,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1793863379 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1793863378}
+--- !u!65 &1793863380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793863379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1807390268
 Prefab:
   m_ObjectHideFlags: 0
@@ -8308,9 +10372,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1807390269 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1807390268}
+--- !u!65 &1807390270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1807390269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1812710404
 Prefab:
   m_ObjectHideFlags: 0
@@ -8410,9 +10502,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1830201563 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1830201562}
+--- !u!65 &1830201564
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830201563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1838369187
 Prefab:
   m_ObjectHideFlags: 0
@@ -8456,9 +10576,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1838369188 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1838369187}
+--- !u!65 &1838369189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838369188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1860218779
 Prefab:
   m_ObjectHideFlags: 0
@@ -8502,6 +10650,18 @@ Prefab:
       propertyPath: m_Name
       value: PathSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -8509,6 +10669,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 1860218779}
+--- !u!1 &1860218781 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 1860218779}
+--- !u!65 &1860218782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860218781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1873949979
 GameObject:
   m_ObjectHideFlags: 0
@@ -8542,7 +10718,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &1873949981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8555,7 +10731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8570,7 +10746,6 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -8681,9 +10856,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1889683007 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1889683006}
+--- !u!65 &1889683008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889683007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1900202805
 Prefab:
   m_ObjectHideFlags: 0
@@ -8727,9 +10930,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1900202806 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 1900202805}
+--- !u!65 &1900202807
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900202806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1900744656 stripped
 Transform:
   m_PrefabParentObject: {fileID: 496286, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
@@ -8783,11 +11014,11 @@ RectTransform:
   - {fileID: 233202178}
   m_Father: {fileID: 160164210}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.8, y: 0.015}
-  m_AnchorMax: {x: 0.985, y: 0.14}
+  m_AnchorMin: {x: .800000012, y: .0149999997}
+  m_AnchorMax: {x: .985000014, y: .140000001}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &1971984731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8831,7 +11062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8899,9 +11130,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2013319102 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 2013319101}
+--- !u!65 &2013319103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013319102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2020847434
 Prefab:
   m_ObjectHideFlags: 0
@@ -8956,6 +11215,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 2020847434}
+--- !u!1 &2020847436 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 2020847434}
+--- !u!65 &2020847437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020847436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &2044917667
 Prefab:
   m_ObjectHideFlags: 0
@@ -9006,6 +11281,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 472608, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
   m_PrefabInternal: {fileID: 2044917667}
+--- !u!1 &2044917669 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 165688, guid: f20d790805b3a154296cb52f9f1e2bc7, type: 2}
+  m_PrefabInternal: {fileID: 2044917667}
+--- !u!65 &2044917670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044917669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &2052321649
 Prefab:
   m_ObjectHideFlags: 0
@@ -9049,9 +11340,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2052321650 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 2052321649}
+--- !u!65 &2052321651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052321650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2073717642
 GameObject:
   m_ObjectHideFlags: 0
@@ -9062,6 +11381,7 @@ GameObject:
   - 4: {fileID: 2073717643}
   - 212: {fileID: 2073717645}
   - 114: {fileID: 2073717644}
+  - 65: {fileID: 2073717646}
   m_Layer: 0
   m_Name: PathSquare
   m_TagString: Untagged
@@ -9113,18 +11433,26 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 72e0c4c904993934d95379037baa4b7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+--- !u!65 &2073717646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073717642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .400000006, z: .200000003}
+  m_Center: {x: 0, y: 0, z: .200000003}
 --- !u!1001 &2078301878
 Prefab:
   m_ObjectHideFlags: 0
@@ -9168,6 +11496,18 @@ Prefab:
       propertyPath: m_Name
       value: PathSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -9175,6 +11515,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 2078301878}
+--- !u!1 &2078301880 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 2078301878}
+--- !u!65 &2078301881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078301880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2109465720
 Prefab:
   m_ObjectHideFlags: 0
@@ -9218,9 +11574,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2109465721 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 2109465720}
+--- !u!65 &2109465722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2109465721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2129915711
 Prefab:
   m_ObjectHideFlags: 0
@@ -9264,9 +11648,37 @@ Prefab:
       propertyPath: m_Name
       value: SandSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540568, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2129915712 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109132, guid: 166c12247e7bc2e4c8e43d89165e9c03, type: 2}
+  m_PrefabInternal: {fileID: 2129915711}
+--- !u!65 &2129915713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129915712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2144592970
 Prefab:
   m_ObjectHideFlags: 0
@@ -9310,6 +11722,18 @@ Prefab:
       propertyPath: m_Name
       value: PathSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Size.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545982, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+      propertyPath: m_Center.z
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_IsPrefabParent: 0
@@ -9317,3 +11741,19 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 428438, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
   m_PrefabInternal: {fileID: 2144592970}
+--- !u!1 &2144592972 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 127430, guid: 903816fda7cd9184ab7b9cc128d04459, type: 2}
+  m_PrefabInternal: {fileID: 2144592970}
+--- !u!65 &2144592973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144592972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .5, y: .5, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}

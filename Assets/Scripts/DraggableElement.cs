@@ -5,13 +5,17 @@ public class DraggableElement : Element, Draggable {
 
     public Element elementBase;
 
-    void Start()
-    {
-    }
+	private Vector3 startPosition;
+	private bool isDragging = false;
 
     //La methode OnMouseDrag necessite un collider sur l'element a bouger 
     public void OnMouseDrag()
     {
+		if(!isDragging)
+		{
+			startPosition = this.transform.position;
+			isDragging = true;
+		}
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         mousePos.z = 0;
         this.transform.position = mousePos;
@@ -27,14 +31,20 @@ public class DraggableElement : Element, Draggable {
     }
 
     public void OnMouseDrop()
-    {
-        Debug.Log(this.name + " : OnMouseDrop");
-
+	{
+		isDragging = false;
         Vector3 favoritePosition = new Vector3(0, 0, 0);
         favoritePosition.x = CalculDemiLePlusProche(this.transform.position.x);
         favoritePosition.y = CalculDemiLePlusProche(this.transform.position.y);
-
-        this.transform.position = favoritePosition;
+		this.transform.position = startPosition;
+		if(this.ElementCanBePlacedHere(favoritePosition))
+		{
+			this.transform.position = favoritePosition;
+		}
+		else
+		{
+			this.transform.position = startPosition;
+		}
     }
 
     public void OnMouseDown()
