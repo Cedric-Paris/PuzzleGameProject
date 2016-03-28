@@ -50,6 +50,7 @@ public class Player : MonoBehaviour {
 		Explosion e = ((GameObject)Instantiate(explosion, this.transform.position, Quaternion.identity) ).GetComponent<Explosion>();
 		e.onAnimationFinished += () => SceneLevelManager.main.ReloadCurrentScene();
 		Destroy(this.gameObject);
+		AdManager.ShowInterstitialAd();
 	}
 
 	public void FallInWater()
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour {
 		Explosion splash = ((GameObject)Instantiate(splashWater, this.transform.position, Quaternion.identity) ).GetComponent<Explosion>();
 		splash.onAnimationFinished += () => SceneLevelManager.main.ReloadCurrentScene();
 		Destroy(this.gameObject);
+		AdManager.ShowInterstitialAd();
 	}
 
 	/// <summary>

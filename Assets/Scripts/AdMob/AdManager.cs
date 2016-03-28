@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using GoogleMobileAds.Api;
 
-public class AdManager : MonoBehaviour {
+public class AdManager {
 
 	#if UNITY_ANDROID
 	private const string adUnitId = "ca-app-pub-9641236307244569/6280394333";
@@ -15,6 +15,10 @@ public class AdManager : MonoBehaviour {
 
 	private static InterstitialAd inAd;
 
+	static AdManager()
+	{
+		LoadInterstistialAd();
+	}
 
 	private static void initializeInterstitialAd()
 	{
