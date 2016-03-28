@@ -29,6 +29,14 @@ public class RemoveEditorTiles : MonoBehaviour {
 					break;
 				}
 			}
+			Vector3 pos = new Vector3(worldPos.x, worldPos.y, worldPos.z + 0.2f);
+			foreach (Collider col in Physics.OverlapSphere(pos, 0.15f)) 
+			{
+				if(col.gameObject.GetComponent<Square>() != null)
+					baseTilesAlreadySet.Remove(worldPos);
+				Destroy(col.gameObject);
+				break;
+			}
 		}
 	}
 

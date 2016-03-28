@@ -45,7 +45,8 @@ public class Element : MonoBehaviour {
 	public void CheckSquareAroundToAttach()
 	{
 		Square s;
-		foreach (Collider2D col in Physics2D.OverlapCircleAll(this.transform.position, 0.15f)) 
+		Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
+		foreach (Collider col in Physics.OverlapSphere(pos, 0.15f)) 
 		{
 			if( (s = col.gameObject.GetComponent<Square>()) != null)// && s.squareElement == null)
 			{

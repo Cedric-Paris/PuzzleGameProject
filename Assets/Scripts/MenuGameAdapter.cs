@@ -16,7 +16,7 @@ public class MenuGameAdapter : MonoBehaviour {
 	public Text rightArrowCount;
 	public GameObject menuCanvas;
 
-	private bool firstTime = true;
+	public bool firstTime = true;
 
 	public void adaptMenu(StartCase startCase, Dictionary<string, int> actions)
 	{
@@ -25,7 +25,10 @@ public class MenuGameAdapter : MonoBehaviour {
 		Destroy(GameObject.Find("UILeftArrow(Clone)"));
 		Destroy(GameObject.Find("UIUpArrow(Clone)"));
 		playButton.onClick.RemoveAllListeners();
-		playButton.onClick.AddListener( () => startCase.Play() );
+		if(startCase!=null)
+		{
+			playButton.onClick.AddListener( () => startCase.Play() );
+		}
 		downArrowMenuButton.ElementCount = actions["UpArrow"];
 		upArrowMenuButton.ElementCount = actions["DownArrow"];
 		leftArrowMenuButton.ElementCount = actions["LeftArrow"];

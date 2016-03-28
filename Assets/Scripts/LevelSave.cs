@@ -61,7 +61,6 @@ public class LevelSave {
 		TileMapSave tLoad = (TileMapSave) Load(fileName+levelSavesExtension);
 
 		GameObject tileMap = GameObject.FindGameObjectsWithTag("TileMap")[0];
-
 		foreach (Transform child in tileMap.transform) {
 			GameObject.Destroy(child.gameObject);
 		}

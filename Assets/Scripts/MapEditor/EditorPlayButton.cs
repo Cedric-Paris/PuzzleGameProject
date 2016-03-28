@@ -6,10 +6,11 @@ using System;
 
 public class EditorPlayButton : MonoBehaviour {
 
-	private const string FILE_PATH = "PrivateLevels/TemporaryMapFromEditor";
+	public ActionsPanel actionPanel;
+
+	public const string FILE_PATH = "PrivateLevels/TemporaryMapFromEditor";
 
 	private bool isOnClick = false;
-
 
 	public void OnClickPlay()
 	{
@@ -19,16 +20,9 @@ public class EditorPlayButton : MonoBehaviour {
 		if (Directory.Exists(path) == false)
 			Directory.CreateDirectory(path);
 
-		LevelSave.SaveTileMap(FILE_PATH, null);
+		LevelSave.SaveTileMap(FILE_PATH, actionPanel.actions);
+		GameObject.Find("TileMapEditor").tag = "RejectTileMap";
 		Application.LoadLevel("EmptySceneWithMenu");
 	}
-
-	void OnLevelWasLoaded(int level)
-	{
-		if(!isOnClick)
-			return;
-		isOnClick = false;
-		Dictionary<string, int> actions = LevelSave.LoadTileMap(FILE_PATH);
-		//Mettre actions dans menu
-	}
+	
 }

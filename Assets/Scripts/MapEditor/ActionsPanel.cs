@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ActionsPanel : MonoBehaviour {
 
-	private Dictionary<string, int> actions = new Dictionary<string, int>();
+	public Dictionary<string, int> actions = new Dictionary<string, int>();
 	
 	void Start () {
 		actions.Add("UpArrow", 0);
