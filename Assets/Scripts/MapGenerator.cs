@@ -6,6 +6,7 @@ public class MapGenerator : MonoBehaviour {
 	private MenuGameAdapter menuAdapter;
 
 	public Square emptySquare;
+	public GameObject wallAround; 
 	public int hauteur;
 	public int largeur;
 	public int nbChangementDirection;
@@ -25,6 +26,7 @@ public class MapGenerator : MonoBehaviour {
 		if(menuAdapter == null)
 			menuAdapter = GameObject.Find("MenuAdapter").GetComponent<MenuGameAdapter>();
 		GenerateEmpty(hauteur, largeur);
+		CreateBorder (hauteur, largeur, this.wallAround);
 		if (modeDeGeneration == GenerationType.WithRandomElements)
 		{
 			int[,] tab = GenerateRandom (hauteur, largeur, nbChangementDirection);
@@ -80,4 +82,28 @@ public class MapGenerator : MonoBehaviour {
 		}
 		menuAdapter.adaptMenu(caseDepart, elementGenerator.getTabActionsPossible());
 	}
+
+	private void CreateBorder(int height, int width, GameObject wall)
+	{
+		GameObject borderInstance = new GameObject();
+		GameObject instance;
+		borderInstance.name = "BorderGeneratedMap";
+		Vector2 posTileMap = new Vector2(this.transform.position.x, this.transform.position.y);
+		for(float i=posTileMap.y; i<height; i++)
+		{
+			instance = (GameObject)Instantiate(wall,new Vector3(posTileMap.x - 1, i, 0),Quaternion.identity);
+			instance.transform.SetParent(borderInstance.transform);
+			instance = (GameObject)Instantiate(wall,new Vector3(posTileMap.x + width, i, 0),Quaternion.identity);
+			instance.transform.SetParent(borderInstance.transform);
+		}
+		for(float j=posTileMap.x-1; j<width+1; j++)
+		{
+			instance = (GameObject)Instantiate(wall,new Vector3(j, posTileMap.y - 1, 0),Quaternion.identity);
+			instance.transform.SetParent(borderInstance.transform);
+			instance = (GameObject)Instantiate(wall,new Vector3(j, posTileMap.y + height, 0),Quaternion.identity);
+			instance.transform.SetParent(borderInstance.transform);
+		}
+		borderInstance.transform.SetParent(this.transform);
+	}
 }
+
