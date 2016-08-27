@@ -8,6 +8,7 @@ public class SceneLevelManager : SceneManager {
 		if(nextScene == null || nextScene == "")
 			return;
 		Application.LoadLevel(nextScene);
+		ProgressionSave.currentlevel += 1;
 	}
 
 	public override void ReloadCurrentScene()
@@ -22,5 +23,6 @@ public class SceneLevelManager : SceneManager {
 		if(previousScene == null || previousScene == "")
 			return;
 		Application.LoadLevel(previousScene);
+		ProgressionSave.currentlevel -= 1;
 	}
 }

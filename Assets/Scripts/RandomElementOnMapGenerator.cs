@@ -48,8 +48,7 @@ public class RandomElementOnMapGenerator {
 				break;
 			}
 		}
-		Debug.Log ("Up:" +actions["UpArrow"]);
-		Debug.Log ("Down:" + actions["DownArrow"]);
+
 		return actions;
 	}
 

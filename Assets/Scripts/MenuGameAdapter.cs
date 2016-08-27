@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class MenuGameAdapter : MonoBehaviour {
 
@@ -16,8 +17,8 @@ public class MenuGameAdapter : MonoBehaviour {
 	public Text rightArrowCount;
 	public GameObject menuCanvas;
 
-	public bool firstTime = true;
-	public bool needToInverse = true;
+	public bool firstTime;
+	public bool needToInverse;
 
 	public void adaptMenu(StartCase startCase, Dictionary<string, int> actions)
 	{
@@ -32,16 +33,16 @@ public class MenuGameAdapter : MonoBehaviour {
 		}
 		if(needToInverse)
 		{
-			downArrowMenuButton.ElementCount = actions["UpArrow"];
-			upArrowMenuButton.ElementCount = actions["DownArrow"];
+			downArrowMenuButton.ElementCount = 1 + actions["UpArrow"];
+			upArrowMenuButton.ElementCount = 1 + actions["DownArrow"];
 		}
 		else
 		{
-			downArrowMenuButton.ElementCount = actions["DownArrow"];
-			upArrowMenuButton.ElementCount = actions["UpArrow"];
+			downArrowMenuButton.ElementCount = 1 + actions["DownArrow"];
+			upArrowMenuButton.ElementCount = 1 + actions["UpArrow"];
 		}
-		leftArrowMenuButton.ElementCount = actions["LeftArrow"];
-		rightArrowMenuButton.ElementCount = actions["RightArrow"];
+		leftArrowMenuButton.ElementCount = 1+ actions["LeftArrow"];
+		rightArrowMenuButton.ElementCount = 1 + actions["RightArrow"];
 
 		if(needToInverse)
 		{
@@ -55,11 +56,17 @@ public class MenuGameAdapter : MonoBehaviour {
 		}
 		leftArrowCount.text = "x "+actions["LeftArrow"];
 		rightArrowCount.text = "x "+actions["RightArrow"];
+
+		upArrowMenuButton.DownElementCount ();
+		downArrowMenuButton.DownElementCount ();
+		leftArrowMenuButton.DownElementCount ();
+		rightArrowMenuButton.DownElementCount ();
+
 		if(firstTime)
 		{
 			firstTime = false;
 			return;
 		}
-		menuCanvas.BroadcastMessage("Start");
+
 	}
 }
