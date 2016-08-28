@@ -27,7 +27,6 @@ public class ProgressionSave : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("Last Unlocked Level", currentlevel+1);
 		}
-		currentlevel = -1;
 	}
 
 	private void initialiseProgression()

@@ -148,8 +148,8 @@ public class PlayerMovementController : MonoBehaviour {
 	private void OnPlayerWin()
 	{
 		this.speed = 0;
-		SceneLevelManager.main.LoadNextScene();
 		ProgressionSave.LevelFinish(3);
+		SceneLevelManager.main.LoadNextScene();
 		Destroy(this.gameObject);
 	}
 
