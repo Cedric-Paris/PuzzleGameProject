@@ -1,0 +1,123 @@
+﻿using System;
+using UnityEngine;
+
+public class JumpProcedure : MonoBehaviour, IMovementProcedure
+{
+
+    private static readonly float[] ROTATION_VALUES = {
+        -85,
+        -75,
+        -70,
+        -65,
+        -55,
+        -50,
+        -45,
+        -43,
+        -40,
+        -38,
+        -35,
+        -30,
+        -25,
+        -20,
+        -15,
+        -10,
+        -5,
+        -3,
+        0,
+        3,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        38,
+        40,
+        43,
+        45,
+        47,
+        55,
+        60,
+        65,
+        70,
+        80,
+        83,
+        85
+    };
+
+    private Transform transform3DObject;
+    private int currentPhase = 0;
+    private const int START_PHASE_NUMBER = 11;
+    private const int END_PHASE_NUMBER = 50;
+
+    public void ProcessPhase(PlayerMovementController p)
+    {
+        if(transform3DObject == null)
+        {
+            transform3DObject = p.transform.Find("3DObject");
+            if (transform3DObject == null)
+                return;
+        }
+        if(currentPhase >= START_PHASE_NUMBER)
+        {
+            Vector3 anglesSave = transform3DObject.transform.eulerAngles;
+            Vector3 angles = p.transform.rotation.eulerAngles;
+            angles.x = ROTATION_VALUES[currentPhase-START_PHASE_NUMBER];
+            p.transform.eulerAngles = angles;
+            transform3DObject.eulerAngles = anglesSave;
+        }
+        currentPhase++;
+        if (currentPhase >= END_PHASE_NUMBER || p.transform.position.y < 0)
+        {
+            p.RemoveMovementProcedure(this);
+            OnMovementEnding(p);
+        }
+    }
+
+    public void OnMovementFinishedForCurrentFrame(PlayerMovementController p)
+    {
+        if (p.transform.position.y < 0)
+        {
+            p.RemoveMovementProcedure(this);
+            OnMovementEnding(p);
+        }
+    }
+
+    public void OnMovementEnding(PlayerMovementController p)
+    {
+        Vector3 anglesSave = transform3DObject.transform.eulerAngles;
+        Vector3 angles = p.transform.eulerAngles;
+        angles.x = 0;
+        p.transform.eulerAngles = angles;
+        transform3DObject.eulerAngles = anglesSave;
+        p.transform.position = new Vector3(p.transform.position.x, 0, p.transform.position.z);
+        transform3DObject = null;
+        currentPhase = 0;
+    }
+}
+
+/*
+private static readonly int[] ROTATION_VALUES = {
+                                                        -5,  -7,  -8, -10, -12, -14, -16, -22, -29, -37, -46, -48, -49, -52, -55,
+                                                       -55, -50, -49, -47, -45, -41, -37, -32, -29, -28, -25, -23, -20, -16, -12,
+                                                        -7,  -3,   4,   9,  15,  22,  29,  30,  39,  45,  60,  60,  60,  60,  58,
+                                                        53,  45,  40,  35,  30,  27,  25,  23,  20,  15,  13,  12,  11,   8,   7, 0,
+                                                    };
+
+private int currentPhase = 0;
+private const int END_PHASE_NUMBER = 61;
+
+public void ProcessPhase(PlayerMovementController p)
+{
+    Vector3 angles = p.transform.rotation.eulerAngles;
+    angles.x = (float)ROTATION_VALUES[currentPhase];
+    p.transform.eulerAngles = angles;
+
+    currentPhase++;
+    if (currentPhase >= END_PHASE_NUMBER)
+    {
+        p.RemoveMovementProcedure(this);
+        OnMovementEnding(p);
+    }
+}*/
