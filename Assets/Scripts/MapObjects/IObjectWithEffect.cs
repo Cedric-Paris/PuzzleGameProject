@@ -5,3 +5,6 @@
 
 //AT Square Entrance
 public interface IObjectWithEffectAtEntrance : IObjectWithEffect {}
+
+//On hit
+public interface IObjectWithEffectOnHit : IObjectWithEffect { }

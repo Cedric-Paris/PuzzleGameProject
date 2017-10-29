@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class KillingObject : MonoBehaviour, IObjectWithEffect
+public class KillingObject : MonoBehaviour, IObjectWithEffectOnHit
 {
 
     public void ApplyEffect(Player player)

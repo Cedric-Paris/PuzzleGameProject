@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class JumpProcedure : MonoBehaviour, IMovementProcedure
 {
@@ -68,7 +67,7 @@ public class JumpProcedure : MonoBehaviour, IMovementProcedure
             transform3DObject.eulerAngles = anglesSave;
         }
         currentPhase++;
-        if (currentPhase >= END_PHASE_NUMBER || p.transform.position.y < 0)
+        if (currentPhase >= END_PHASE_NUMBER)
         {
             p.RemoveMovementProcedure(this);
             OnMovementEnding(p);
@@ -77,7 +76,7 @@ public class JumpProcedure : MonoBehaviour, IMovementProcedure
 
     public void OnMovementFinishedForCurrentFrame(PlayerMovementController p)
     {
-        if (p.transform.position.y < 0)
+        if (p.transform.position.y < 0 && currentPhase > END_PHASE_NUMBER - 5)
         {
             p.RemoveMovementProcedure(this);
             OnMovementEnding(p);
@@ -96,28 +95,3 @@ public class JumpProcedure : MonoBehaviour, IMovementProcedure
         currentPhase = 0;
     }
 }
-
-/*
-private static readonly int[] ROTATION_VALUES = {
-                                                        -5,  -7,  -8, -10, -12, -14, -16, -22, -29, -37, -46, -48, -49, -52, -55,
-                                                       -55, -50, -49, -47, -45, -41, -37, -32, -29, -28, -25, -23, -20, -16, -12,
-                                                        -7,  -3,   4,   9,  15,  22,  29,  30,  39,  45,  60,  60,  60,  60,  58,
-                                                        53,  45,  40,  35,  30,  27,  25,  23,  20,  15,  13,  12,  11,   8,   7, 0,
-                                                    };
-
-private int currentPhase = 0;
-private const int END_PHASE_NUMBER = 61;
-
-public void ProcessPhase(PlayerMovementController p)
-{
-    Vector3 angles = p.transform.rotation.eulerAngles;
-    angles.x = (float)ROTATION_VALUES[currentPhase];
-    p.transform.eulerAngles = angles;
-
-    currentPhase++;
-    if (currentPhase >= END_PHASE_NUMBER)
-    {
-        p.RemoveMovementProcedure(this);
-        OnMovementEnding(p);
-    }
-}*/
