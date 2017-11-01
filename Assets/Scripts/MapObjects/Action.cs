@@ -3,6 +3,16 @@ using TouchInfo = TouchInputManager.TouchInfo;
 
 public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 {
+    public enum MovementEffectType
+    {
+        None = 0,
+        GoNorth = 1,
+        GoSouth = 2,
+        GoEast = 3,
+        GoWest = 4,
+        Jump = 5
+    }
+
     [SerializeField]
     private bool isDestructible;
 
@@ -13,8 +23,8 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
     [SerializeField]
     private Square attachedTo;
 
-    [SerializeField]//Component needed to display the field in Unity Inspector
-    private Component movementEffect;
+    [SerializeField]
+    private MovementEffectType movementEffectType;
 
     [SerializeField]
     private Collider actionCollider;
@@ -37,8 +47,6 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 
     private Vector3 InitialPos;
     private int fingerDraggingId = -1;
-
-    public IMovementProcedure MovementEffect { get { return movementEffect as IMovementProcedure; } }
 
     void Start()
     {
@@ -110,8 +118,9 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 
     public void ApplyEffect(Player player)
     {
-        if (MovementEffect != null)
-            player.MovementController.AddMovementProcedure(MovementEffect);
+        var movementEffect = GetIMovementProc(movementEffectType);
+        if (movementEffect != null)
+            player.MovementController.AddMovementProcedure(movementEffect);
         if(isDestructible)
         {
             player.MovementController.PhasePointReached += OnPhasePointReached;
@@ -124,6 +133,25 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
         {
             sender.PhasePointReached -= OnPhasePointReached;
             Destroy(this.gameObject);
+        }
+    }
+
+    private IMovementProcedure GetIMovementProc(MovementEffectType movType)
+    {
+        switch(movType)
+        {
+            case MovementEffectType.GoNorth:
+                return new TurnProcedure(Direction.North);
+            case MovementEffectType.GoSouth:
+                return new TurnProcedure(Direction.South);
+            case MovementEffectType.GoEast:
+                return new TurnProcedure(Direction.East);
+            case MovementEffectType.GoWest:
+                return new TurnProcedure(Direction.West);
+            case MovementEffectType.Jump:
+                return new JumpProcedure();
+            default:
+                return null;
         }
     }
 

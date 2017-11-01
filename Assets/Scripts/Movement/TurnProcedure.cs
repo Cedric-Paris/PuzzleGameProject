@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TurnProcedure : MonoBehaviour, IMovementProcedure {
+public class TurnProcedure : IMovementProcedure {
 
     private static readonly int[] ROTATION_VALUES = {
                                                     //From NORTH
@@ -24,17 +24,15 @@ public class TurnProcedure : MonoBehaviour, IMovementProcedure {
                                                         270, 270, 250, 230, 210, 190, 170, 150, 130, 110, 90,  //To East
                                                         270, 270, 270, 270, 270, 270, 270, 270, 270, 270, 270  //To West
                                                     };
-    [SerializeField]
-    [Tooltip("The direction reached at the end of the movement")]
-    private Direction targetDirection;
-    public Direction TargetDirection { get { return targetDirection; } }
+
+    public Direction TargetDirection { get; private set; }
 
     private int currentPhase = 0;
     private const int END_PHASE_NUMBER = 11;
 
     public TurnProcedure(Direction targetDirection)
     {
-        this.targetDirection = targetDirection;
+        TargetDirection = targetDirection;
     }
 
     private int GetRotationValue(Direction currentDirection, Direction endDirection, int phaseId)
@@ -46,7 +44,7 @@ public class TurnProcedure : MonoBehaviour, IMovementProcedure {
     public void ProcessPhase(PlayerMovementController p)
     {
         Vector3 angles = p.transform.rotation.eulerAngles;
-        angles.y = GetRotationValue(p.CurrentDirection, targetDirection, currentPhase);
+        angles.y = GetRotationValue(p.CurrentDirection, TargetDirection, currentPhase);
         p.transform.eulerAngles = angles;
         currentPhase++;
         if(currentPhase >= END_PHASE_NUMBER)
@@ -62,11 +60,11 @@ public class TurnProcedure : MonoBehaviour, IMovementProcedure {
     public void OnMovementEnding(PlayerMovementController p)
     {
         float xSave = p.transform.rotation.eulerAngles.x;
-        p.transform.LookAt(p.transform.position + ValueConverter.DirectionToVector3(targetDirection));
+        p.transform.LookAt(p.transform.position + ValueConverter.DirectionToVector3(TargetDirection));
         Vector3 angles = p.transform.rotation.eulerAngles;
         angles.x = xSave;
         p.transform.eulerAngles = angles;
-        p.CurrentDirection = targetDirection;
+        p.CurrentDirection = TargetDirection;
         p.ResetPhaseId(); // We need to reset the phase Id because it can change in a new direction
         currentPhase = 0;
     }

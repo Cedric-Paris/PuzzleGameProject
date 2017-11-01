@@ -1,49 +1,13 @@
 ﻿using UnityEngine;
 
-public class JumpProcedure : MonoBehaviour, IMovementProcedure
+public class JumpProcedure : IMovementProcedure
 {
 
-    private static readonly float[] ROTATION_VALUES = {
-        -85,
-        -75,
-        -70,
-        -65,
-        -55,
-        -50,
-        -45,
-        -43,
-        -40,
-        -38,
-        -35,
-        -30,
-        -25,
-        -20,
-        -15,
-        -10,
-        -5,
-        -3,
-        0,
-        3,
-        5,
-        10,
-        15,
-        20,
-        25,
-        30,
-        35,
-        38,
-        40,
-        43,
-        45,
-        47,
-        55,
-        60,
-        65,
-        70,
-        80,
-        83,
-        85
-    };
+    private static readonly float[] ROTATION_VALUES =
+        {
+            -85, -75, -70, -65, -55, -50, -45, -43, -40, -38, -35, -30, -25, -20, -15, -10, -5, -3,  0,
+                3,   5,  10,  15,  20,  25,  30,  35,  38,  40,  43,  45,  47,  55,  60,  65, 70, 80, 83, 85
+        };
 
     private Transform transform3DObject;
     private int currentPhase = 0;
