@@ -41,11 +41,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        Debug.Log("TOUCHED");
-    }
-
     public void Kill()
     {
         Destroy(gameObject);

@@ -70,6 +70,11 @@ public class TouchInputManager : MonoBehaviour
         touchesList.Remove(touchInfo);
     }
 
+    public static void Unhandled(int fingerId)
+    {
+        fingersTrackedByAGameObject.Remove(fingerId);
+    }
+
     void Awake()
     {
         if (singleInstance == null)

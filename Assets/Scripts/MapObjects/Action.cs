@@ -5,12 +5,11 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 {
     public enum MovementEffectType
     {
-        None = 0,
-        GoNorth = 1,
-        GoSouth = 2,
-        GoEast = 3,
-        GoWest = 4,
-        Jump = 5
+        GoNorth = 0,
+        GoSouth = 1,
+        GoEast = 2,
+        GoWest = 3,
+        Jump = 4
     }
 
     [SerializeField]
@@ -24,7 +23,9 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
     private Square attachedTo;
 
     [SerializeField]
-    private MovementEffectType movementEffectType;
+    private MovementEffectType movementType;
+    public MovementEffectType MovementType { get { return movementType; } }
+
 
     [SerializeField]
     private Collider actionCollider;
@@ -118,7 +119,7 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 
     public void ApplyEffect(Player player)
     {
-        var movementEffect = GetIMovementProc(movementEffectType);
+        var movementEffect = GetIMovementProc(MovementType);
         if (movementEffect != null)
             player.MovementController.AddMovementProcedure(movementEffect);
         if(isDestructible)
@@ -159,6 +160,9 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
     {
         if(attachedTo != null)
             attachedTo.Content = null;
+        if (fingerDraggingId != -1)
+            TouchInputManager.Unhandled(fingerDraggingId);
+        fingerDraggingId = -1;
     }
 
 }
