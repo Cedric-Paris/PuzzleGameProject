@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using TouchInfo = TouchInputManager.TouchInfo;
+using Assets.Scripts.Utilities;
+using TouchInfo = Assets.Scripts.Utilities.TouchInputManager.TouchInfo;
 
 public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
 {
