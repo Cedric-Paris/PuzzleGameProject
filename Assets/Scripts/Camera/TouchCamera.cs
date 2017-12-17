@@ -9,16 +9,15 @@ public class TouchCamera : MonoBehaviour
 {
     private static readonly int SMOOTH_REDUCER = 4;
     /// <summary>
-    /// Zoom force
-    /// Bigger the number is, the more precise the zoom is. (slow)
+    /// Zoom speed
     /// </summary>
-    private static readonly int ZOOM_FORCE = 60;
+    private static readonly float ZOOM_SPEED = 0.05f;
     /// <summary>
-    /// Maximum value for zooming (size attribute on camera)
+    /// Maximum camera size
     /// </summary>
     private static readonly int MAX_ZOOM_SIZE = 10;
     /// <summary>
-    /// Minimum value for zooming (size attribute on camera)
+    /// Minimum camera size
     /// </summary>
     private static readonly int MIN_ZOOM_SIZE = 2;
 
@@ -30,8 +29,11 @@ public class TouchCamera : MonoBehaviour
     private bool isZooming;
 
     private Vector3 draggingSmoothEffect;
+    private float zoomingSmoothEffect;
+    private float lastZoomMagnitude;
 
     private bool dragSmoothEffectInProgress;
+    private bool zoomSmoothEffectInProgress;
 
     /// <summary>
     /// Processing performed by Unity when an instance is created.
@@ -49,6 +51,7 @@ public class TouchCamera : MonoBehaviour
         isDragging = false;
         isZooming = false;
         dragSmoothEffectInProgress = false;
+        zoomSmoothEffectInProgress = false;
     }
 
     void Update()
@@ -56,7 +59,7 @@ public class TouchCamera : MonoBehaviour
         TouchInfo firstTouch = null;
         TouchInfo secondTouch = null;
         if ((firstFingerTargetId != -1 && !TouchInputManager.TryGetTouch(firstFingerTargetId, out firstTouch))
-            || (secondFingerTargetId != -1 && !TouchInputManager.TryGetTouch(firstFingerTargetId, out secondTouch)))
+            || (secondFingerTargetId != -1 && !TouchInputManager.TryGetTouch(secondFingerTargetId, out secondTouch)))
         {
             Reset();
         }
@@ -68,16 +71,23 @@ public class TouchCamera : MonoBehaviour
 
     private void ManageTouchInputs(TouchInfo firstTouch, TouchInfo secondTouch)
     {
-        if (isDragging)
+        if (isDragging && TouchInputManager.Touches.Count != 1)
+        {
             Drag(firstTouch);
+        }
         else if (isZooming)
             Zoom(firstTouch, secondTouch);
         else if (TouchInputManager.Touches.Count > 0 && TouchInputManager.Touches.Count <= 2)
         {
+            // Drag => Zoom if two fingers
+            if(!isDragging)
+            {
+                firstTouch = TouchInputManager.Touches[0];
+                firstFingerTargetId = firstTouch.Touch.fingerId;
+                TouchInputManager.Handled(firstTouch);
+            }
+            isDragging = false;
             dragSmoothEffectInProgress = false;
-            firstTouch = TouchInputManager.Touches[0];
-            firstFingerTargetId = firstTouch.Touch.fingerId;
-            TouchInputManager.Handled(firstTouch);
             if(TouchInputManager.Touches.Count > 0)
             {
                 secondTouch = TouchInputManager.Touches[0];
@@ -90,10 +100,13 @@ public class TouchCamera : MonoBehaviour
                 Drag(firstTouch);
             }
         }
-        else if(dragSmoothEffectInProgress)
+        else if(dragSmoothEffectInProgress || zoomSmoothEffectInProgress)
         {
             if (TouchInputManager.HasNewTouch)
+            {
                 dragSmoothEffectInProgress = false;
+                zoomSmoothEffectInProgress = false;
+            }
             else
                 ManageSmoothEffect();
         }
@@ -107,6 +120,21 @@ public class TouchCamera : MonoBehaviour
             GameManager.mainCamera.transform.Translate(draggingSmoothEffect);
             if (draggingSmoothEffect == Vector3.zero)
                 dragSmoothEffectInProgress = false;
+        }
+        else
+        {
+            var lerp = zoomingSmoothEffect * (Time.deltaTime * SMOOTH_REDUCER);
+            if(zoomingSmoothEffect == 0 || (zoomingSmoothEffect > 0 && lerp >= zoomingSmoothEffect) || (zoomingSmoothEffect < 0 && zoomingSmoothEffect >= lerp))
+            {
+                zoomSmoothEffectInProgress = false;
+            }
+            else
+            {
+                zoomingSmoothEffect -= lerp;
+                GameManager.mainCamera.orthographicSize += zoomingSmoothEffect * ZOOM_SPEED;
+                GameManager.mainCamera.orthographicSize = Mathf.Clamp(GameManager.mainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
+            }
+            
         }
     }
 
@@ -133,6 +161,29 @@ public class TouchCamera : MonoBehaviour
 
     private void Zoom(TouchInfo touch1, TouchInfo touch2)
     {
-        isZooming = true;
+        if (!isZooming)
+        {
+            lastZoomMagnitude = (touch1.Touch.position - touch2.Touch.position).magnitude;
+            lastZoomMagnitude = Mathf.Abs(lastZoomMagnitude * 100 / Screen.width);
+            isZooming = true;
+        }
+        else
+        {
+            float newMagnitude = (touch1.Touch.position - touch2.Touch.position).magnitude;
+            newMagnitude = Mathf.Abs(newMagnitude*100 / Screen.width);
+            float zoomDeltaMagnitude = lastZoomMagnitude - newMagnitude;
+            GameManager.mainCamera.orthographicSize += zoomDeltaMagnitude * ZOOM_SPEED;
+            GameManager.mainCamera.orthographicSize = Mathf.Clamp(GameManager.mainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
+
+            lastZoomMagnitude = newMagnitude;
+
+            if (touch1.Touch.phase == TouchPhase.Ended || touch1.Touch.phase == TouchPhase.Canceled ||
+                touch2.Touch.phase == TouchPhase.Ended || touch2.Touch.phase == TouchPhase.Canceled)
+            {
+                Reset();
+                zoomingSmoothEffect = zoomDeltaMagnitude;
+                zoomSmoothEffectInProgress = true;
+            }
+        }
     }
 }

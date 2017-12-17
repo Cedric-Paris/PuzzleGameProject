@@ -161,8 +161,6 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
     {
         if(attachedTo != null)
             attachedTo.Content = null;
-        if (fingerDraggingId != -1)
-            TouchInputManager.Unhandled(fingerDraggingId);
         fingerDraggingId = -1;
     }
 
