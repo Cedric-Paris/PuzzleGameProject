@@ -17,7 +17,7 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
     private bool isDestructible;
 
     [SerializeField]
-    [Range(0, 19)]
+    [Range(PlayerMovementController.FIRST_PHASE_ID, PlayerMovementController.LAST_PHASE_ID)]
     private int destroyPhaseNumber;
 
     [SerializeField]
@@ -66,7 +66,7 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
                 TouchInfo touchInfo;
                 if (TouchInputManager.TryGetTouch(fingerDraggingId, out touchInfo))
                 {
-                    transform.position = GameManager.mainCamera.ScreenToWorldPoint(touchInfo.Touch.position) + GameManager.mainCamera.transform.forward;
+                    transform.position = GameManager.MainCamera.ScreenToWorldPoint(touchInfo.Touch.position) + GameManager.MainCamera.transform.forward;
                 }
                 if (touchInfo == null || touchInfo.Touch.phase == TouchPhase.Ended || touchInfo.Touch.phase == TouchPhase.Canceled)
                     EndDrag();
@@ -80,7 +80,7 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
                     {
                         TouchInputManager.Handled(t);
                         InitialPos = transform.position;
-                        transform.position = GameManager.mainCamera.ScreenToWorldPoint(t.Touch.position) + GameManager.mainCamera.transform.forward;
+                        transform.position = GameManager.MainCamera.ScreenToWorldPoint(t.Touch.position) + GameManager.MainCamera.transform.forward;
                         if (t.Touch.phase != TouchPhase.Ended && t.Touch.phase != TouchPhase.Canceled)
                             fingerDraggingId = t.Touch.fingerId;
                         else
@@ -98,14 +98,14 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
         fingerDraggingId = -1;
 
         //Project position point on the TileMap : 
-        float t = (transform.position.y *-1) / GameManager.mainCamera.transform.forward.y;
-        float xProjection = transform.position.x + (GameManager.mainCamera.transform.forward.x * t);
-        float zProjection = transform.position.z + (GameManager.mainCamera.transform.forward.z * t);
+        float t = (transform.position.y *-1) / GameManager.MainCamera.transform.forward.y;
+        float xProjection = transform.position.x + (GameManager.MainCamera.transform.forward.x * t);
+        float zProjection = transform.position.z + (GameManager.MainCamera.transform.forward.z * t);
         int squareIndexX = Mathf.FloorToInt(xProjection);
         int squareIndexY = Mathf.FloorToInt(zProjection);
 
         Square s = TileMap.MainMap.GetSquare(squareIndexX, squareIndexY);
-        if(s == null || s.Content != null)
+        if(s == null || s.HasContent)
         {
             transform.position = InitialPos;
         }

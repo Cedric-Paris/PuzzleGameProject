@@ -117,7 +117,7 @@ public class TouchCamera : MonoBehaviour
         if(dragSmoothEffectInProgress)
         {
             draggingSmoothEffect = Vector3.Lerp(draggingSmoothEffect, Vector3.zero, Time.deltaTime* SMOOTH_REDUCER);
-            GameManager.mainCamera.transform.Translate(draggingSmoothEffect);
+            GameManager.MainCamera.transform.Translate(draggingSmoothEffect);
             if (draggingSmoothEffect == Vector3.zero)
                 dragSmoothEffectInProgress = false;
         }
@@ -131,8 +131,9 @@ public class TouchCamera : MonoBehaviour
             else
             {
                 zoomingSmoothEffect -= lerp;
-                GameManager.mainCamera.orthographicSize += zoomingSmoothEffect * ZOOM_SPEED;
-                GameManager.mainCamera.orthographicSize = Mathf.Clamp(GameManager.mainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
+                GameManager.MainCamera.orthographicSize += zoomingSmoothEffect * ZOOM_SPEED;
+                GameManager.MainCamera.orthographicSize = Mathf.Clamp(GameManager.MainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
+                GameManager.OnCameraSizeChanged();
             }
             
         }
@@ -142,14 +143,14 @@ public class TouchCamera : MonoBehaviour
     {
         if(!isDragging)
         {
-            firstFingerPosition = GameManager.mainCamera.ScreenToWorldPoint(touch.Touch.position);
+            firstFingerPosition = GameManager.MainCamera.ScreenToWorldPoint(touch.Touch.position);
             isDragging = true;
         }
         else
         {
-            Vector3 movement = firstFingerPosition - GameManager.mainCamera.ScreenToWorldPoint(touch.Touch.position);
+            Vector3 movement = firstFingerPosition - GameManager.MainCamera.ScreenToWorldPoint(touch.Touch.position);
             movement.z = 0;
-            GameManager.mainCamera.transform.Translate(movement);
+            GameManager.MainCamera.transform.Translate(movement);
             if(touch.Touch.phase == TouchPhase.Ended || touch.Touch.phase == TouchPhase.Canceled)
             {
                 Reset();
@@ -172,8 +173,8 @@ public class TouchCamera : MonoBehaviour
             float newMagnitude = (touch1.Touch.position - touch2.Touch.position).magnitude;
             newMagnitude = Mathf.Abs(newMagnitude*100 / Screen.width);
             float zoomDeltaMagnitude = lastZoomMagnitude - newMagnitude;
-            GameManager.mainCamera.orthographicSize += zoomDeltaMagnitude * ZOOM_SPEED;
-            GameManager.mainCamera.orthographicSize = Mathf.Clamp(GameManager.mainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
+            GameManager.MainCamera.orthographicSize += zoomDeltaMagnitude * ZOOM_SPEED;
+            GameManager.MainCamera.orthographicSize = Mathf.Clamp(GameManager.MainCamera.orthographicSize, MIN_ZOOM_SIZE, MAX_ZOOM_SIZE);
 
             lastZoomMagnitude = newMagnitude;
 
@@ -184,6 +185,8 @@ public class TouchCamera : MonoBehaviour
                 zoomingSmoothEffect = zoomDeltaMagnitude;
                 zoomSmoothEffectInProgress = true;
             }
+
+            GameManager.OnCameraSizeChanged();
         }
     }
 }

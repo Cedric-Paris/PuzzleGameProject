@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Square : MonoBehaviour
 {
+    public virtual bool HasContent { get { return Content != null; } }
 
     public Component Content { get; set; }
 
-    void Start()
+    protected void Start()
     {
         TileMap.MainMap.Tiles[(int)transform.position.x, (int)transform.position.z] = this;
     }

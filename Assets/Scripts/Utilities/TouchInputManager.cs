@@ -63,9 +63,9 @@ namespace Assets.Scripts.Utilities
         // TODO LayerMask CHECK MAX DISTANCE POUR LIMITER LE COUP DU RAY
         private static GameObject GetGameObjectTouched(Touch t)
         {
-            Vector3 center = GameManager.mainCamera.ScreenToWorldPoint(t.position);
+            Vector3 center = GameManager.MainCamera.ScreenToWorldPoint(t.position);
             RaycastHit hitInfo;
-            if (Physics.Raycast(center, GameManager.mainCamera.transform.forward, out hitInfo, 100f, 1 << 8))
+            if (Physics.Raycast(center, GameManager.MainCamera.transform.forward, out hitInfo, 100f, 1 << 8))
             {
                 return hitInfo.collider.gameObject;
             }

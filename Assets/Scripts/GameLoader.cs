@@ -14,7 +14,7 @@ public class GameLoader : MonoBehaviour {
             Instantiate(gameManager).transform.name = "GameManager";
         }
 
-        GameManager.mainCamera = camera;
+        GameManager.MainCamera = camera;
 		
 	}
 }

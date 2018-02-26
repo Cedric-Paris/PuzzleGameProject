@@ -6,9 +6,9 @@ public class PlayerMovementController : MonoBehaviour
 {
     private const int PASSAGE_STEP_100 = 5;
     private const float PASSAGE_STEP = 0.05f;
-    private const int FIRST_PHASE_ID = 0;
-    private const int MID_PHASE_ID = 10;
-    private const int LAST_PHASE_ID = 19;
+    public const int FIRST_PHASE_ID = 0;
+    public const int MID_PHASE_ID = 10;
+    public const int LAST_PHASE_ID = 19;
     private const float MAX_SPEED = 10f;
     private const float MIN_SPEED = 3f;
     private float speed = 3f;
@@ -105,18 +105,10 @@ public class PlayerMovementController : MonoBehaviour
             if(currentPositionValue > 0)
             {
                 decimalPart = (LAST_PHASE_ID - currentPhaseId) * PASSAGE_STEP;
-                /*if(currentPhaseId == FIRST_PHASE_ID)
-                {
-                    integerPart--;
-                }*/
             }
             else
             {
                 decimalPart = NextPhaseId * PASSAGE_STEP * -1;
-                /*if (NextPhaseId == FIRST_PHASE_ID && currentPositionValue != 0)
-                {
-                    integerPart--;
-                }*/
             }
         }
         else // Direction.North && Direction.East
@@ -139,10 +131,6 @@ public class PlayerMovementController : MonoBehaviour
                 else
                 {
                     decimalPart = (LAST_PHASE_ID - currentPhaseId) * -PASSAGE_STEP;
-                    /*if (currentPhaseId == FIRST_PHASE_ID)
-                    {
-                        integerPart++;
-                    }*/
                 }
             }
         }
@@ -150,7 +138,6 @@ public class PlayerMovementController : MonoBehaviour
         double resultValue = integerPart + decimalPart;
         if(verify && (System.Math.Abs(resultValue-currentPositionValue) > 2 * PASSAGE_STEP) )
         {
-            //Debug.LogWarning("VERIFY ERROR : "+resultValue);
             if(CurrentDirection == Direction.South || CurrentDirection == Direction.West)
             {
                 return GetNextPassageValue(currentPositionValue - (PASSAGE_STEP / 3), false);
@@ -176,20 +163,6 @@ public class PlayerMovementController : MonoBehaviour
          * A partir de T on recupere x , y , z coordonnées du point d'intersection a partir
          * de l'équation parametrique de D
          */
-
-        /*float factor = currentDirectionVector.x + currentDirectionVector.y + currentDirectionVector.z;
-        float currentPassageValue = (this.transform.position.x * currentDirectionVector.x) + (this.transform.position.y * currentDirectionVector.y) + (this.transform.position.z * currentDirectionVector.z);
-        float nextPassageValue = currentPassageValue - (Mathf.Floor(currentPassageValue) * factor);
-        nextPassageValue = (Mathf.Floor(nextPassageValue / PASSAGE_STEP) * PASSAGE_STEP) + (PASSAGE_STEP * factor);
-        nextPassageValue += Mathf.Floor(currentPassageValue);
-        //Resolution des problemes poses par les nombre floatant : 1.05 => 1.049999999.. -> Show script Reference unity3D.com or end of file.
-        if (Mathf.Approximately(nextPassageValue, currentPassageValue))//Resoud les problèmes posés par les nombres flotant -> Show script reference unity3D.com
-        {
-            if(! Mathf.Approximately(currentPassageValue, CurrentPhaseValue))
-            {
-                nextPassageValue += PASSAGE_STEP * factor;
-            }
-        }*/
         Vector3 extractor = new Vector3((currentDirectionVector.x * currentDirectionVector.x), (currentDirectionVector.y * currentDirectionVector.y), (currentDirectionVector.z * currentDirectionVector.z));
         float value = (this.transform.position.x * extractor.x) + (this.transform.position.y * extractor.y) + (this.transform.position.z * extractor.z);
         float nextPassageValue = GetNextPassageValue(value);
@@ -227,11 +200,7 @@ public class PlayerMovementController : MonoBehaviour
         float moveLenght = Vector3.Distance(Vector3.zero, this.transform.forward * Speed * Time.deltaTime);
         Vector3 nextPoint = NextPassagePoint();
         float dToNextPoint = Vector3.Distance(this.transform.position, nextPoint);
-        //Debug.Log(Vector3.Distance(Vector3.up, Vector3.up));
 
-        //Debug.Log(transform.position);
-        //Debug.LogError(nextPoint);
-        //Debug.LogWarning(nextPoint);
         while (moveLenght > dToNextPoint)
         {
             this.transform.position = nextPoint;
@@ -299,7 +268,7 @@ public class PlayerMovementController : MonoBehaviour
 
 }
 /* FLOATING POINT ISSUES
- * Extract of http://answers.unity3d.com/questions/121304/c-floating-point-confusion.html
+ * Extract from http://answers.unity3d.com/questions/121304/c-floating-point-confusion.html
 
  * "Most responders point out that floating-point is complicated, or at least more complicated than integer math. In particular
  * I was warned away from relying on == (and !=) between floats. Reasons given include: 1) That certain decimal numbers aren't
