@@ -23,4 +23,9 @@ public class TileMap : MonoBehaviour
             return null;
         return Tiles[x, y];
     }
+
+    public Square GetSquare(float x, float y)
+    {
+        return GetSquare(Mathf.FloorToInt(x), Mathf.FloorToInt(y));
+    }
 }

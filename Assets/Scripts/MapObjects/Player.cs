@@ -31,13 +31,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    /*void OnCollisionEnter(Collision col)
     {
         var obj = col.gameObject.GetComponent<IObjectWithEffectOnHit>();
-        if(obj != null)
+        if (obj != null)
         {
             obj.ApplyEffect(this);
-            Debug.Log("TOUCH");
+        }
+    }*/
+
+    void OnTriggerEnter(Collider collider)
+    {
+        var obj = collider.gameObject.GetComponent<IObjectWithEffectOnHit>();
+        if (obj != null)
+        {
+            obj.ApplyEffect(this);
         }
     }
 

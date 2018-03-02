@@ -93,6 +93,13 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
         }
     }
 
+    public void AttachTo(Square s = null)
+    {
+        attachedTo = s;
+        if (attachedTo != null)
+            attachedTo.Content = this;
+    }
+
     private void EndDrag()
     {
         fingerDraggingId = -1;
@@ -163,5 +170,4 @@ public class Action : MonoBehaviour, IObjectWithEffectAtEntrance
             attachedTo.Content = null;
         fingerDraggingId = -1;
     }
-
 }

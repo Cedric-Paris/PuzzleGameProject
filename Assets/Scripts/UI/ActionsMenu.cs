@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Utilities;
 
 public class ActionsMenu : MonoBehaviour
 {
@@ -17,12 +18,43 @@ public class ActionsMenu : MonoBehaviour
         SetColliderSize();
     }
 
+    void Update()
+    {
+        if(selectedAction != null)
+        {
+            foreach(var touchInfo in  TouchInputManager.Touches)
+            {
+                Vector3 touchPos = GameManager.MainCamera.ScreenToWorldPoint(touchInfo.Touch.position);
+                float t = (-touchPos.y) / GameManager.MainCamera.transform.forward.y;
+                float interX = touchPos.x + (GameManager.MainCamera.transform.forward.x * t);
+                float interZ = touchPos.z + (GameManager.MainCamera.transform.forward.z * t);
+
+                Square square = TileMap.MainMap.GetSquare(interX, interZ);
+                if (square != null && !square.HasContent && selectedAction.InstantiateAction(square))
+                {
+                    actionsCounter[selectedAction.ActionIndex]--;
+                    if(actionsCounter[selectedAction.ActionIndex]<=0)
+                    {
+                        ToggleSelect(selectedAction);
+                    }
+                    TouchInputManager.Handled(touchInfo);
+                    break;
+                }
+            }
+        }
+    }
+
     public void ToggleSelect(ActionInMenu actionToSelect = null)
     {
         if (selectedAction != null)
             selectedAction.IsAnimated = false;
-        if (actionToSelect != null && selectedAction != actionToSelect)
-            actionToSelect.IsAnimated = true;
+        if (actionToSelect != null)
+        {
+            if (selectedAction == actionToSelect || actionsCounter[actionToSelect.ActionIndex] <= 0)
+                actionToSelect = null;
+            else
+                actionToSelect.IsAnimated = true;
+        }
         selectedAction = actionToSelect;
     }
 
@@ -33,12 +65,11 @@ public class ActionsMenu : MonoBehaviour
         actionsCollider.center = new Vector3((Screen.width - actionsCollider.size.x) / 2, 0, actionsCollider.size.z / -2);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        var action = collision.gameObject.GetComponent<Action>();
+        var action = collider.gameObject.GetComponent<Action>();
         if (action == null)
             return;
-        Debug.Log(action.MovementType);
         actionsCounter[(int)action.MovementType]++;
         Destroy(action.gameObject);
     }

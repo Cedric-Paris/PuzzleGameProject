@@ -36,8 +36,16 @@ public class JumpProcedure : IMovementProcedure
             p.RemoveMovementProcedure(this);
             OnMovementEnding(p);
         }
+        if (currentPhase == 1)
+        {
+            p.ShouldIgnoreNext = true;
+        }
     }
 
+    /// <summary>
+    /// WARNING ProcessPhase() can be called multiple times before OnMovementFinishedForCurrentFrame
+    /// </summary>
+    /// <param name="p"></param>
     public void OnMovementFinishedForCurrentFrame(PlayerMovementController p)
     {
         if (p.transform.position.y < 0 && currentPhase > END_PHASE_NUMBER - 5)

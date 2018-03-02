@@ -4,7 +4,7 @@ public class Square : MonoBehaviour
 {
     public virtual bool HasContent { get { return Content != null; } }
 
-    public Component Content { get; set; }
+    public virtual Component Content { get; set; }
 
     protected void Start()
     {

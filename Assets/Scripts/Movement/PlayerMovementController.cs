@@ -47,6 +47,8 @@ public class PlayerMovementController : MonoBehaviour
     }
     public float Speed { get { return BaseSpeed + SpeedBost; } }
 
+    public bool ShouldIgnoreNext { get; set; }
+
     private List<IMovementProcedure> movementProcedures;
 
     public delegate void OnPhasePointReached(PlayerMovementController sender, int phaseNumber);
@@ -243,10 +245,17 @@ public class PlayerMovementController : MonoBehaviour
         currentPhaseId = NextPhaseId;
         if (currentPhaseId == FIRST_PHASE_ID && NewSquareReached != null)
         {
-            var squareIndex = GetNewSquareReachedIndex();
-            NewSquareReached(this, squareIndex.Item1, squareIndex.Item2);
+            if(ShouldIgnoreNext)
+            {
+                ShouldIgnoreNext = false;
+            }
+            else
+            {
+                var squareIndex = GetNewSquareReachedIndex();
+                NewSquareReached(this, squareIndex.Item1, squareIndex.Item2);
+            }
         }
-        if(PhasePointReached != null)
+        if (PhasePointReached != null)
         {
             PhasePointReached(this, currentPhaseId);
         }
